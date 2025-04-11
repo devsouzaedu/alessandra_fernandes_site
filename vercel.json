@@ -1,8 +1,5 @@
 {
   "framework": "nextjs",
-  "images": {
-    "remotePatterns": []
-  },
   "headers": [
     {
       "source": "/(.*)",
