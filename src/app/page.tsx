@@ -270,7 +270,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                "A Alessandra transformou minha relação com a alimentação. Perdi 12kg em 6 meses, sem passar fome e com muita qualidade de vida. Além da melhora na composição corporal, minha saúde intestinal melhorou significativamente!"
+                &quot;A Alessandra transformou minha relação com a alimentação. Perdi 12kg em 6 meses, sem passar fome e com muita qualidade de vida. Além da melhora na composição corporal, minha saúde intestinal melhorou significativamente!&quot;
               </p>
             </div>
             
@@ -290,7 +290,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                "Como atleta, sempre tive dificuldade em equilibrar minha alimentação com os treinos. A Alessandra desenvolveu um plano que melhorou minha performance e recuperação. Consegui reduzir meu tempo nas provas e ganhar mais resistência!"
+                &quot;Como atleta, sempre tive dificuldade em equilibrar minha alimentação com os treinos. A Alessandra desenvolveu um plano que melhorou minha performance e recuperação. Consegui reduzir meu tempo nas provas e ganhar mais resistência!&quot;
               </p>
             </div>
             
@@ -310,7 +310,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                "Após anos sofrendo com sintomas intestinais, finalmente encontrei na Alessandra uma profissional que entendeu minhas necessidades. Com o plano funcional, consegui eliminar os desconfortos e retomar minha qualidade de vida!"
+                &quot;Após anos sofrendo com sintomas intestinais, finalmente encontrei na Alessandra uma profissional que entendeu minhas necessidades. Com o plano funcional, consegui eliminar os desconfortos e retomar minha qualidade de vida!&quot;
               </p>
             </div>
             
@@ -330,7 +330,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                "Buscava ganho de massa muscular e a Alessandra me mostrou que era possível sem recorrer a suplementos desnecessários. Com uma alimentação bem planejada, ganhei 5kg de massa magra em 4 meses e melhorei minha definição muscular!"
+                &quot;Buscava ganho de massa muscular e a Alessandra me mostrou que era possível sem recorrer a suplementos desnecessários. Com uma alimentação bem planejada, ganhei 5kg de massa magra em 4 meses e melhorei minha definição muscular!&quot;
               </p>
             </div>
           </div>
@@ -431,7 +431,7 @@ export default function Home() {
               className="btn bg-transparent border border-white/30 text-white hover:bg-white/5 transform transition-transform duration-300 hover:scale-[1.02]"
             >
               Ver Serviços
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ChevronRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
         </div>

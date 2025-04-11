@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { Mail, MapPin, Phone, Instagram, Linkedin, Calendar } from "lucide-react";
+import { Mail, MapPin, Instagram, Linkedin, Calendar } from "lucide-react";
 
 export default function Contato() {
   return (
