@@ -13,10 +13,9 @@
 
 @layer base {
   body {
-    @apply font-libre;
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-libre), serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
