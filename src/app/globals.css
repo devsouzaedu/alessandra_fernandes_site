@@ -3,15 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
-  --primary: #EEE8DC;
-  --accent: #000000;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  
+  /* Cores personalizadas para o tema */
+  --primary: 147 22% 51%; /* #70967f */
+  --secondary: 46 67% 52%; /* #D4AF37 - dourado */
 }
 
 @layer base {
   body {
-    @apply bg-white text-black;
+    @apply font-libre;
+    background-color: var(--background);
+    color: var(--foreground);
     font-family: var(--font-inter), sans-serif;
   }
 
@@ -65,37 +69,20 @@
   to { opacity: 1; }
 }
 
-@keyframes slideInLeft {
-  from { transform: translateX(-30px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInRight {
-  from { transform: translateX(30px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInUp {
-  from { transform: translateY(30px); opacity: 0; }
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
 .animate-fadeIn {
-  animation: fadeIn 1s ease-out forwards;
+  animation: fadeIn 1s ease forwards;
 }
 
-.animate-slideInLeft {
-  animation: slideInLeft 0.8s ease-out forwards;
+.animate-slideUp {
+  animation: slideUp 0.8s ease forwards;
 }
 
-.animate-slideInRight {
-  animation: slideInRight 0.8s ease-out forwards;
-}
-
-.animate-slideInUp {
-  animation: slideInUp 0.8s ease-out forwards;
-}
-
+/* Animação com delay */
 .delay-100 {
   animation-delay: 0.1s;
 }

@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Libre_Baskerville, Montserrat } from "next/font/google";
-import { Navbar } from "@/components/ui/navbar";
-import { Footer } from "@/components/ui/footer";
 
 // Definindo as fontes
 const libreBaskerville = Libre_Baskerville({
@@ -39,12 +37,8 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${libreBaskerville.variable} ${montserrat.variable} ${inter.variable} antialiased`}>
-        <Navbar />
-        <div className="pt-16"> {/* Para compensar a altura do navbar fixo */}
-          {children}
-        </div>
-        <Footer />
+      <body className={`${libreBaskerville.variable} ${montserrat.variable} ${inter.variable} font-libre antialiased`}>
+        {children}
       </body>
     </html>
   );
