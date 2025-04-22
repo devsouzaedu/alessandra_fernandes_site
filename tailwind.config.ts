@@ -19,10 +19,10 @@ const config: Config = {
     },
     extend: {
       colors: {
-        primary: "#006D66", // Verde principal
+        primary: "#005651", // Verde principal
         "primary-dark": "#005651", // Versão mais escura do principal
         secondary: "#D4AF37", // Cor ouro mantida
-        'brand-green': '#006D66', // Verde principal
+        'brand-green': '#005651', // Verde principal
         'brand-green-alt': '#68A097', // Verde secundário
       },
       fontFamily: {
