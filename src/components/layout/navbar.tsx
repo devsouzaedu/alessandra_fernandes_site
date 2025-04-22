@@ -28,11 +28,6 @@ export default function Navbar() {
     setIsMenuOpen(true);
   };
 
-  // Função simplificada para fechar o menu
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
   // Fechar o menu quando a rota mudar
   useEffect(() => {
     const handleRouteChange = () => {
