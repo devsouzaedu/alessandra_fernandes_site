@@ -22,6 +22,7 @@ const config: Config = {
         primary: "#70967f",
         secondary: "#D4AF37", // Cor ouro
         "primary-dark": "#5a7a66",
+        'brand-green': '#6f9880', // Cor principal da marca
       },
       fontFamily: {
         inter: "var(--font-inter)",
