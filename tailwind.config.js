@@ -13,11 +13,11 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: "#608B65",
-          dark: "#4e7151",
+          DEFAULT: "#00857E",
+          dark: "#006d66",
         },
-        'brand-green': '#608B65',
-        'brand-green-alt': '#00857E',
+        'brand-green': '#00857E',
+        'brand-green-alt': '#608B65',
         secondary: "#D4AF37",
         pink: {
           50: "#fdf2f8",
@@ -29,8 +29,8 @@ module.exports = {
         },
         green: {
           300: "#86efac",
-          primary: "#608B65",
-          secondary: "#00857E",
+          primary: "#00857E",
+          secondary: "#608B65",
         },
       },
       animation: {

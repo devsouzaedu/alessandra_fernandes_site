@@ -3,7 +3,7 @@ import { GraduationCap, Award, Users, CalendarClock } from 'lucide-react';
 
 export default function SobreMim() {
   return (
-    <section className="py-10 bg-brand-green-alt" id="sobre">
+    <section className="py-10 bg-brand-green" id="sobre">
       <div className="container mx-auto px-4">
         <h2 
           className="text-3xl md:text-4xl font-bold text-white text-center mb-8"
