@@ -24,7 +24,9 @@ export default function Navbar() {
 
   // Função para alternar o menu
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    const newState = !isMenuOpen;
+    console.log('Navbar - toggleMenu:', newState ? 'Abrindo menu' : 'Fechando menu');
+    setIsMenuOpen(newState);
   };
   
   // Função para fechar o menu
@@ -32,6 +34,9 @@ export default function Navbar() {
     // Garante que o evento não será propagado para elementos pai
     if (e) {
       e.stopPropagation();
+      console.log('Navbar - closeMenu: Clique no botão X para fechar');
+    } else {
+      console.log('Navbar - closeMenu: Fechando por outro método');
     }
     setIsMenuOpen(false);
   };
@@ -39,6 +44,7 @@ export default function Navbar() {
   // Fechar o menu quando a rota mudar
   useEffect(() => {
     const handleRouteChange = () => {
+      console.log('Navbar - handleRouteChange: Fechando menu por mudança de rota');
       setIsMenuOpen(false);
     };
 
@@ -49,6 +55,7 @@ export default function Navbar() {
   // Controlar a rolagem do corpo quando o menu estiver aberto
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
+    console.log('Navbar - useEffect: Estado do menu mudou para', isMenuOpen ? 'aberto' : 'fechado');
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -120,7 +127,12 @@ export default function Navbar() {
       {isMenuOpen && (
         <div 
           className="fixed inset-0 bg-brand-green bg-opacity-95 backdrop-blur-sm z-50 md:hidden flex flex-col overflow-auto"
-          onClick={(e) => e.target === e.currentTarget && closeMenu()}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              console.log('Navbar - overlay: Clique fora do menu para fechar');
+              closeMenu();
+            }
+          }}
         >
           {/* Botão Fechar */}
           <div className="flex justify-end p-4">
