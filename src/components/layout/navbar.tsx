@@ -1,7 +1,7 @@
 // src/components/layout/navbar.tsx
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
@@ -21,19 +21,22 @@ const navItems = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-  const openMenu = useCallback(() => {
+  // Função simplificada para abrir o menu
+  const openMenu = () => {
     setIsMenuOpen(true);
-  }, []);
+  };
 
-  const closeMenu = useCallback(() => {
+  // Função simplificada para fechar o menu
+  const closeMenu = () => {
     setIsMenuOpen(false);
-  }, []);
+  };
 
   // Fechar o menu quando a rota mudar
   useEffect(() => {
     const handleRouteChange = () => {
-      closeMenu();
+      setIsMenuOpen(false);
     };
 
     window.addEventListener('popstate', handleRouteChange);
@@ -41,7 +44,7 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('popstate', handleRouteChange);
     };
-  }, [closeMenu]);
+  }, []);
 
   // Prevenir rolagem quando o menu estiver aberto
   useEffect(() => {
@@ -54,6 +57,23 @@ export default function Navbar() {
     return () => {
       document.body.style.overflow = 'unset';
     };
+  }, [isMenuOpen]);
+
+  // Adicionar evento de clique para o botão de fechamento após renderização
+  useEffect(() => {
+    const closeButton = closeButtonRef.current;
+    
+    if (closeButton && isMenuOpen) {
+      const handleClick = () => {
+        setIsMenuOpen(false);
+      };
+      
+      closeButton.addEventListener('click', handleClick);
+      
+      return () => {
+        closeButton.removeEventListener('click', handleClick);
+      };
+    }
   }, [isMenuOpen]);
 
   return (
@@ -119,9 +139,10 @@ export default function Navbar() {
           {/* Botão Fechar */}
           <div className="flex justify-end p-4">
             <button
-              onClick={closeMenu}
+              ref={closeButtonRef}
               aria-label="Fechar menu"
               className="text-white hover:text-gray-200 focus:outline-none"
+              type="button"
             >
               <X className="h-8 w-8" />
             </button>
@@ -133,22 +154,22 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className="text-white text-xl font-semibold hover:text-gray-200 font-lexend"
-                onClick={closeMenu}
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
             
             {/* Botão Agendar Consulta */}
-            <Link
+            <a
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 px-6 py-3 bg-white text-brand-green rounded-full hover:bg-gray-100 transition-colors duration-300 font-lexend"
-              onClick={closeMenu}
+              onClick={() => setIsMenuOpen(false)}
             >
               Agendar Consulta
-            </Link>
+            </a>
           </div>
         </div>
       )}
