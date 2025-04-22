@@ -3,11 +3,11 @@ import { MapPin, Video } from 'lucide-react';
 
 export default function ComoFuncionaConsultas() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-brand-green">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-green mb-4">Consultas</h2>
-          <h3 className="text-xl md:text-2xl font-semibold mb-4">Como funciona?</h3>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Consultas</h2>
+          <h3 className="text-xl md:text-2xl font-semibold mb-4 text-white/90">Como funciona?</h3>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -28,7 +28,7 @@ export default function ComoFuncionaConsultas() {
               
               <div className="relative w-full h-64 rounded-md overflow-hidden">
                 <Image
-                  src="/images/consultorio_alessandra.jpg"
+                  src="/images/fotos_alessandra_nutricionista_esportiva_em_barueri_alphaville_bethaville_espaco_interno (1).jpeg"
                   alt="Consultório da Dra. Alessandra Fernandes"
                   fill
                   style={{ objectFit: 'cover' }}
@@ -52,7 +52,7 @@ export default function ComoFuncionaConsultas() {
               
               <div className="relative w-full h-64 rounded-md overflow-hidden">
                 <Image
-                  src="/images/dra_alessandra.jpg"
+                  src="/images/alessandra_foto_lado.png"
                   alt="Dra. Alessandra Fernandes"
                   fill
                   style={{ objectFit: 'cover' }}

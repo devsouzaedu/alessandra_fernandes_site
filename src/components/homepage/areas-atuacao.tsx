@@ -10,11 +10,11 @@ interface ServicoProps {
 }
 
 const ServicoCard = ({ icon, title }: ServicoProps) => (
-  <div className="bg-white p-5 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md hover:bg-brand-green/5 flex items-center gap-4 animate-fadeIn">
-    <div className="text-brand-green">
+  <div className="bg-brand-green p-5 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md hover:bg-primary-dark flex items-center gap-4 animate-fadeIn">
+    <div className="text-white">
       {icon}
     </div>
-    <h3 className="text-gray-800 font-medium">{title}</h3>
+    <h3 className="text-white font-medium">{title}</h3>
   </div>
 );
 
@@ -66,7 +66,7 @@ export default function AreasAtuacao() {
   );
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-green mb-4">Áreas de Atuação e Serviços</h2>

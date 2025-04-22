@@ -7,12 +7,12 @@ interface EspecialidadeProps {
 }
 
 const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
-  <div className={`bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay}`}>
+  <div className={`bg-brand-green p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay}`}>
     <div className="flex flex-col items-center text-center">
-      <div className="text-brand-green mb-4">
+      <div className="text-white mb-4">
         {icon}
       </div>
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
+      <h3 className="text-lg font-semibold mb-2 text-white">{title}</h3>
     </div>
   </div>
 );
@@ -47,7 +47,7 @@ export default function Especialidades() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-green mb-4">Especialidades</h2>

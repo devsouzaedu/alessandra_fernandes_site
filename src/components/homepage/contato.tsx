@@ -5,11 +5,11 @@ export default function Contato() {
   const WHATSAPP_LINK = "https://wa.me/5511963074495?text=Oi!%20gostaria%20de%20agendar%20uma%20consulta...";
   
   return (
-    <section className="py-16 bg-gray-50" id="contato">
+    <section className="py-16 bg-brand-green" id="contato">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-green mb-4">Contato</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Contato</h2>
+          <p className="text-white/90 max-w-3xl mx-auto">
             Entre em contato para agendar sua consulta ou tirar dúvidas
           </p>
         </div>

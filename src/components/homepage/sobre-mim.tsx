@@ -3,10 +3,10 @@ import { GraduationCap, Award, Users, CalendarClock } from 'lucide-react';
 
 export default function SobreMim() {
   return (
-    <section className="py-16 bg-gray-50" id="sobre">
+    <section className="py-16 bg-brand-green" id="sobre">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-green mb-4">Quem Eu Sou</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Quem Eu Sou</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -14,7 +14,7 @@ export default function SobreMim() {
           <div className="mx-auto md:mx-0 animate-slideUp delay-100">
             <div className="relative w-full max-w-md h-96 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/images/dra_alessandra_perfil.jpg"
+                src="/images/alessandra_foto_pfp.jpg"
                 alt="Dra. Alessandra Fernandes"
                 fill
                 style={{ objectFit: 'cover' }}
@@ -26,7 +26,7 @@ export default function SobreMim() {
           </div>
           
           {/* Informações biográficas */}
-          <div className="animate-slideUp delay-200">
+          <div className="animate-slideUp delay-200 bg-white p-8 rounded-lg shadow-md">
             <div className="flex items-center gap-3 mb-6">
               <GraduationCap size={28} className="text-brand-green" />
               <div>

@@ -1,5 +1,6 @@
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
+import Image from 'next/image';
 
 // Interface para dados de depoimentos
 interface Depoimento {
@@ -19,21 +20,21 @@ export default function Feedbacks() {
     {
       id: 1,
       nome: "Cliente Satisfeito",
-      foto: "/images/placeholder.png",
+      foto: "/images/garotas_feedback_pfp (1).jpg",
       texto: "Este é um placeholder para um depoimento real. Aqui será adicionado o feedback de um cliente satisfeito com os serviços da Dra. Alessandra Fernandes.",
       avaliacao: 5
     },
     {
       id: 2,
       nome: "Cliente Motivado",
-      foto: "/images/placeholder.png",
+      foto: "/images/garotas_feedback_pfp (2).jpg",
       texto: "Outro placeholder para depoimento. Os depoimentos reais dos clientes serão adicionados posteriormente nesta seção, mostrando os resultados obtidos.",
       avaliacao: 5
     },
     {
       id: 3,
       nome: "Cliente Transformado",
-      foto: "/images/placeholder.png",
+      foto: "/images/garotas_feedback_pfp (3).jpg",
       texto: "Terceiro placeholder para depoimento. Esta área será preenchida com histórias reais de transformação e resultados alcançados com a nutrição.",
       avaliacao: 5
     }
@@ -53,18 +54,18 @@ export default function Feedbacks() {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-brand-green">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-green mb-4">O Que Dizem Nossos Pacientes</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">O Que Dizem Nossos Pacientes</h2>
+          <p className="text-white/90 max-w-3xl mx-auto">
             Depoimentos de quem já transformou sua saúde e qualidade de vida
           </p>
         </div>
         
         {/* Carrossel de depoimentos */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-gray-50 p-6 md:p-8 rounded-xl shadow-sm animate-fadeIn">
+          <div className="relative bg-white p-6 md:p-8 rounded-xl shadow-sm animate-fadeIn">
             {/* Aspas decorativas */}
             <div className="absolute top-4 left-4 text-6xl text-brand-green/20 font-serif">&ldquo;</div>
             
@@ -77,8 +78,13 @@ export default function Feedbacks() {
               {/* Informações do cliente */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-xs text-gray-600">
-                    Foto
+                  <div className="w-12 h-12 rounded-full overflow-hidden relative">
+                    <Image 
+                      src={depoimentos[currentIndex].foto}
+                      alt={`Foto de ${depoimentos[currentIndex].nome}`}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-800">{depoimentos[currentIndex].nome}</div>
@@ -121,7 +127,7 @@ export default function Feedbacks() {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  currentIndex === index ? 'bg-brand-green' : 'bg-gray-300'
+                  currentIndex === index ? 'bg-white' : 'bg-white/30'
                 }`}
                 aria-label={`Ver depoimento ${index + 1}`}
               />
