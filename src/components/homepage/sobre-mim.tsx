@@ -5,11 +5,11 @@ export default function SobreMim() {
   return (
     <section className="py-12 md:py-16 bg-brand-green" id="sobre">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-4 md:mb-6 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Quem Eu Sou</h2>
+        <div className="text-center mb-0 sm:mb-2 animate-fadeIn">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Quem Eu Sou</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center mt-4 md:mt-6">
           {/* Foto da Doutora */}
           <div className="mx-auto md:mx-0 animate-slideUp delay-100">
             <div className="relative w-full max-w-md h-64 sm:h-80 md:h-[550px] rounded-lg overflow-hidden shadow-lg">
