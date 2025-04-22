@@ -41,6 +41,14 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+  // Função específica para o botão X
+  const handleCloseButtonClick = (e: React.MouseEvent) => {
+    console.log('Navbar - BOTÃO X CLICADO!');
+    e.preventDefault();
+    e.stopPropagation();
+    setIsMenuOpen(false);
+  };
+
   // Fechar o menu quando a rota mudar
   useEffect(() => {
     const handleRouteChange = () => {
@@ -137,9 +145,9 @@ export default function Navbar() {
           {/* Botão Fechar */}
           <div className="flex justify-end p-4">
             <button
-              onClick={(e) => closeMenu(e)}
+              onClick={handleCloseButtonClick}
               aria-label="Fechar menu"
-              className="text-white hover:text-gray-200 focus:outline-none"
+              className="text-white hover:text-gray-200 focus:outline-none p-2 relative z-50"
               type="button"
             >
               <X className="h-8 w-8" />
