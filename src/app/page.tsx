@@ -69,7 +69,7 @@ export default function Home() {
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
 
-          {/* Botão Modo Admin agora usa onClick */}
+          {/* Botão Modo Admin */}
           <button
             onClick={handleAdminLogin}
             className="inline-flex items-center justify-center px-6 py-3 border border-white/50 text-base font-medium rounded-md text-white bg-transparent hover:bg-white/10 transition-colors duration-300"

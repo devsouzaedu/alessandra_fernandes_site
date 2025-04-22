@@ -22,7 +22,7 @@ export default function HeroSection() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 text-lg font-semibold text-white bg-brand-green rounded-md shadow-md hover:bg-opacity-90 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
+              className="inline-block px-8 py-3 text-lg font-semibold text-white bg-brand-green rounded-md shadow-md hover:bg-primary-dark transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
             >
               Agendar Consulta via WhatsApp
             </Link>

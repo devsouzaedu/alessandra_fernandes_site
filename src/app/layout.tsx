@@ -31,11 +31,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        {/* Adicionando as fontes do Google */}
+        {/* Preconnect com as fontes */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className={`${libreBaskerville.variable} ${montserrat.variable} ${inter.variable} font-libre antialiased`}>
         {children}

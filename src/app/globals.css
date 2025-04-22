@@ -7,8 +7,9 @@
   --foreground: 222.2 84% 4.9%;
   
   /* Cores personalizadas para o tema */
-  --primary: 147 22% 51%; /* #70967f */
-  --secondary: 46 67% 52%; /* #D4AF37 - dourado */
+  --primary: #70967f;
+  --secondary: #D4AF37; /* dourado */
+  --brand-green: #6f9880;
 }
 
 @layer base {
@@ -58,8 +59,16 @@
   background-color: var(--primary);
 }
 
+.bg-brand-green {
+  background-color: var(--brand-green);
+}
+
+.text-brand-green {
+  color: var(--brand-green);
+}
+
 .text-accent {
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 /* Animações */

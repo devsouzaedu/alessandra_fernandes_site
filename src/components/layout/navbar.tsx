@@ -30,13 +30,13 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Navegação Desktop (Simples por enquanto) */}
+          {/* Navegação Desktop */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-700 hover:text-brand-green transition-colors"
+                className="text-gray-700 hover:text-brand-green transition-colors duration-300"
               >
                 {item.label}
               </Link>
@@ -59,7 +59,7 @@ export default function Navbar() {
       {/* Menu Overlay Mobile */}
       <div
         className={`fixed inset-0 bg-brand-green bg-opacity-95 backdrop-blur-sm z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          } md:hidden flex flex-col`} // Adicionado flex flex-col
+          } md:hidden flex flex-col`}
       >
         {/* Botão Fechar */}
         <div className="flex justify-end p-4">
@@ -72,7 +72,7 @@ export default function Navbar() {
           </button>
         </div>
         {/* Itens do Menu Centralizados */}
-        <div className="flex flex-col items-center justify-center flex-grow space-y-8 -mt-12"> {/* Ajustado para centralizar */}
+        <div className="flex flex-col items-center justify-center flex-grow space-y-8 -mt-12">
           {navItems.map((item) => (
             <Link
               key={item.href}
