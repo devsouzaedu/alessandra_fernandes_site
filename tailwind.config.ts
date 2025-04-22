@@ -19,11 +19,11 @@ const config: Config = {
     },
     extend: {
       colors: {
-        primary: "#00857E", // Novo verde principal (mais escuro)
-        "primary-dark": "#006d66", // Versão mais escura do principal
+        primary: "#006D66", // Verde principal
+        "primary-dark": "#005651", // Versão mais escura do principal
         secondary: "#D4AF37", // Cor ouro mantida
-        'brand-green': '#00857E', // Verde principal (mais escuro)
-        'brand-green-alt': '#608B65', // Verde secundário (mais claro)
+        'brand-green': '#006D66', // Verde principal
+        'brand-green-alt': '#68A097', // Verde secundário
       },
       fontFamily: {
         inter: "var(--font-inter)",
