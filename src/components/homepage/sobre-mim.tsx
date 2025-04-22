@@ -5,19 +5,24 @@ export default function SobreMim() {
   return (
     <section className="py-12 md:py-16 bg-brand-green" id="sobre">
       <div className="container mx-auto px-4">
-        <div className="text-center animate-fadeIn">
+        <div className="text-center mb-8">
           <h2 
-            className="text-3xl md:text-4xl font-bold text-white mb-0"
+            className="text-3xl md:text-4xl font-bold text-white"
             data-aos="fade-down"
+            data-aos-duration="800"
           >
             Quem Eu Sou
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center mt-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
           {/* Foto da Doutora */}
-          <div className="mx-auto md:mx-0" data-aos="fade-right">
-            <div className="relative w-full max-w-md h-64 sm:h-80 md:h-[550px] rounded-lg overflow-hidden shadow-lg">
+          <div 
+            className="mx-auto md:mx-0" 
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <div className="relative w-full max-w-md h-64 sm:h-80 md:h-[450px] rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/images/alessandra_foto_pfp.jpg"
                 alt="Dra. Alessandra Fernandes"
@@ -34,60 +39,62 @@ export default function SobreMim() {
           <div 
             className="bg-white p-6 md:p-8 rounded-lg shadow-md" 
             data-aos="fade-left"
-            data-aos-delay="100"
+            data-aos-duration="1000"
           >
-            <div 
-              className="flex items-center gap-3 mb-4 md:mb-6"
-              data-aos="fade-up"
-              data-aos-delay="150"
-            >
-              <GraduationCap size={24} className="text-brand-green flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold text-gray-800">Formação</h3>
-                <p className="text-gray-600">Universidade Presbiteriana Mackenzie (2016)</p>
+            <div className="grid grid-cols-1 gap-4 mb-6">
+              <div 
+                className="flex items-start gap-3"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <GraduationCap size={24} className="text-brand-green flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800">Formação</h3>
+                  <p className="text-gray-600">Universidade Presbiteriana Mackenzie (2016)</p>
+                </div>
+              </div>
+              
+              <div 
+                className="flex items-start gap-3"
+                data-aos="fade-up"
+                data-aos-delay="150"
+              >
+                <Award size={24} className="text-brand-green flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800">Especialização</h3>
+                  <p className="text-gray-600">Pós-graduada em Nutrição Esportiva pelo Centro de Estudos de Fisiologia do Exercício</p>
+                </div>
+              </div>
+              
+              <div 
+                className="flex items-start gap-3"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <Users size={24} className="text-brand-green flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800">Experiência</h3>
+                  <p className="text-gray-600">Membro da comissão técnica de judô da Força Aérea Brasileira</p>
+                </div>
+              </div>
+              
+              <div 
+                className="flex items-start gap-3"
+                data-aos="fade-up"
+                data-aos-delay="250"
+              >
+                <CalendarClock size={24} className="text-brand-green flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800">Atuação</h3>
+                  <p className="text-gray-600">7 anos de experiência em consultório</p>
+                </div>
               </div>
             </div>
             
             <div 
-              className="flex items-center gap-3 mb-4 md:mb-6"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <Award size={24} className="text-brand-green flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold text-gray-800">Especialização</h3>
-                <p className="text-gray-600">Pós-graduada em Nutrição Esportiva pelo Centro de Estudos de Fisiologia do Exercício</p>
-              </div>
-            </div>
-            
-            <div 
-              className="flex items-center gap-3 mb-4 md:mb-6"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
-              <Users size={24} className="text-brand-green flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold text-gray-800">Experiência</h3>
-                <p className="text-gray-600">Membro da comissão técnica de judô da Força Aérea Brasileira</p>
-              </div>
-            </div>
-            
-            <div 
-              className="flex items-center gap-3 mb-4 md:mb-6"
+              className="text-gray-700 space-y-3"
               data-aos="fade-up"
               data-aos-delay="300"
-            >
-              <CalendarClock size={24} className="text-brand-green flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold text-gray-800">Atuação</h3>
-                <p className="text-gray-600">7 anos de experiência em consultório</p>
-              </div>
-            </div>
-            
-            <div 
-              className="mt-6 md:mt-8 text-gray-700 space-y-3 md:space-y-4"
-              data-aos="fade-up"
-              data-aos-delay="350"
             >
               <p>
                 Há 7 anos atendendo em consultórios, sempre com o intuito de auxiliar e melhorar a qualidade de vida dos indivíduos, 
