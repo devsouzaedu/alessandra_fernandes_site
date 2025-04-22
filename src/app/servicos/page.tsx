@@ -8,7 +8,7 @@ export default function ServicosPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-16 min-h-screen">
+      <main className="pt-20 min-h-screen">
         <AreasAtuacao />
       </main>
       <Footer />

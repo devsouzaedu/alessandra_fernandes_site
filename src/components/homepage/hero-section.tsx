@@ -7,7 +7,7 @@ const HERO_IMAGE_PATH = "/images/fotos_alessandra_nutricionista_esportiva_em_bar
 
 export default function HeroSection() {
   return (
-    <section className="bg-gray-50 pt-16"> {/* pt-16 para compensar a altura do Navbar fixo */}
+    <section className="bg-gray-50 pt-20"> {/* pt-20 para compensar a altura do Navbar fixo */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Conteúdo de Texto */}
@@ -22,7 +22,7 @@ export default function HeroSection() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 text-lg font-semibold text-white bg-brand-green rounded-md shadow-md hover:bg-primary-dark transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
+              className="inline-block px-8 py-3 text-lg font-semibold text-white bg-brand-green rounded-full shadow-md hover:bg-primary-dark transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
             >
               Agendar Consulta
             </Link>
@@ -36,8 +36,8 @@ export default function HeroSection() {
                 alt="Dra. Alessandra Fernandes"
                 fill
                 style={{ 
-                  objectFit: 'contain', 
-                  backgroundColor: '#f9f9f9' 
+                  objectFit: 'cover', 
+                  objectPosition: 'center'
                 }}
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -5,8 +5,8 @@ export default function SobreMim() {
   return (
     <section className="py-16 bg-brand-green" id="sobre">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Quem Eu Sou</h2>
+        <div className="text-center mb-6 animate-fadeIn">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Quem Eu Sou</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

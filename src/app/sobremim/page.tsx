@@ -8,7 +8,7 @@ export default function SobreMimPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-16 min-h-screen">
+      <main className="pt-20 min-h-screen">
         <SobreMim />
       </main>
       <Footer />
