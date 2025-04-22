@@ -10,6 +10,7 @@ const HERO_IMAGE_PATH = "/images/fotos_alessandra_nutricionista_esportiva_em_bar
 export default function HeroSection() {
   // Inicializar AOS com configurações personalizadas para o hero
   useEffect(() => {
+    // Garantir que as animações sejam atualizadas
     AOS.refresh();
   }, []);
 
@@ -19,28 +20,31 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Conteúdo de Texto */}
           <div 
-            className="text-center md:text-left font-lexend"
+            className="text-center md:text-left font-lexend overflow-hidden"
             data-aos="fade-right"
-            data-aos-duration="1200"
+            data-aos-duration="1500"
             data-aos-easing="ease-out-cubic"
             data-aos-delay="100"
             data-aos-offset="0"
+            data-aos-distance="100px"
           >
             <h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-green mb-4 font-montserrat"
               data-aos="fade-right"
-              data-aos-duration="1200"
+              data-aos-duration="1500"
               data-aos-easing="ease-out-cubic"
               data-aos-delay="200"
+              data-aos-distance="100px"
             >
               Dra. Alessandra Fernandes
             </h1>
             <p 
               className="text-lg md:text-xl text-gray-600 mb-8"
               data-aos="fade-right"
-              data-aos-duration="1200"
+              data-aos-duration="1500"
               data-aos-easing="ease-out-cubic"
               data-aos-delay="300"
+              data-aos-distance="100px"
             >
               Nutricionista Clínica, especialista em Nutrição Esportiva.
             </p>
@@ -50,9 +54,10 @@ export default function HeroSection() {
               rel="noopener noreferrer"
               className="inline-block px-8 py-3 text-lg font-semibold text-white bg-brand-green rounded-full shadow-md hover:bg-primary-dark transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
               data-aos="fade-right"
-              data-aos-duration="1200"
+              data-aos-duration="1500"
               data-aos-easing="ease-out-cubic"
               data-aos-delay="400"
+              data-aos-distance="100px"
             >
               Agendar Consulta
             </Link>
@@ -60,11 +65,12 @@ export default function HeroSection() {
 
           {/* Imagem */}
           <div 
-            className="flex justify-center" 
+            className="flex justify-center overflow-hidden" 
             data-aos="fade-left"
-            data-aos-duration="1200"
+            data-aos-duration="1500"
             data-aos-easing="ease-out-cubic"
             data-aos-delay="200"
+            data-aos-distance="100px"
           >
             <div className="relative w-full max-w-md h-auto rounded-lg overflow-hidden shadow-lg">
               <Image
@@ -72,7 +78,7 @@ export default function HeroSection() {
                 alt="Dra. Alessandra Fernandes"
                 width={500}
                 height={700}
-                className="w-full h-auto"
+                className="w-full h-auto transition-transform duration-700 hover:scale-105"
                 style={{ 
                   objectFit: 'contain',
                   objectPosition: 'center'
