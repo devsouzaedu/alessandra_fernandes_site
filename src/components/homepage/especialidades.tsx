@@ -7,8 +7,8 @@ interface EspecialidadeProps {
   alt?: boolean;
 }
 
-const EspecialidadeCard = ({ icon, title, delay, alt = false }: EspecialidadeProps) => (
-  <div className={`${alt ? 'bg-brand-green-alt' : 'bg-brand-green'} p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay}`}>
+const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
+  <div className={`bg-brand-green p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay}`}>
     <div className="flex flex-col items-center text-center">
       <div className="text-white mb-4">
         {icon}
