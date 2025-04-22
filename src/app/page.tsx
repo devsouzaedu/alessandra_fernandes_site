@@ -4,7 +4,7 @@ import { useState } from 'react'; // Importa useState
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, UserCog } from "lucide-react";
-// import Homepage from '@/components/homepage/homepage'; // Descomentar quando Homepage for criado
+import Homepage from '@/components/homepage/homepage'; // Importar Homepage
 
 export default function Home() {
   // Estado para controlar a autenticação do admin
@@ -21,9 +21,9 @@ export default function Home() {
   };
 
   // Renderiza a Homepage se o admin estiver autenticado
-  // if (isAdminAuthenticated) {
-  //   return <Homepage />; // Descomentar quando Homepage for criado
-  // }
+  if (isAdminAuthenticated) {
+    return <Homepage />; 
+  }
 
   // Renderiza a tela "Em breve" por padrão ou se a autenticação falhar
   return (
