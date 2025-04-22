@@ -1,4 +1,4 @@
-import { Video, Phone, UserRound, Dumbbell, Brain, Salad, 
+import { Video, UserRound, Dumbbell, Brain, Salad, 
   Leaf, Award, Clipboard, Timer, HeartPulse, Clock, Baby,
   Flower2, Sparkles, Egg, Activity, Stethoscope, Smile, Scissors, 
   Scale } from 'lucide-react';

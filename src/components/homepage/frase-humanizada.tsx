@@ -16,8 +16,8 @@ export default function FraseHumanizada() {
           </h2>
           
           <p className="text-xl md:text-2xl font-montserrat leading-relaxed mb-8">
-            "Meu compromisso é com o seu bem-estar. Cada consulta é uma oportunidade de transformar 
-            sua relação com a alimentação e construir hábitos saudáveis que durarão por toda a vida."
+            &ldquo;Meu compromisso é com o seu bem-estar. Cada consulta é uma oportunidade de transformar 
+            sua relação com a alimentação e construir hábitos saudáveis que durarão por toda a vida.&rdquo;
           </p>
           
           <div className="text-lg font-semibold">

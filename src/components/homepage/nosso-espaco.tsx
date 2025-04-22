@@ -41,8 +41,8 @@ export default function NossoEspaco() {
         {/* Frase destacada */}
         <div className="mt-12 text-center animate-fadeIn">
           <p className="text-lg text-gray-700 italic max-w-2xl mx-auto">
-            "Um ambiente confortável e acolhedor, projetado para proporcionar tranquilidade e privacidade 
-            durante seu atendimento nutricional."
+            &ldquo;Um ambiente confortável e acolhedor, projetado para proporcionar tranquilidade e privacidade 
+            durante seu atendimento nutricional.&rdquo;
           </p>
         </div>
       </div>

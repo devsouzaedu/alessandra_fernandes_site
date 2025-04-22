@@ -66,7 +66,7 @@ export default function Feedbacks() {
         <div className="max-w-4xl mx-auto">
           <div className="relative bg-gray-50 p-6 md:p-8 rounded-xl shadow-sm animate-fadeIn">
             {/* Aspas decorativas */}
-            <div className="absolute top-4 left-4 text-6xl text-brand-green/20 font-serif">"</div>
+            <div className="absolute top-4 left-4 text-6xl text-brand-green/20 font-serif">&ldquo;</div>
             
             {/* Conteúdo do depoimento */}
             <div className="relative z-10 pt-6">
@@ -111,7 +111,7 @@ export default function Feedbacks() {
             </div>
             
             {/* Aspas decorativas de fechamento */}
-            <div className="absolute bottom-4 right-4 text-6xl text-brand-green/20 font-serif rotate-180">"</div>
+            <div className="absolute bottom-4 right-4 text-6xl text-brand-green/20 font-serif rotate-180">&rdquo;</div>
           </div>
           
           {/* Indicadores de paginação */}
