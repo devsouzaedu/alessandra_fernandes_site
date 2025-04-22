@@ -22,13 +22,17 @@ const navItems = [
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Alternar o estado do menu
+  // Função para alternar o menu
   const toggleMenu = () => {
-    setIsMenuOpen(prev => !prev);
+    setIsMenuOpen(!isMenuOpen);
   };
-
-  // Fechar o menu
-  const closeMenu = () => {
+  
+  // Função para fechar o menu
+  const closeMenu = (e?: React.MouseEvent) => {
+    // Garante que o evento não será propagado para elementos pai
+    if (e) {
+      e.stopPropagation();
+    }
     setIsMenuOpen(false);
   };
 
@@ -39,20 +43,12 @@ export default function Navbar() {
     };
 
     window.addEventListener('popstate', handleRouteChange);
-
-    return () => {
-      window.removeEventListener('popstate', handleRouteChange);
-    };
+    return () => window.removeEventListener('popstate', handleRouteChange);
   }, []);
 
   // Controlar a rolagem do corpo quando o menu estiver aberto
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -122,11 +118,14 @@ export default function Navbar() {
 
       {/* Menu Overlay Mobile */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-brand-green bg-opacity-95 backdrop-blur-sm z-50 md:hidden flex flex-col overflow-auto">
+        <div 
+          className="fixed inset-0 bg-brand-green bg-opacity-95 backdrop-blur-sm z-50 md:hidden flex flex-col overflow-auto"
+          onClick={(e) => e.target === e.currentTarget && closeMenu()}
+        >
           {/* Botão Fechar */}
           <div className="flex justify-end p-4">
             <button
-              onClick={closeMenu}
+              onClick={(e) => closeMenu(e)}
               aria-label="Fechar menu"
               className="text-white hover:text-gray-200 focus:outline-none"
               type="button"
@@ -142,7 +141,7 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className="text-white text-xl font-semibold hover:text-gray-200 font-lexend"
-                onClick={closeMenu}
+                onClick={(e) => closeMenu(e)}
               >
                 {item.label}
               </Link>
@@ -154,7 +153,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 px-6 py-3 bg-white text-brand-green rounded-full hover:bg-gray-100 transition-colors duration-300 font-lexend"
-              onClick={closeMenu}
+              onClick={(e) => closeMenu(e)}
             >
               Agendar Consulta
             </a>
