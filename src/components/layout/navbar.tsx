@@ -1,7 +1,7 @@
 // src/components/layout/navbar.tsx
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
@@ -22,14 +22,18 @@ const navItems = [
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const openMenu = useCallback(() => {
+    setIsMenuOpen(true);
+  }, []);
+
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
 
   // Fechar o menu quando a rota mudar
   useEffect(() => {
     const handleRouteChange = () => {
-      setIsMenuOpen(false);
+      closeMenu();
     };
 
     window.addEventListener('popstate', handleRouteChange);
@@ -37,7 +41,7 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('popstate', handleRouteChange);
     };
-  }, []);
+  }, [closeMenu]);
 
   // Prevenir rolagem quando o menu estiver aberto
   useEffect(() => {
@@ -99,7 +103,7 @@ export default function Navbar() {
           {/* Botão Hamburguer Mobile */}
           <div className="md:hidden flex items-center">
             <button
-              onClick={toggleMenu}
+              onClick={openMenu}
               aria-label="Abrir menu"
               className="text-gray-700 hover:text-brand-green focus:outline-none"
             >
@@ -115,7 +119,7 @@ export default function Navbar() {
           {/* Botão Fechar */}
           <div className="flex justify-end p-4">
             <button
-              onClick={toggleMenu}
+              onClick={closeMenu}
               aria-label="Fechar menu"
               className="text-white hover:text-gray-200 focus:outline-none"
             >
@@ -129,7 +133,7 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className="text-white text-xl font-semibold hover:text-gray-200 font-lexend"
-                onClick={() => setIsMenuOpen(false)} // Fecha o menu ao clicar no link
+                onClick={closeMenu}
               >
                 {item.label}
               </Link>
@@ -141,7 +145,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 px-6 py-3 bg-white text-brand-green rounded-full hover:bg-gray-100 transition-colors duration-300 font-lexend"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={closeMenu}
             >
               Agendar Consulta
             </Link>
