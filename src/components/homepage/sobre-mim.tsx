@@ -5,13 +5,18 @@ export default function SobreMim() {
   return (
     <section className="py-12 md:py-16 bg-brand-green" id="sobre">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-0 sm:mb-2 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Quem Eu Sou</h2>
+        <div className="text-center animate-fadeIn">
+          <h2 
+            className="text-3xl md:text-4xl font-bold text-white mb-0"
+            data-aos="fade-down"
+          >
+            Quem Eu Sou
+          </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center mt-4 md:mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center mt-0">
           {/* Foto da Doutora */}
-          <div className="mx-auto md:mx-0 animate-slideUp delay-100">
+          <div className="mx-auto md:mx-0" data-aos="fade-right">
             <div className="relative w-full max-w-md h-64 sm:h-80 md:h-[550px] rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/images/alessandra_foto_pfp.jpg"
@@ -26,8 +31,16 @@ export default function SobreMim() {
           </div>
           
           {/* Informações biográficas */}
-          <div className="animate-slideUp delay-200 bg-white p-6 md:p-8 rounded-lg shadow-md">
-            <div className="flex items-center gap-3 mb-4 md:mb-6">
+          <div 
+            className="bg-white p-6 md:p-8 rounded-lg shadow-md" 
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
+            <div 
+              className="flex items-center gap-3 mb-4 md:mb-6"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
               <GraduationCap size={24} className="text-brand-green flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-800">Formação</h3>
@@ -35,7 +48,11 @@ export default function SobreMim() {
               </div>
             </div>
             
-            <div className="flex items-center gap-3 mb-4 md:mb-6">
+            <div 
+              className="flex items-center gap-3 mb-4 md:mb-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <Award size={24} className="text-brand-green flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-800">Especialização</h3>
@@ -43,7 +60,11 @@ export default function SobreMim() {
               </div>
             </div>
             
-            <div className="flex items-center gap-3 mb-4 md:mb-6">
+            <div 
+              className="flex items-center gap-3 mb-4 md:mb-6"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
               <Users size={24} className="text-brand-green flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-800">Experiência</h3>
@@ -51,7 +72,11 @@ export default function SobreMim() {
               </div>
             </div>
             
-            <div className="flex items-center gap-3 mb-4 md:mb-6">
+            <div 
+              className="flex items-center gap-3 mb-4 md:mb-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <CalendarClock size={24} className="text-brand-green flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-800">Atuação</h3>
@@ -59,7 +84,11 @@ export default function SobreMim() {
               </div>
             </div>
             
-            <div className="mt-6 md:mt-8 text-gray-700 space-y-3 md:space-y-4">
+            <div 
+              className="mt-6 md:mt-8 text-gray-700 space-y-3 md:space-y-4"
+              data-aos="fade-up"
+              data-aos-delay="350"
+            >
               <p>
                 Há 7 anos atendendo em consultórios, sempre com o intuito de auxiliar e melhorar a qualidade de vida dos indivíduos, 
                 pensando na sua realidade, respeitando seus gostos alimentares, e com a reeducação alimentar buscar seus objetivos 

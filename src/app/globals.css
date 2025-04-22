@@ -3,19 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  
-  /* Cores personalizadas para o tema */
-  --primary: #70967f;
-  --secondary: #D4AF37; /* dourado */
-  --brand-green: #6f9880;
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --brand-green: #68a097;
+  --primary-dark: #4b7a72;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @layer base {
   body {
-    background-color: var(--background);
-    color: var(--foreground);
     font-family: 'Lexend', sans-serif;
   }
 
@@ -81,50 +90,99 @@
   font-family: var(--font-montserrat), sans-serif;
 }
 
-/* Animações */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
+/* Animações customizadas */
 .animate-fadeIn {
-  animation: fadeIn 1s ease forwards;
+  animation: fadeIn 1.2s ease forwards;
 }
 
 .animate-slideUp {
-  animation: slideUp 0.8s ease forwards;
+  animation: slideUp 1s ease forwards;
 }
 
-/* Animação com delay */
 .delay-100 {
-  animation-delay: 0.1s;
+  animation-delay: 100ms;
 }
 
 .delay-200 {
-  animation-delay: 0.2s;
+  animation-delay: 200ms;
 }
 
 .delay-300 {
-  animation-delay: 0.3s;
+  animation-delay: 300ms;
 }
 
-.delay-400 {
-  animation-delay: 0.4s;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.delay-500 {
-  animation-delay: 0.5s;
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.delay-600 {
-  animation-delay: 0.6s;
+/* Animação flutuante para elementos que queremos destacar */
+.animate-float {
+  animation: float 5s ease-in-out infinite;
 }
 
-.delay-700 {
-  animation-delay: 0.7s;
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Transições suaves para todos os elementos */
+* {
+  transition: background-color 0.3s, transform 0.3s, opacity 0.3s, color 0.3s;
+}
+
+/* Estilo para links interativos */
+a:not(.no-anim) {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+a:not(.no-anim)::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--brand-green);
+  transition: width 0.3s ease;
+}
+
+a:not(.no-anim):hover::after {
+  width: 100%;
+}
+
+/* Efeito de zoom suave em imagens */
+.zoom-on-hover {
+  overflow: hidden;
+}
+
+.zoom-on-hover img {
+  transition: transform 0.5s ease;
+}
+
+.zoom-on-hover:hover img {
+  transform: scale(1.05);
 }

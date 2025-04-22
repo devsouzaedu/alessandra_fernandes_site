@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Libre_Baskerville, Montserrat, Lexend } from "next/font/google";
+import AnimationProvider from "@/components/animation-provider";
 
 // Definindo as fontes
 const libreBaskerville = Libre_Baskerville({
@@ -44,7 +45,9 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </head>
       <body className={`${libreBaskerville.variable} ${montserrat.variable} ${inter.variable} ${lexend.variable} font-lexend antialiased`}>
-        {children}
+        <AnimationProvider>
+          {children}
+        </AnimationProvider>
       </body>
     </html>
   );
