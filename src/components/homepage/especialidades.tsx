@@ -4,10 +4,11 @@ interface EspecialidadeProps {
   icon: React.ReactNode;
   title: string;
   delay: string;
+  alt?: boolean;
 }
 
-const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
-  <div className={`bg-brand-green p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay}`}>
+const EspecialidadeCard = ({ icon, title, delay, alt = false }: EspecialidadeProps) => (
+  <div className={`${alt ? 'bg-brand-green-alt' : 'bg-brand-green'} p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay}`}>
     <div className="flex flex-col items-center text-center">
       <div className="text-white mb-4">
         {icon}
@@ -22,27 +23,32 @@ export default function Especialidades() {
     { 
       icon: <Heart size={48} />, 
       title: "Nutrição Estética", 
-      delay: "delay-100" 
+      delay: "delay-100",
+      alt: false
     },
     { 
       icon: <Weight size={48} />, 
       title: "Emagrecimento", 
-      delay: "delay-200" 
+      delay: "delay-200",
+      alt: true 
     },
     { 
       icon: <Apple size={48} />, 
       title: "Nutrição Clínica", 
-      delay: "delay-300" 
+      delay: "delay-300",
+      alt: false
     },
     { 
       icon: <Dumbbell size={48} />, 
       title: "Nutrição Aplicada ao Exercício", 
-      delay: "delay-400" 
+      delay: "delay-400",
+      alt: true
     },
     { 
       icon: <FileSpreadsheet size={48} />, 
       title: "Planejamento de Cardápio", 
-      delay: "delay-500" 
+      delay: "delay-500",
+      alt: false
     },
   ];
 
@@ -63,6 +69,7 @@ export default function Especialidades() {
               icon={esp.icon}
               title={esp.title}
               delay={esp.delay}
+              alt={esp.alt}
             />
           ))}
         </div>

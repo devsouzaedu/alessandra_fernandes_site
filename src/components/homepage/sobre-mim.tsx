@@ -3,7 +3,7 @@ import { GraduationCap, Award, Users, CalendarClock } from 'lucide-react';
 
 export default function SobreMim() {
   return (
-    <section className="py-10 bg-brand-green" id="sobre">
+    <section className="py-10 bg-brand-green-alt" id="sobre">
       <div className="container mx-auto px-4">
         <h2 
           className="text-3xl md:text-4xl font-bold text-white text-center mb-8"
@@ -58,7 +58,7 @@ export default function SobreMim() {
                   data-aos="fade-up"
                   data-aos-delay="150"
                 >
-                  <Award size={24} className="text-brand-green flex-shrink-0 mt-1" />
+                  <Award size={24} className="text-brand-green-alt flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-gray-800">Especialização</h3>
                     <p className="text-gray-600">Pós-graduada em Nutrição Esportiva pelo Centro de Estudos de Fisiologia do Exercício</p>
@@ -82,7 +82,7 @@ export default function SobreMim() {
                   data-aos="fade-up"
                   data-aos-delay="250"
                 >
-                  <CalendarClock size={24} className="text-brand-green flex-shrink-0 mt-1" />
+                  <CalendarClock size={24} className="text-brand-green-alt flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-gray-800">Atuação</h3>
                     <p className="text-gray-600">7 anos de experiência em consultório</p>

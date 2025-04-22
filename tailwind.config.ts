@@ -19,10 +19,11 @@ const config: Config = {
     },
     extend: {
       colors: {
-        primary: "#70967f",
-        secondary: "#D4AF37", // Cor ouro
-        "primary-dark": "#5a7a66",
-        'brand-green': '#6f9880', // Cor principal da marca
+        primary: "#608B65", // Novo verde principal
+        "primary-dark": "#4e7151", // Versão mais escura do principal
+        secondary: "#D4AF37", // Cor ouro mantida
+        'brand-green': '#608B65', // Verde principal
+        'brand-green-alt': '#00857E', // Verde secundário
       },
       fontFamily: {
         inter: "var(--font-inter)",
@@ -67,14 +68,18 @@ const config: Config = {
     'bg-primary',
     'bg-secondary',
     'bg-brand-green',
+    'bg-brand-green-alt',
     'text-primary',
     'text-secondary',
     'text-brand-green',
+    'text-brand-green-alt',
     'text-white',
     'hover:bg-primary',
     'hover:bg-primary-dark',
+    'hover:bg-brand-green-alt',
     'hover:bg-gray-800',
     'hover:text-brand-green',
+    'hover:text-brand-green-alt',
     'font-lexend',
   ],
 };

@@ -22,7 +22,7 @@ export default function NossoEspaco() {
   ];
 
   return (
-    <section className="py-16 bg-brand-green">
+    <section className="py-16 bg-brand-green-alt">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Nosso Espaço</h2>
