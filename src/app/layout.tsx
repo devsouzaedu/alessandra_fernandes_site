@@ -34,6 +34,8 @@ export default function RootLayout({
         {/* Preconnect com as fontes */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Importação da fonte Special Gothic */}
+        <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet" />
       </head>
       <body className={`${libreBaskerville.variable} ${montserrat.variable} ${inter.variable} font-libre antialiased`}>
         {children}

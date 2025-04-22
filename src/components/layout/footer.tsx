@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-primary-dark text-white">
+    <footer className="bg-white text-brand-green">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo e informações */}
@@ -17,10 +17,9 @@ export default function Footer() {
                 alt="Logo Alessandra Fernandes" 
                 width={150} 
                 height={75}
-                className="invert opacity-90" // Inverte as cores para ficar branca em fundo escuro
               />
             </div>
-            <p className="text-white/70 text-sm text-center md:text-left">
+            <p className="text-brand-green/80 text-sm text-center md:text-left font-special-gothic">
               CRN-3: 123456 <br />
               Nutricionista Clínica e Esportiva
             </p>
@@ -28,15 +27,15 @@ export default function Footer() {
           
           {/* Links rápidos */}
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-4">Links Rápidos</h3>
+            <h3 className="text-lg font-semibold mb-4 font-special-gothic">Links Rápidos</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="#sobre" className="text-white/70 hover:text-white transition-colors">
+              <Link href="/sobremim" className="text-brand-green/80 hover:text-brand-green transition-colors font-special-gothic">
                 Sobre Mim
               </Link>
-              <Link href="#contato" className="text-white/70 hover:text-white transition-colors">
-                Contato
+              <Link href="/endereco" className="text-brand-green/80 hover:text-brand-green transition-colors font-special-gothic">
+                Endereço
               </Link>
-              <Link href="https://wa.me/5511963074495" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">
+              <Link href="https://wa.me/5511963074495" target="_blank" rel="noopener noreferrer" className="text-brand-green/80 hover:text-brand-green transition-colors font-special-gothic">
                 Agendar Consulta
               </Link>
             </nav>
@@ -44,13 +43,13 @@ export default function Footer() {
           
           {/* Redes sociais */}
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-4">Siga-me nas Redes</h3>
+            <h3 className="text-lg font-semibold mb-4 font-special-gothic">Siga-me nas Redes</h3>
             <div className="flex justify-center md:justify-start space-x-4">
               <a 
                 href="https://instagram.com/dra.alessandrafernandes" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-brand-green/30 flex items-center justify-center hover:bg-brand-green transition-colors"
+                className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center hover:bg-brand-green hover:text-white text-brand-green transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -59,7 +58,7 @@ export default function Footer() {
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-brand-green/30 flex items-center justify-center hover:bg-brand-green transition-colors"
+                className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center hover:bg-brand-green hover:text-white text-brand-green transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
@@ -68,7 +67,7 @@ export default function Footer() {
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-brand-green/30 flex items-center justify-center hover:bg-brand-green transition-colors"
+                className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center hover:bg-brand-green hover:text-white text-brand-green transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
@@ -78,7 +77,7 @@ export default function Footer() {
         </div>
         
         {/* Copyright */}
-        <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/60 text-sm">
+        <div className="border-t border-brand-green/10 mt-8 pt-8 text-center text-brand-green/70 text-sm font-special-gothic">
           <p>© {currentYear} Dra. Alessandra Fernandes. Todos os direitos reservados.</p>
         </div>
       </div>

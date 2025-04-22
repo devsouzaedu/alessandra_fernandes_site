@@ -12,12 +12,12 @@ export default function SobreMim() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Foto da Doutora */}
           <div className="mx-auto md:mx-0 animate-slideUp delay-100">
-            <div className="relative w-full max-w-md h-96 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
+            <div className="relative w-full max-w-md h-96 md:h-[550px] rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/images/alessandra_foto_pfp.jpg"
                 alt="Dra. Alessandra Fernandes"
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'contain' }}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
                 className="transition-transform duration-500 hover:scale-105"

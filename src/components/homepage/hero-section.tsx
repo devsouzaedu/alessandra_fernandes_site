@@ -11,8 +11,8 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Conteúdo de Texto */}
-          <div className="text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-green mb-4">
+          <div className="text-center md:text-left font-special-gothic">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-green mb-4 font-montserrat">
               Dra. Alessandra Fernandes
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8">
@@ -24,7 +24,7 @@ export default function HeroSection() {
               rel="noopener noreferrer"
               className="inline-block px-8 py-3 text-lg font-semibold text-white bg-brand-green rounded-md shadow-md hover:bg-primary-dark transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
             >
-              Agendar Consulta via WhatsApp
+              Agendar Consulta
             </Link>
           </div>
 
@@ -35,7 +35,10 @@ export default function HeroSection() {
                 src={HERO_IMAGE_PATH}
                 alt="Dra. Alessandra Fernandes"
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ 
+                  objectFit: 'contain', 
+                  backgroundColor: '#f9f9f9' 
+                }}
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />

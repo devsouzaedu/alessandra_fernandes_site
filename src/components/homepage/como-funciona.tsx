@@ -55,7 +55,7 @@ export default function ComoFuncionaConsultas() {
                   src="/images/alessandra_foto_lado.png"
                   alt="Dra. Alessandra Fernandes"
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'contain', backgroundColor: '#f8f8f8' }}
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="transition-transform duration-500 hover:scale-105"
                 />
