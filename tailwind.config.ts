@@ -29,7 +29,7 @@ const config: Config = {
         montserrat: "var(--font-montserrat)",
         libre: ["'Libre Baskerville'", "serif"],
         "funnel-sans": ["'Funnel Sans'", "sans-serif"],
-        "special-gothic": ["'Special Elite'", "cursive"], // Fonte Special Gothic
+        "lexend": ["var(--font-lexend)", "Lexend", "sans-serif"],
       },
       animation: {
         fadeIn: 'fadeIn 1s ease forwards',
@@ -75,7 +75,7 @@ const config: Config = {
     'hover:bg-primary-dark',
     'hover:bg-gray-800',
     'hover:text-brand-green',
-    'font-special-gothic',
+    'font-lexend',
   ],
 };
 

@@ -16,7 +16,7 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: 'Special Elite', cursive;
+    font-family: 'Lexend', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -72,8 +72,8 @@
 }
 
 /* Fonte secundária do site */
-.font-special-gothic {
-  font-family: 'Special Elite', cursive;
+.font-lexend {
+  font-family: 'Lexend', sans-serif;
 }
 
 /* Fonte primária para títulos */

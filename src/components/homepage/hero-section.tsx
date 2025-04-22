@@ -11,7 +11,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Conteúdo de Texto */}
-          <div className="text-center md:text-left font-special-gothic">
+          <div className="text-center md:text-left font-lexend">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-green mb-4 font-montserrat">
               Dra. Alessandra Fernandes
             </h1>

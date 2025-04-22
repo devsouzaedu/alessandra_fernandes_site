@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo ou Nome */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-brand-green font-special-gothic">
+            <Link href="/" className="text-xl font-bold text-brand-green font-lexend">
               Dra. Alessandra Fernandes
             </Link>
           </div>
@@ -43,7 +43,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-brand-green transition-colors duration-300 px-3 py-2 font-special-gothic"
+                  className="text-gray-700 hover:text-brand-green transition-colors duration-300 px-3 py-2 font-lexend"
                 >
                   {item.label}
                 </Link>
@@ -55,7 +55,7 @@ export default function Navbar() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-6 px-4 py-2 bg-brand-green text-white rounded-md hover:bg-primary-dark transition-colors duration-300 font-special-gothic"
+              className="ml-6 px-4 py-2 bg-brand-green text-white rounded-md hover:bg-primary-dark transition-colors duration-300 font-lexend"
             >
               Agendar Consulta
             </Link>
@@ -95,7 +95,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-white text-xl font-semibold hover:text-gray-200 font-special-gothic"
+              className="text-white text-xl font-semibold hover:text-gray-200 font-lexend"
               onClick={toggleMenu} // Fecha o menu ao clicar no link
             >
               {item.label}
@@ -107,7 +107,7 @@ export default function Navbar() {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 px-6 py-3 bg-white text-brand-green rounded-md hover:bg-gray-100 transition-colors duration-300 font-special-gothic"
+            className="mt-6 px-6 py-3 bg-white text-brand-green rounded-md hover:bg-gray-100 transition-colors duration-300 font-lexend"
             onClick={toggleMenu}
           >
             Agendar Consulta

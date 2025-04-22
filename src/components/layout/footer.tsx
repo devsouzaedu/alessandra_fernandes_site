@@ -19,7 +19,7 @@ export default function Footer() {
                 height={75}
               />
             </div>
-            <p className="text-brand-green/80 text-sm text-center md:text-left font-special-gothic">
+            <p className="text-brand-green/80 text-sm text-center md:text-left font-lexend">
               CRN-3: 123456 <br />
               Nutricionista Clínica e Esportiva
             </p>
@@ -27,15 +27,15 @@ export default function Footer() {
           
           {/* Links rápidos */}
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-4 font-special-gothic">Links Rápidos</h3>
+            <h3 className="text-lg font-semibold mb-4 font-lexend">Links Rápidos</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="/sobremim" className="text-brand-green/80 hover:text-brand-green transition-colors font-special-gothic">
+              <Link href="/sobremim" className="text-brand-green/80 hover:text-brand-green transition-colors font-lexend">
                 Sobre Mim
               </Link>
-              <Link href="/endereco" className="text-brand-green/80 hover:text-brand-green transition-colors font-special-gothic">
+              <Link href="/endereco" className="text-brand-green/80 hover:text-brand-green transition-colors font-lexend">
                 Endereço
               </Link>
-              <Link href="https://wa.me/5511963074495" target="_blank" rel="noopener noreferrer" className="text-brand-green/80 hover:text-brand-green transition-colors font-special-gothic">
+              <Link href="https://wa.me/5511963074495" target="_blank" rel="noopener noreferrer" className="text-brand-green/80 hover:text-brand-green transition-colors font-lexend">
                 Agendar Consulta
               </Link>
             </nav>
@@ -43,7 +43,7 @@ export default function Footer() {
           
           {/* Redes sociais */}
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-4 font-special-gothic">Siga-me nas Redes</h3>
+            <h3 className="text-lg font-semibold mb-4 font-lexend">Siga-me nas Redes</h3>
             <div className="flex justify-center md:justify-start space-x-4">
               <a 
                 href="https://instagram.com/dra.alessandrafernandes" 
@@ -77,7 +77,7 @@ export default function Footer() {
         </div>
         
         {/* Copyright */}
-        <div className="border-t border-brand-green/10 mt-8 pt-8 text-center text-brand-green/70 text-sm font-special-gothic">
+        <div className="border-t border-brand-green/10 mt-8 pt-8 text-center text-brand-green/70 text-sm font-lexend">
           <p>© {currentYear} Dra. Alessandra Fernandes. Todos os direitos reservados.</p>
         </div>
       </div>
