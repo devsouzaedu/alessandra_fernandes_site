@@ -30,13 +30,15 @@ export default function HeroSection() {
 
           {/* Imagem */}
           <div className="flex justify-center">
-            <div className="relative w-full max-w-md h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
+            <div className="relative w-full max-w-md h-auto rounded-lg overflow-hidden shadow-lg">
               <Image
                 src={HERO_IMAGE_PATH}
                 alt="Dra. Alessandra Fernandes"
-                fill
+                width={500}
+                height={700}
+                className="w-full h-auto"
                 style={{ 
-                  objectFit: 'cover', 
+                  objectFit: 'contain',
                   objectPosition: 'center'
                 }}
                 priority
