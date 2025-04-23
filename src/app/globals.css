@@ -5,8 +5,8 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
-  --brandMain: #729080;
-  --brandSecondary: #13896F;
+  --brand-main: #729080;
+  --brand-secondary: #13896F;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,8 +17,8 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  color: #111;
+  background: var(--brand-main);
   overflow-x: hidden;
   scroll-behavior: smooth;
 }

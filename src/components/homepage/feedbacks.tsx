@@ -54,7 +54,7 @@ export default function Feedbacks() {
   };
 
   return (
-    <section className="py-16 bg-brandMain text-black">
+    <section className="py-16 bg-brand-main text-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">O Que Dizem Nossos Pacientes</h2>
@@ -65,7 +65,7 @@ export default function Feedbacks() {
         
         {/* Carrossel de depoimentos */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-brandMain p-6 md:p-8 rounded-xl shadow-sm animate-fadeIn">
+          <div className="relative bg-brand-main p-6 md:p-8 rounded-xl shadow-sm animate-fadeIn">
             {/* Aspas decorativas */}
             <div className="absolute top-4 left-4 text-6xl text-brandSecondary font-serif">&ldquo;</div>
             
@@ -100,17 +100,17 @@ export default function Feedbacks() {
                 <div className="flex gap-2">
                   <button 
                     onClick={prevDepoimento} 
-                    className="p-2 rounded-full bg-brandMain border border-brandSecondary text-brandSecondary hover:bg-brandSecondary hover:text-white transition-colors"
+                    className="p-2 rounded-full bg-brand-main border border-brandSecondary text-brandSecondary hover:bg-brandSecondary hover:text-brand-main transition-colors"
                     aria-label="Depoimento anterior"
                   >
-                    <ChevronLeft size={20} className="text-brandSecondary" />
+                    <ChevronLeft size={20} className="text-brandSecondary hover:text-brand-main" />
                   </button>
                   <button 
                     onClick={nextDepoimento} 
-                    className="p-2 rounded-full bg-brandMain border border-brandSecondary text-brandSecondary hover:bg-brandSecondary hover:text-white transition-colors"
+                    className="p-2 rounded-full bg-brand-main border border-brandSecondary text-brandSecondary hover:bg-brandSecondary hover:text-brand-main transition-colors"
                     aria-label="Próximo depoimento"
                   >
-                    <ChevronRight size={20} className="text-brandSecondary" />
+                    <ChevronRight size={20} className="text-brandSecondary hover:text-brand-main" />
                   </button>
                 </div>
               </div>
@@ -126,7 +126,7 @@ export default function Feedbacks() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${currentIndex === index ? 'bg-white' : 'bg-brandMain'}`}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${currentIndex === index ? 'bg-white' : 'bg-brand-main'}`}
                 aria-label={`Ver depoimento ${index + 1}`}
               />
             ))}

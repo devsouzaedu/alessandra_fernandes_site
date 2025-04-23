@@ -10,7 +10,7 @@ interface ServicoProps {
 }
 
 const ServicoCard = ({ icon, title }: ServicoProps) => (
-  <div className="p-5 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md flex items-center gap-4 animate-fadeIn bg-brandMain">
+  <div className="p-5 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md flex items-center gap-4 animate-fadeIn hover:bg-brand-main">
     <div className="text-black">
       {icon}
     </div>
@@ -69,7 +69,7 @@ export default function AreasAtuacao() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Áreas de Atuação e Serviços</h2>
-          <p className="text-brandSecondary600 max-w-3xl mx-auto">
+          <p className="text-brand-secondary600 max-w-3xl mx-auto hover:text-brand-secondary">
             Conheça os serviços especializados oferecidos para o seu bem-estar e saúde
           </p>
         </div>
@@ -100,7 +100,7 @@ export default function AreasAtuacao() {
                 key={index}
                 onClick={() => setCurrentPage(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  currentPage === index ? 'bg-brandMain' : 'bg-gray-300'
+                  currentPage === index ? 'bg-brand-main' : 'bg-gray-300'
                 }`}
                 aria-label={`Página ${index + 1}`}
               />

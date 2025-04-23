@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-brandMain text-black">
+    <footer className="bg-brand-main text-black">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo e informações */}
@@ -49,7 +49,7 @@ export default function Footer() {
                 href="https://instagram.com/dra.alessandrafernandes" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-brandMain/10 flex items-center justify-center hover:bg-brandMain hover:text-black text-black transition-colors"
+                className="w-10 h-10 rounded-full bg-brand-main/10 flex items-center justify-center hover:bg-brand-secondary hover:text-black transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -58,7 +58,7 @@ export default function Footer() {
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-brandMain/10 flex items-center justify-center hover:bg-brandMain hover:text-black text-black transition-colors"
+                className="w-10 h-10 rounded-full bg-brand-main/10 flex items-center justify-center hover:bg-brand-secondary hover:text-black transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
@@ -67,7 +67,7 @@ export default function Footer() {
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-brandMain/10 flex items-center justify-center hover:bg-brandMain hover:text-black text-black transition-colors"
+                className="w-10 h-10 rounded-full bg-brand-main/10 flex items-center justify-center hover:bg-brand-secondary hover:text-black transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
@@ -77,8 +77,8 @@ export default function Footer() {
         </div>
         
         {/* Copyright */}
-        <div className="border-t border-brandSecondary/10 mt-8 pt-8 text-center text-black/70 text-sm font-lexend">
-          <p>© {currentYear} Dra. Alessandra Fernandes. Todos os direitos reservados.</p>
+        <div className="border-t border-brand-secondary/10 mt-8 pt-8 text-center text-black/70 text-sm font-lexend">
+          <p> {currentYear} Dra. Alessandra Fernandes. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

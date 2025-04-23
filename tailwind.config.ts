@@ -19,8 +19,8 @@ const config: Config = {
     },
     extend: {
       colors: {
-        brandMain: "#729080", // Cor principal
-        brandSecondary: "#13896F", // Elementos secundários
+        'brand-main': "#729080", // Cor principal
+        'brand-secondary': "#13896F", // Elementos secundários
         secondary: "#D4AF37", // Cor ouro mantida
       },
       fontFamily: {
@@ -63,21 +63,16 @@ const config: Config = {
     },
   },
   safelist: [
-    'bg-primary',
-    'bg-secondary',
-    'bg-brand-green',
-    'bg-brand-green-alt',
-    'text-primary',
-    'text-secondary',
-    'text-brand-green',
-    'text-brand-green-alt',
+    'bg-brand-main',
+    'bg-brand-secondary',
+    'text-brand-main',
+    'text-brand-secondary',
+    'hover:bg-brand-main',
+    'hover:bg-brand-secondary',
+    'hover:text-brand-main',
+    'hover:text-brand-secondary',
     'text-white',
-    'hover:bg-primary',
-    'hover:bg-primary-dark',
-    'hover:bg-brand-green-alt',
-    'hover:bg-gray-800',
-    'hover:text-brand-green',
-    'hover:text-brand-green-alt',
+    'text-black',
     'font-lexend',
   ],
 };
