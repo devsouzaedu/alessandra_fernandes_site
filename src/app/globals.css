@@ -5,8 +5,8 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
-  --brand-green: #13896F;
-  --primary-dark: #13896F;
+  --brandMain: #729080;
+  --brandSecondary: #13896F;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -54,20 +54,20 @@ export default function Feedbacks() {
   };
 
   return (
-    <section className="py-16 bg-#13896F text-white">
+    <section className="py-16 bg-brandMain text-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">O Que Dizem Nossos Pacientes</h2>
-          <p className="text-white max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">O Que Dizem Nossos Pacientes</h2>
+          <p className="text-black max-w-3xl mx-auto">
             Depoimentos de quem já transformou sua saúde e qualidade de vida
           </p>
         </div>
         
         {/* Carrossel de depoimentos */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-#13896F p-6 md:p-8 rounded-xl shadow-sm animate-fadeIn">
+          <div className="relative bg-brandMain p-6 md:p-8 rounded-xl shadow-sm animate-fadeIn">
             {/* Aspas decorativas */}
-            <div className="absolute top-4 left-4 text-6xl text-white font-serif">&ldquo;</div>
+            <div className="absolute top-4 left-4 text-6xl text-brandSecondary font-serif">&ldquo;</div>
             
             {/* Conteúdo do depoimento */}
             <div className="relative z-10 pt-6">
@@ -90,7 +90,7 @@ export default function Feedbacks() {
                     <div className="font-semibold text-white">{depoimentos[currentIndex].nome}</div>
                     <div className="flex">
                       {Array.from({ length: depoimentos[currentIndex].avaliacao }).map((_, i) => (
-                        <Star key={i} size={16} className="fill-current text-white" />
+                        <Star key={i} size={16} className="fill-current text-brandSecondary" />
                       ))}
                     </div>
                   </div>
@@ -100,24 +100,24 @@ export default function Feedbacks() {
                 <div className="flex gap-2">
                   <button 
                     onClick={prevDepoimento} 
-                    className="p-2 rounded-full bg-#13896F border border-white text-white hover:bg-white hover:text-#13896F transition-colors"
+                    className="p-2 rounded-full bg-brandMain border border-brandSecondary text-brandSecondary hover:bg-brandSecondary hover:text-white transition-colors"
                     aria-label="Depoimento anterior"
                   >
-                    <ChevronLeft size={20} className="text-white" />
+                    <ChevronLeft size={20} className="text-brandSecondary" />
                   </button>
                   <button 
                     onClick={nextDepoimento} 
-                    className="p-2 rounded-full bg-#13896F border border-white text-white hover:bg-white hover:text-#13896F transition-colors"
+                    className="p-2 rounded-full bg-brandMain border border-brandSecondary text-brandSecondary hover:bg-brandSecondary hover:text-white transition-colors"
                     aria-label="Próximo depoimento"
                   >
-                    <ChevronRight size={20} className="text-white" />
+                    <ChevronRight size={20} className="text-brandSecondary" />
                   </button>
                 </div>
               </div>
             </div>
             
             {/* Aspas decorativas de fechamento */}
-            <div className="absolute bottom-4 right-4 text-6xl text-white font-serif rotate-180">&rdquo;</div>
+            <div className="absolute bottom-4 right-4 text-6xl text-brandSecondary font-serif rotate-180">&rdquo;</div>
           </div>
           
           {/* Indicadores de paginação */}
@@ -126,7 +126,7 @@ export default function Feedbacks() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${currentIndex === index ? 'bg-white' : 'bg-#13896F'}`}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${currentIndex === index ? 'bg-white' : 'bg-brandMain'}`}
                 aria-label={`Ver depoimento ${index + 1}`}
               />
             ))}
