@@ -4,18 +4,17 @@ interface EspecialidadeProps {
   icon: React.ReactNode;
   title: string;
   delay: string;
-  alt?: boolean;
 }
 
-const EspecialidadeCard = ({ icon, title, delay, alt }: EspecialidadeProps) => (
+const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
   <div
-    className={`p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay} ${alt ? 'bg-brand-green-alt' : 'bg-brand-green'}`}
+    className={`p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay} bg-brand-green`}
   >
     <div className="flex flex-col items-center text-center">
-      <div className={alt ? 'text-brand-green mb-4' : 'text-white mb-4'}>
+      <div className="text-white mb-4">
         {icon}
       </div>
-      <h3 className={`text-lg font-semibold mb-2 ${alt ? 'text-brand-green' : 'text-white'}`}>{title}</h3>
+      <h3 className="text-lg font-semibold mb-2 text-white">{title}</h3>
     </div>
   </div>
 );
@@ -58,7 +57,7 @@ export default function Especialidades() {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-green mb-4">Especialidades</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Especialidades</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Atendimento especializado para suas necessidades nutricionais
           </p>

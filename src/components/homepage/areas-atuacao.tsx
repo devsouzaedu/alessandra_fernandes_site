@@ -9,12 +9,12 @@ interface ServicoProps {
   title: string;
 }
 
-const ServicoCard = ({ icon, title, alt }: ServicoProps & { alt?: boolean }) => (
-  <div className={`p-5 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md flex items-center gap-4 animate-fadeIn ${alt ? 'bg-brand-green-alt' : 'bg-brand-green'}`}>
-    <div className={alt ? 'text-brand-green' : 'text-white'}>
+const ServicoCard = ({ icon, title }: ServicoProps) => (
+  <div className="p-5 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md flex items-center gap-4 animate-fadeIn bg-brand-green">
+    <div className="text-white">
       {icon}
     </div>
-    <h3 className={`font-medium ${alt ? 'text-brand-green' : 'text-white'}`}>{title}</h3>
+    <h3 className="font-medium text-white">{title}</h3>
   </div>
 );
 
@@ -68,7 +68,7 @@ export default function AreasAtuacao() {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-green mb-4">Áreas de Atuação e Serviços</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Áreas de Atuação e Serviços</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Conheça os serviços especializados oferecidos para o seu bem-estar e saúde
           </p>
@@ -77,7 +77,7 @@ export default function AreasAtuacao() {
         {/* Grid para desktop */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {servicos.map((servico, index) => (
-            <ServicoCard key={index} {...servico} alt={index % 2 === 1} />
+            <ServicoCard key={index} {...servico} />
           ))}
         </div>
 

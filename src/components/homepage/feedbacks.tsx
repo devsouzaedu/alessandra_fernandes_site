@@ -54,24 +54,24 @@ export default function Feedbacks() {
   };
 
   return (
-    <section className="py-16 bg-brand-green">
+    <section className="py-16 bg-#13896F text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">O Que Dizem Nossos Pacientes</h2>
-          <p className="text-white/90 max-w-3xl mx-auto">
+          <p className="text-white max-w-3xl mx-auto">
             Depoimentos de quem já transformou sua saúde e qualidade de vida
           </p>
         </div>
         
         {/* Carrossel de depoimentos */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-white p-6 md:p-8 rounded-xl shadow-sm animate-fadeIn">
+          <div className="relative bg-#13896F p-6 md:p-8 rounded-xl shadow-sm animate-fadeIn">
             {/* Aspas decorativas */}
-            <div className="absolute top-4 left-4 text-6xl text-brand-green/20 font-serif">&ldquo;</div>
+            <div className="absolute top-4 left-4 text-6xl text-white font-serif">&ldquo;</div>
             
             {/* Conteúdo do depoimento */}
             <div className="relative z-10 pt-6">
-              <p className="text-gray-700 text-lg italic mb-6">
+              <p className="text-white text-lg italic mb-6">
                 {depoimentos[currentIndex].texto}
               </p>
               
@@ -87,10 +87,10 @@ export default function Feedbacks() {
                     />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-800">{depoimentos[currentIndex].nome}</div>
+                    <div className="font-semibold text-white">{depoimentos[currentIndex].nome}</div>
                     <div className="flex">
                       {Array.from({ length: depoimentos[currentIndex].avaliacao }).map((_, i) => (
-                        <Star key={i} size={16} className="fill-current text-yellow-400" />
+                        <Star key={i} size={16} className="fill-current text-white" />
                       ))}
                     </div>
                   </div>
@@ -100,24 +100,24 @@ export default function Feedbacks() {
                 <div className="flex gap-2">
                   <button 
                     onClick={prevDepoimento} 
-                    className="p-2 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-brand-green hover:text-white transition-colors"
+                    className="p-2 rounded-full bg-#13896F border border-white text-white hover:bg-white hover:text-#13896F transition-colors"
                     aria-label="Depoimento anterior"
                   >
-                    <ChevronLeft size={20} />
+                    <ChevronLeft size={20} className="text-white" />
                   </button>
                   <button 
                     onClick={nextDepoimento} 
-                    className="p-2 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-brand-green hover:text-white transition-colors"
+                    className="p-2 rounded-full bg-#13896F border border-white text-white hover:bg-white hover:text-#13896F transition-colors"
                     aria-label="Próximo depoimento"
                   >
-                    <ChevronRight size={20} />
+                    <ChevronRight size={20} className="text-white" />
                   </button>
                 </div>
               </div>
             </div>
             
             {/* Aspas decorativas de fechamento */}
-            <div className="absolute bottom-4 right-4 text-6xl text-brand-green/20 font-serif rotate-180">&rdquo;</div>
+            <div className="absolute bottom-4 right-4 text-6xl text-white font-serif rotate-180">&rdquo;</div>
           </div>
           
           {/* Indicadores de paginação */}
@@ -126,7 +126,7 @@ export default function Feedbacks() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${currentIndex === index ? (index % 2 === 0 ? 'bg-brand-green' : 'bg-brand-green-alt') : 'bg-gray-300'}`}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${currentIndex === index ? 'bg-white' : 'bg-#13896F'}`}
                 aria-label={`Ver depoimento ${index + 1}`}
               />
             ))}
