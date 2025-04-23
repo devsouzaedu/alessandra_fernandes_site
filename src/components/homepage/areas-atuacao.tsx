@@ -9,12 +9,12 @@ interface ServicoProps {
   title: string;
 }
 
-const ServicoCard = ({ icon, title }: ServicoProps) => (
-  <div className="bg-brand-green p-5 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md hover:bg-primary-dark flex items-center gap-4 animate-fadeIn">
-    <div className="text-white">
+const ServicoCard = ({ icon, title, alt }: ServicoProps & { alt?: boolean }) => (
+  <div className={`p-5 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md flex items-center gap-4 animate-fadeIn ${alt ? 'bg-brand-green-alt' : 'bg-brand-green'}`}>
+    <div className={alt ? 'text-brand-green' : 'text-white'}>
       {icon}
     </div>
-    <h3 className="text-white font-medium">{title}</h3>
+    <h3 className={`font-medium ${alt ? 'text-brand-green' : 'text-white'}`}>{title}</h3>
   </div>
 );
 
@@ -60,10 +60,9 @@ export default function AreasAtuacao() {
   const totalPages = Math.ceil(servicos.length / itemsPerPage);
 
   // Obter os serviços para a página atual
-  const paginatedServicos = servicos.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = (currentPage + 1) * itemsPerPage;
+  const paginatedServicos = servicos.slice(startIndex, endIndex);
 
   return (
     <section className="py-16 bg-gray-50">
@@ -78,11 +77,7 @@ export default function AreasAtuacao() {
         {/* Grid para desktop */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {servicos.map((servico, index) => (
-            <ServicoCard 
-              key={index}
-              icon={servico.icon}
-              title={servico.title}
-            />
+            <ServicoCard key={index} {...servico} alt={index % 2 === 1} />
           ))}
         </div>
 

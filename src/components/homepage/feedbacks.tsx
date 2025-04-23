@@ -126,9 +126,7 @@ export default function Feedbacks() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  currentIndex === index ? 'bg-white' : 'bg-white/30'
-                }`}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${currentIndex === index ? (index % 2 === 0 ? 'bg-brand-green' : 'bg-brand-green-alt') : 'bg-gray-300'}`}
                 aria-label={`Ver depoimento ${index + 1}`}
               />
             ))}

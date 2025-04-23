@@ -7,13 +7,15 @@ interface EspecialidadeProps {
   alt?: boolean;
 }
 
-const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
-  <div className={`bg-brand-green p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay}`}>
+const EspecialidadeCard = ({ icon, title, delay, alt }: EspecialidadeProps) => (
+  <div
+    className={`p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay} ${alt ? 'bg-brand-green-alt' : 'bg-brand-green'}`}
+  >
     <div className="flex flex-col items-center text-center">
-      <div className="text-white mb-4">
+      <div className={alt ? 'text-brand-green mb-4' : 'text-white mb-4'}>
         {icon}
       </div>
-      <h3 className="text-lg font-semibold mb-2 text-white">{title}</h3>
+      <h3 className={`text-lg font-semibold mb-2 ${alt ? 'text-brand-green' : 'text-white'}`}>{title}</h3>
     </div>
   </div>
 );
@@ -63,14 +65,8 @@ export default function Especialidades() {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {especialidades.map((esp, index) => (
-            <EspecialidadeCard 
-              key={index}
-              icon={esp.icon}
-              title={esp.title}
-              delay={esp.delay}
-              alt={esp.alt}
-            />
+          {especialidades.map((item, idx) => (
+            <EspecialidadeCard key={idx} {...item} />
           ))}
         </div>
       </div>

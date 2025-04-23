@@ -93,7 +93,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-brand-green transition-colors duration-300 px-4 py-2 rounded-full font-lexend text-sm"
+                  className="text-gray-700 hover:text-brand-green-alt transition-colors duration-300 px-4 py-2 rounded-full font-lexend text-sm"
                 >
                   {item.label}
                 </Link>
@@ -107,7 +107,7 @@ export default function Navbar() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-brand-green text-white rounded-full hover:bg-primary-dark transition-colors duration-300 font-lexend text-sm"
+              className="px-5 py-2.5 bg-brand-green text-white rounded-full hover:bg-brand-green-alt transition-colors duration-300 font-lexend text-sm"
             >
               Agendar Consulta
             </Link>
@@ -118,7 +118,7 @@ export default function Navbar() {
             <button
               onClick={toggleMenu}
               aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-              className="text-gray-700 hover:text-brand-green focus:outline-none"
+              className="text-gray-700 hover:text-brand-green-alt focus:outline-none"
               type="button"
             >
               {isMenuOpen ? (
