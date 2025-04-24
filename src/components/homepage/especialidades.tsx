@@ -54,11 +54,11 @@ export default function Especialidades() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-brand-main">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 hover:text-brand-secondary">Especialidades</h2>
-          <p className="text-brand-secondary600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Especialidades</h2>
+          <p className="text-white/90 max-w-3xl mx-auto">
             Atendimento especializado para suas necessidades nutricionais
           </p>
         </div>

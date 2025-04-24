@@ -71,7 +71,7 @@ export default function Feedbacks() {
             
             {/* Conteúdo do depoimento */}
             <div className="relative z-10 pt-6">
-              <p className="text-white text-lg italic mb-6">
+              <p className="text-black text-lg italic mb-6">
                 {depoimentos[currentIndex].texto}
               </p>
               
@@ -87,7 +87,7 @@ export default function Feedbacks() {
                     />
                   </div>
                   <div>
-                    <div className="font-semibold text-white">{depoimentos[currentIndex].nome}</div>
+                    <div className="font-semibold text-black">{depoimentos[currentIndex].nome}</div>
                     <div className="flex">
                       {Array.from({ length: depoimentos[currentIndex].avaliacao }).map((_, i) => (
                         <Star key={i} size={16} className="fill-current text-brandSecondary" />

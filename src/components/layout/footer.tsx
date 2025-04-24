@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-brand-main text-black">
+    <footer className="bg-brand-main text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo e informações */}
@@ -19,7 +19,7 @@ export default function Footer() {
                 height={75}
               />
             </div>
-            <p className="text-black/80 text-sm text-center md:text-left font-lexend">
+            <p className="text-white/90 text-sm text-center md:text-left font-lexend">
               CRN-3: 123456 <br />
               Nutricionista Clínica e Esportiva
             </p>
@@ -29,13 +29,13 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold mb-4 font-lexend">Links Rápidos</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="/sobremim" className="text-black/80 hover:text-black transition-colors font-lexend">
+              <Link href="/sobremim" className="text-white/90 hover:text-gray-200 transition-colors font-lexend">
                 Sobre Mim
               </Link>
-              <Link href="/endereco" className="text-black/80 hover:text-black transition-colors font-lexend">
+              <Link href="/endereco" className="text-white/90 hover:text-gray-200 transition-colors font-lexend">
                 Endereço
               </Link>
-              <Link href="https://wa.me/5511963074495" target="_blank" rel="noopener noreferrer" className="text-black/80 hover:text-black transition-colors font-lexend">
+              <Link href="https://wa.me/5511963074495" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-gray-200 transition-colors font-lexend">
                 Agendar Consulta
               </Link>
             </nav>
@@ -49,7 +49,7 @@ export default function Footer() {
                 href="https://instagram.com/dra.alessandrafernandes" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-brand-main/10 flex items-center justify-center hover:bg-brand-secondary hover:text-black transition-colors"
+                className="w-10 h-10 rounded-full bg-brand-main/10 flex items-center justify-center hover:bg-brand-secondary hover:text-gray-200 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -58,7 +58,7 @@ export default function Footer() {
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-brand-main/10 flex items-center justify-center hover:bg-brand-secondary hover:text-black transition-colors"
+                className="w-10 h-10 rounded-full bg-brand-main/10 flex items-center justify-center hover:bg-brand-secondary hover:text-gray-200 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
@@ -67,7 +67,7 @@ export default function Footer() {
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-brand-main/10 flex items-center justify-center hover:bg-brand-secondary hover:text-black transition-colors"
+                className="w-10 h-10 rounded-full bg-brand-main/10 flex items-center justify-center hover:bg-brand-secondary hover:text-gray-200 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />

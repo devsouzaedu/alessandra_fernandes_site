@@ -93,7 +93,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-black hover:text-brand-secondary transition-colors duration-300 px-4 py-2 rounded-full font-lexend text-sm"
+                  className="text-white hover:text-gray-200 transition-colors duration-300 px-4 py-2 rounded-full font-lexend text-sm"
                 >
                   {item.label}
                 </Link>
@@ -107,7 +107,7 @@ export default function Navbar() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-brand-main text-black hover:bg-brand-secondary transition-colors duration-300 font-lexend text-sm"
+              className="px-5 py-2.5 bg-brand-main text-white hover:bg-brand-secondary transition-colors duration-300 font-lexend text-sm"
             >
               Agendar Consulta
             </Link>
@@ -118,7 +118,7 @@ export default function Navbar() {
             <button
               onClick={toggleMenu}
               aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-              className="text-black hover:text-brand-secondary focus:outline-none"
+              className="text-white hover:text-gray-200 focus:outline-none"
               type="button"
             >
               {isMenuOpen ? (
@@ -147,7 +147,7 @@ export default function Navbar() {
             <button
               onClick={handleCloseButtonClick}
               aria-label="Fechar menu"
-              className="text-black hover:text-brand-secondary focus:outline-none p-2 relative z-50"
+              className="text-white hover:text-gray-200 focus:outline-none p-2 relative z-50"
               type="button"
             >
               <X className="h-8 w-8" />
@@ -160,7 +160,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-black text-xl font-semibold hover:text-brand-secondary font-lexend"
+                className="text-white text-xl font-semibold hover:text-gray-200 font-lexend"
                 onClick={(e) => closeMenu(e)}
               >
                 {item.label}
@@ -172,7 +172,7 @@ export default function Navbar() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 px-6 py-3 bg-brand-main text-black hover:bg-brand-secondary transition-colors duration-300 font-lexend"
+              className="mt-6 px-6 py-3 bg-brand-main text-white hover:text-white font-lexend"
               onClick={(e) => closeMenu(e)}
             >
               Agendar Consulta
