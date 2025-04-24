@@ -22,11 +22,11 @@ export default function NossoEspaco() {
   ];
 
   return (
-    <section className="py-16 bg-brand-green-alt">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Nosso Espaço</h2>
-          <p className="text-white/90 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Nosso Espaço</h2>
+          <p className="text-black/80 max-w-3xl mx-auto">
             Conheça o ambiente acolhedor onde realizamos nossos atendimentos
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function NossoEspaco() {
         
         {/* Frase destacada */}
         <div className="mt-12 text-center animate-fadeIn">
-          <p className="text-lg text-white/90 italic max-w-2xl mx-auto">
+          <p className="text-lg text-black italic max-w-2xl mx-auto">
             &ldquo;Um ambiente confortável e acolhedor, projetado para proporcionar tranquilidade e privacidade 
             durante seu atendimento nutricional.&rdquo;
           </p>
