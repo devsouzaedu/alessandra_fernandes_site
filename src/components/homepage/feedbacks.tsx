@@ -54,11 +54,11 @@ export default function Feedbacks() {
   };
 
   return (
-    <section className="py-16 bg-brand-main text-black">
+    <section className="py-16 bg-white text-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">O Que Dizem Nossos Pacientes</h2>
-          <p className="text-black max-w-3xl mx-auto">
+          <p className="text-black/80 max-w-3xl mx-auto">
             Depoimentos de quem já transformou sua saúde e qualidade de vida
           </p>
         </div>
