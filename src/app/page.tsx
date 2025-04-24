@@ -63,7 +63,7 @@ export default function Home() {
             href="https://wa.me/5511963074495?text=Oi!%20gostaria%20de%20agendar%20uma%20consulta..." 
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-brand-green bg-white hover:bg-white/90 transition-colors duration-300"
+            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-black bg-white hover:bg-white/90 transition-colors duration-300"
           >
             Agendar Consulta
             <ArrowRight className="ml-2 h-5 w-5" />
