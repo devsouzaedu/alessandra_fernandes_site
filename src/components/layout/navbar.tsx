@@ -79,8 +79,8 @@ export default function Navbar() {
               <Image 
                 src="/images/logo_alessandra.png" 
                 alt="Logo Alessandra Fernandes" 
-                width={120} 
-                height={60}
+                width={84} 
+                height={42}
                 className="h-auto"
               />
             </Link>
@@ -107,7 +107,7 @@ export default function Navbar() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-brand-main text-white hover:bg-brand-secondary hover:text-white transition-colors duration-300 font-lexend text-sm"
+              className="px-5 py-2.5 bg-white text-black rounded-full font-lexend text-sm"
             >
               Agendar Consulta
             </Link>
@@ -172,7 +172,7 @@ export default function Navbar() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 px-6 py-3 bg-brand-main text-white hover:bg-brand-secondary hover:text-white font-lexend"
+              className="mt-6 px-6 py-3 bg-white text-black rounded-full font-lexend"
               onClick={(e) => closeMenu(e)}
             >
               Agendar Consulta

@@ -25,7 +25,15 @@ export default function Contato() {
                   <address className="not-italic text-gray-600">
                     Avenida Trindade, 254<br />
                     Prédio Office Bethaville<br />
-                    Barueri, SP
+                    Barueri, SP<br />
+                    <Link 
+                      href="https://g.co/kgs/Qek28eB"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brand-main hover:underline mt-2 inline-block"
+                    >
+                      Ver no Google Maps
+                    </Link>
                   </address>
                 </div>
               </div>
@@ -63,7 +71,7 @@ export default function Contato() {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full py-3 px-6 bg-white text-black text-center font-medium rounded-md hover:bg-brand-main hover:text-white transition-colors duration-300"
+                className="inline-block w-full py-3 px-6 bg-brand-main text-white text-center font-medium rounded-md"
               >
                 Agendar Consulta
               </Link>
@@ -73,7 +81,7 @@ export default function Contato() {
           {/* Mapa */}
           <div className="h-96 rounded-lg overflow-hidden shadow-md animate-slideUp delay-200">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.7598854805367!2d-46.86918302391035!3d-23.507650559834967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf03dd5607441b%3A0xd7e96ccebfcafc4e!2sAv.%20Trindade%2C%20254%20-%20Bethavile%2C%20Barueri%20-%20SP%2C%2006404-326!5e0!3m2!1spt-BR!2sbr!4v1688563309967!5m2!1spt-BR!2sbr" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.7598854805367!2d-46.86918302391035!3d-23.507650559834967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf03dd5607441b%3A0x9f8d1c6e4f3e5c5d!2sDra.%20Alessandra%20Fernandes%20-%20Nutricionista%20Esportiva%20em%20Barueri%20e%20Alphaville!5e0!3m2!1spt-BR!2sbr!4v1688563309967!5m2!1spt-BR!2sbr" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
