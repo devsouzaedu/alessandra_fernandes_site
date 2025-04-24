@@ -70,7 +70,7 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-brand-main shadow-sm fixed w-full z-50 top-0">
+    <nav className="shadow-sm fixed w-full z-50 top-0" style={{ backgroundColor: '#729080' }}>
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -93,7 +93,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-black hover:text-brand-secondary transition-colors duration-300 px-4 py-2 rounded-full font-lexend text-sm"
+                  className="text-white hover:text-gray-200 transition-colors duration-300 px-4 py-2 rounded-full font-lexend text-sm"
                 >
                   {item.label}
                 </Link>
@@ -107,7 +107,7 @@ export default function Navbar() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-brand-main text-black hover:bg-brand-secondary hover:text-white transition-colors duration-300 font-lexend text-sm"
+              className="px-5 py-2.5 bg-brand-main text-white hover:bg-brand-secondary hover:text-white transition-colors duration-300 font-lexend text-sm"
             >
               Agendar Consulta
             </Link>
@@ -118,7 +118,7 @@ export default function Navbar() {
             <button
               onClick={toggleMenu}
               aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-              className="text-black hover:text-brand-secondary focus:outline-none"
+              className="text-white hover:text-gray-200 focus:outline-none"
               type="button"
             >
               {isMenuOpen ? (
@@ -134,7 +134,7 @@ export default function Navbar() {
       {/* Menu Overlay Mobile */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-brand-main bg-opacity-95 backdrop-blur-sm z-50 md:hidden flex flex-col overflow-auto"
+          className="fixed inset-0 bg-opacity-95 backdrop-blur-sm z-50 md:hidden flex flex-col overflow-auto" style={{ backgroundColor: '#729080' }}
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               console.log('Navbar - overlay: Clique fora do menu para fechar');
@@ -147,7 +147,7 @@ export default function Navbar() {
             <button
               onClick={handleCloseButtonClick}
               aria-label="Fechar menu"
-              className="text-black hover:text-brand-secondary focus:outline-none p-2 relative z-50"
+              className="text-white hover:text-gray-200 focus:outline-none p-2 relative z-50"
               type="button"
             >
               <X className="h-8 w-8" />
@@ -160,7 +160,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-black text-xl font-semibold hover:text-brand-secondary font-lexend"
+                className="text-white text-xl font-semibold hover:text-gray-200 font-lexend"
                 onClick={(e) => closeMenu(e)}
               >
                 {item.label}
@@ -172,7 +172,7 @@ export default function Navbar() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 px-6 py-3 bg-brand-main text-black hover:bg-brand-secondary hover:text-white font-lexend"
+              className="mt-6 px-6 py-3 bg-brand-main text-white hover:bg-brand-secondary hover:text-white font-lexend"
               onClick={(e) => closeMenu(e)}
             >
               Agendar Consulta
