@@ -71,7 +71,8 @@ export default function Contato() {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full py-3 px-6 bg-brand-main text-white text-center font-medium rounded-md"
+                className="inline-block w-full py-3 px-6 text-white text-center font-medium rounded-md"
+                style={{ backgroundColor: '#729080' }}
               >
                 Agendar Consulta
               </Link>
