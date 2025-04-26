@@ -1,4 +1,4 @@
-import { MessageSquare, Target, HeartHandshake, Sparkles } from 'lucide-react';
+import { MessageSquare, Target, HeartHandshake, Sparkles, LineChart, ClipboardEdit, BarChart } from 'lucide-react';
 
 export default function ComoFuncionaConsultas() {
   return (
@@ -14,14 +14,29 @@ export default function ComoFuncionaConsultas() {
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Além do plano alimentar, você receberá:</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <p className="text-gray-700 font-medium">Feedbacks semanais</p>
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
+              <div className="flex items-start gap-4">
+                <div className="text-brand-green p-2 bg-brand-green/10 rounded-lg group-hover:bg-brand-green/20 transition-colors">
+                  <LineChart size={24} />
+                </div>
+                <p className="text-gray-800 font-medium mt-2">Feedbacks semanais</p>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <p className="text-gray-700 font-medium">Alterações no cardápio para aumentar sua aderência</p>
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
+              <div className="flex items-start gap-4">
+                <div className="text-brand-green p-2 bg-brand-green/10 rounded-lg group-hover:bg-brand-green/20 transition-colors">
+                  <ClipboardEdit size={24} />
+                </div>
+                <p className="text-gray-800 font-medium mt-2">Alterações no cardápio para aumentar sua aderência</p>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <p className="text-gray-700 font-medium">Ajustes de estratégias para evitar a estagnação dos resultados</p>
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
+              <div className="flex items-start gap-4">
+                <div className="text-brand-green p-2 bg-brand-green/10 rounded-lg group-hover:bg-brand-green/20 transition-colors">
+                  <BarChart size={24} />
+                </div>
+                <p className="text-gray-800 font-medium mt-2">Ajustes de estratégias para evitar a estagnação dos resultados</p>
+              </div>
             </div>
           </div>
           <p className="text-center text-gray-600 mt-8 max-w-3xl mx-auto">
@@ -32,8 +47,8 @@ export default function ComoFuncionaConsultas() {
         <div>
           <h3 className="text-2xl font-semibold text-gray-800 mb-8 text-center">4 pilares do acompanhamento</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-brand-green mb-4">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
+              <div className="text-brand-green p-3 bg-brand-green/10 rounded-lg mb-4 group-hover:bg-brand-green/20 transition-colors inline-block">
                 <Target size={32} />
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-2">Individualidade</h4>
@@ -42,8 +57,8 @@ export default function ComoFuncionaConsultas() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-brand-green mb-4">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
+              <div className="text-brand-green p-3 bg-brand-green/10 rounded-lg mb-4 group-hover:bg-brand-green/20 transition-colors inline-block">
                 <HeartHandshake size={32} />
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-2">Adequação</h4>
@@ -52,8 +67,8 @@ export default function ComoFuncionaConsultas() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-brand-green mb-4">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
+              <div className="text-brand-green p-3 bg-brand-green/10 rounded-lg mb-4 group-hover:bg-brand-green/20 transition-colors inline-block">
                 <MessageSquare size={32} />
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-2">Suporte contínuo</h4>
@@ -62,8 +77,8 @@ export default function ComoFuncionaConsultas() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-brand-green mb-4">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
+              <div className="text-brand-green p-3 bg-brand-green/10 rounded-lg mb-4 group-hover:bg-brand-green/20 transition-colors inline-block">
                 <Sparkles size={32} />
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-2">Educação e autonomia</h4>
