@@ -14,28 +14,28 @@ export default function ComoFuncionaConsultas() {
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Além do plano alimentar, você receberá:</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
+            <div className="bg-brand-green p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green-dark group">
               <div className="flex items-start gap-4">
-                <div className="text-brand-green p-2 bg-brand-green/10 rounded-lg group-hover:bg-brand-green/20 transition-colors">
+                <div className="text-white p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
                   <LineChart size={24} />
                 </div>
-                <p className="text-gray-800 font-medium mt-2">Feedbacks semanais</p>
+                <p className="text-white font-medium mt-2">Feedbacks semanais</p>
               </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
+            <div className="bg-brand-green p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green-dark group">
               <div className="flex items-start gap-4">
-                <div className="text-brand-green p-2 bg-brand-green/10 rounded-lg group-hover:bg-brand-green/20 transition-colors">
+                <div className="text-white p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
                   <ClipboardEdit size={24} />
                 </div>
-                <p className="text-gray-800 font-medium mt-2">Alterações no cardápio para aumentar sua aderência</p>
+                <p className="text-white font-medium mt-2">Alterações no cardápio para aumentar sua aderência</p>
               </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
+            <div className="bg-brand-green p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green-dark group">
               <div className="flex items-start gap-4">
-                <div className="text-brand-green p-2 bg-brand-green/10 rounded-lg group-hover:bg-brand-green/20 transition-colors">
+                <div className="text-white p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
                   <BarChart size={24} />
                 </div>
-                <p className="text-gray-800 font-medium mt-2">Ajustes de estratégias para evitar a estagnação dos resultados</p>
+                <p className="text-white font-medium mt-2">Ajustes de estratégias para evitar a estagnação dos resultados</p>
               </div>
             </div>
           </div>
