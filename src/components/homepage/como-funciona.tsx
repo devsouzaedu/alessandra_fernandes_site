@@ -93,7 +93,7 @@ export default function ComoFuncionaConsultas() {
           <p className="text-lg font-medium text-gray-700 mb-6">Quer um acompanhamento individualizado?</p>
           <a 
             href="#contato" 
-            className="inline-block bg-brand-green text-white px-8 py-3 rounded-full font-medium hover:bg-brand-green-dark transition-colors"
+            className="inline-block bg-brand-green text-white px-8 py-3 rounded-full font-medium hover:bg-brand-green-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Agende já sua consulta
           </a>
