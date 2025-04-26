@@ -17,8 +17,8 @@ export default function Homepage() {
       <main>
         <HeroSection />
         <Especialidades />
-        <AreasAtuacao />
         <ComoFuncionaConsultas />
+        <AreasAtuacao />
         <FraseHumanizada />
         <NossoEspaco />
         <SobreMim />

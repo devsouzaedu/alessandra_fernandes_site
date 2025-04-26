@@ -85,7 +85,7 @@ export default function SobreMim() {
                   <CalendarClock size={24} className="text-brand-green-alt flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-gray-800">Atuação</h3>
-                    <p className="text-gray-600">7 anos de experiência em consultório</p>
+                    <p className="text-gray-600">9 anos de experiência em consultório</p>
                   </div>
                 </div>
               </div>
@@ -96,9 +96,17 @@ export default function SobreMim() {
                 data-aos-delay="300"
               >
                 <p>
-                  Há 7 anos atendendo em consultórios, sempre com o intuito de auxiliar e melhorar a qualidade de vida dos indivíduos, 
-                  pensando na sua realidade, respeitando seus gostos alimentares, e com a reeducação alimentar buscar seus objetivos 
-                  e ensinar a fazer escolhas saudáveis para a vida toda.
+                  "Cuidar da alimentação é um ato de amor-próprio — e meu propósito é te mostrar que isso pode ser leve, possível e transformador."
+                </p>
+                <p>
+                  Com mais de 9 anos de experiência em atendimentos em consultório, venho atuando com o propósito de promover saúde e bem-estar, 
+                  sempre respeitando a individualidade de cada paciente. Levo em consideração sua rotina, preferências alimentares e objetivos, 
+                  buscando, por meio da reeducação alimentar, oferecer caminhos possíveis e sustentáveis para escolhas mais saudáveis ao longo da vida.
+                </p>
+                <p>
+                  Acredito em uma nutrição leve, acessível e sem extremismos — longe do terrorismo nutricional. Meu compromisso é mostrar que 
+                  cuidar da alimentação vai muito além de comer frutas, verduras e legumes. É sobre descomplicar, esclarecer mitos e ensinar que 
+                  para emagrecer não é preciso passar fome, mas sim aprender a comer com qualidade e consciência.
                 </p>
                 <p>
                   Nutrição de uma forma leve, sem terrorismo nutricional, mostrando que a nutrição é muito além do que apenas 
