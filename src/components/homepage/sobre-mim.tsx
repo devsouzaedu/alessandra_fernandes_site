@@ -96,7 +96,7 @@ export default function SobreMim() {
                 data-aos-delay="300"
               >
                 <p>
-                  "Cuidar da alimentação é um ato de amor-próprio — e meu propósito é te mostrar que isso pode ser leve, possível e transformador."
+                  &quot;Cuidar da alimentação é um ato de amor-próprio — e meu propósito é te mostrar que isso pode ser leve, possível e transformador.&quot;
                 </p>
                 <p>
                   Com mais de 9 anos de experiência em atendimentos em consultório, venho atuando com o propósito de promover saúde e bem-estar, 

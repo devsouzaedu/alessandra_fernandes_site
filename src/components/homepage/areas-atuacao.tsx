@@ -1,5 +1,5 @@
 import { Video, UserRound, Dumbbell, Brain, Salad, 
-  Leaf, Award, Clipboard, Timer, HeartPulse, Clock, Baby,
+  Award, Clipboard, Timer, HeartPulse, Clock, Baby,
   Flower2, Sparkles, Egg, Activity, Stethoscope, Smile, Scissors, 
   Scale } from 'lucide-react';
 import { useState } from 'react';
