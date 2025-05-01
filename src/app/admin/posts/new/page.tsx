@@ -3,10 +3,7 @@
 
 import { useFormState, useFormStatus } from 'react-dom';
 import { useEffect } from 'react';
-import { revalidatePath } from 'next/cache'; // Importa para a action
-import { redirect } from 'next/navigation'; // Importa para a action
-import slugify from 'slugify'; // Importa para a action
-import { getSupabaseAdmin } from '@/lib/supabaseClient'; // Importa para a action
+import { createPostAction } from '@/app/admin/posts/actions'; // Importa a action do arquivo correto
 
 // Define o tipo do estado esperado pelo useFormState
 interface FormState {
@@ -14,64 +11,7 @@ interface FormState {
   type: 'error' | 'success' | null;
 }
 
-// Server Action ajustada para useFormState
-async function createPostAction(prevState: FormState, formData: FormData): Promise<FormState> {
-  'use server';
-
-  const title = formData.get('title') as string;
-  const author = formData.get('author') as string;
-  const tagsRaw = formData.get('tags') as string;
-  const content = formData.get('content') as string;
-  const published = formData.get('published') === 'on'; // Checkbox value is 'on' when checked
-
-  if (!title || !author || !content) {
-    console.error('Missing required fields');
-    return { message: 'Título, Autor e Conteúdo são obrigatórios.', type: 'error' };
-  }
-
-  // Gera um slug a partir do título
-  const slug = slugify(title, { lower: true, strict: true, remove: /[*+~.()\'"!:@]/g });
-
-  // Processa as tags: remove espaços extras e divide por vírgula
-  const tags = tagsRaw ? tagsRaw.split(',').map(tag => tag.trim()).filter(tag => tag) : [];
-
-  const supabaseAdmin = getSupabaseAdmin();
-
-  const { data, error } = await supabaseAdmin
-    .from('posts')
-    .insert([
-      {
-        title,
-        author,
-        tags,
-        content,
-        published,
-        slug,
-      },
-    ])
-    .select() // Seleciona o post criado para confirmação (opcional)
-    .single(); // Espera um único resultado ou erro
-
-  if (error) {
-    console.error('Supabase Error:', error);
-    // Tratar erro específico de slug duplicado, se ocorrer
-    if (error.code === '23505') { // Código de violação de unicidade do PostgreSQL
-        return { message: `Erro ao salvar: O título "${title}" já existe (slug duplicado). Escolha um título diferente.`, type: 'error' };
-    }
-    return { message: 'Erro ao salvar o post no banco de dados.', type: 'error' };
-  }
-
-  console.log('Post created:', data);
-
-  // Limpa o cache da página de listagem de posts (tanto admin quanto pública)
-  revalidatePath('/admin/posts');
-  revalidatePath('/blog');
-
-  // Redireciona para a página de listagem após sucesso
-  redirect('/admin/posts');
-  // Nota: O redirect() interrompe a execução, então um estado de sucesso aqui não seria retornado normalmente.
-  // Se não houvesse redirect, poderíamos retornar: return { message: 'Post criado com sucesso!', type: 'success' };
-}
+// Server Action foi movida para actions.ts
 
 // Componente do Botão de Submit para usar useFormStatus
 function SubmitButton() {
@@ -92,6 +32,7 @@ function SubmitButton() {
 // Componente da Página usando useFormState
 export default function NewPostPage() {
   const initialState: FormState = { message: null, type: null };
+  // Usa a action importada de actions.ts
   const [state, formAction] = useFormState(createPostAction, initialState);
 
   return (

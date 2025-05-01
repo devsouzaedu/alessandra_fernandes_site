@@ -7,6 +7,58 @@ import slugify from 'slugify'; // Importa slugify
 import { redirect } from 'next/navigation'; // Importa redirect
 
 /**
+ * Cria um novo post.
+ * Esta action é usada com useFormState no formulário NewPostPage.
+ */
+export async function createPostAction(prevState: { message: string | null; type: 'error' | 'success' | null }, formData: FormData): Promise<{ message: string | null; type: 'error' | 'success' | null }> {
+
+  const title = formData.get('title') as string;
+  const author = formData.get('author') as string;
+  const tagsRaw = formData.get('tags') as string;
+  const content = formData.get('content') as string;
+  const published = formData.get('published') === 'on'; // Checkbox value is 'on' when checked
+
+  if (!title || !author || !content) {
+    console.error('Missing required fields');
+    return { message: 'Título, Autor e Conteúdo são obrigatórios.', type: 'error' };
+  }
+
+  // Gera um slug a partir do título
+  const slug = slugify(title, { lower: true, strict: true, remove: /[*+~.()\'"!:@]/g });
+
+  // Processa as tags: remove espaços e filtra vazias
+  const tags = tagsRaw ? tagsRaw.split(',').map(tag => tag.trim()).filter(tag => tag) : [];
+
+  const supabaseAdmin = getSupabaseAdmin();
+
+  const { data, error } = await supabaseAdmin
+    .from('posts')
+    .insert([{ title, author, tags, content, published, slug }])
+    .select()
+    .single();
+
+  if (error) {
+    console.error('Supabase Error:', error);
+    // Tratar erro específico de slug duplicado, se ocorrer
+    if (error.code === '23505') { // Código de violação de unicidade do PostgreSQL
+        return { message: `Erro ao salvar: O título "${title}" já existe (slug duplicado). Escolha um título diferente.`, type: 'error' };
+    }
+    return { message: 'Erro ao salvar o post no banco de dados.', type: 'error' };
+  }
+
+  console.log('Post created:', data);
+
+  // Invalida o cache para a rota de posts no admin e a pública do blog
+  revalidatePath('/admin/posts');
+  revalidatePath('/blog'); // Revalida a página principal do blog também
+
+  // Redireciona para a página de listagem após sucesso
+  redirect('/admin/posts');
+  // Nota: O redirect() interrompe a execução, então um estado de sucesso aqui não seria retornado normalmente.
+  // Se não houvesse redirect, poderíamos retornar: return { message: 'Post criado com sucesso!', type: 'success' };
+}
+
+/**
  * Deleta um post pelo ID.
  */
 export async function deletePost(postId: string) {
