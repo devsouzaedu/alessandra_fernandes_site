@@ -65,7 +65,13 @@ export default function HeroSection() {
             </Link>
             
             {/* Ícones de nutrição com animação de banner rotativo */}
-            <div className="mt-8 relative w-full max-w-md h-24 overflow-hidden">
+            <div 
+              className="mt-8 relative w-full max-w-md h-24 overflow-hidden"
+              style={{
+                maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)' // Para compatibilidade com Webkit/Safari
+              }}
+            >
               <div 
                 className="absolute inset-0 flex space-x-16 items-center animate-carouselRotate" 
                 style={{ 
