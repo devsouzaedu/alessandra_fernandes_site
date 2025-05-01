@@ -37,6 +37,7 @@ module.exports = {
         pulse: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         bounce: 'bounce 2s infinite',
         'spin-slow': 'spin 4s linear infinite',
+        carouselRotate: 'carouselRotate 15s linear infinite',
       },
       keyframes: {
         pulse: {

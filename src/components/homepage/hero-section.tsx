@@ -67,9 +67,8 @@ export default function HeroSection() {
             {/* Ícones de nutrição com animação de banner rotativo */}
             <div className="mt-8 relative w-full max-w-md h-24 overflow-hidden">
               <div 
-                className="absolute inset-0 flex space-x-16 items-center animate-carousel" 
+                className="absolute inset-0 flex space-x-16 items-center animate-carouselRotate" 
                 style={{ 
-                  animation: 'carouselRotate 15s linear infinite',
                   willChange: 'transform' 
                 }}
               >
