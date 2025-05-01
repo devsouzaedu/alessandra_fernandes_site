@@ -8,13 +8,13 @@ interface EspecialidadeProps {
 
 const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
   <div
-    className={`p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay} bg-brand-main hover:bg-brand-main`}
+    className={`p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay} bg-white hover:bg-white/90`}
   >
     <div className="flex flex-col items-center text-center">
-      <div className="text-white mb-4">
+      <div className="text-brand-green mb-4">
         {icon}
       </div>
-      <h3 className="text-lg font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-lg font-semibold mb-2 text-brand-green">{title}</h3>
     </div>
   </div>
 );
