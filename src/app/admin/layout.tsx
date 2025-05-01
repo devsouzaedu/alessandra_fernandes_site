@@ -26,6 +26,13 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     }
   }, [pathname, router]);
 
+  useEffect(() => {
+    // If trying to access login page while already logged in, redirect to dashboard
+    if (isLoggedIn && pathname === '/admin') {
+      router.replace('/admin/posts');
+    }
+  }, [isLoggedIn, pathname, router]);
+
   const handleLogout = () => {
     sessionStorage.removeItem('isAdminLoggedIn');
     setIsLoggedIn(false);
@@ -35,15 +42,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   // While checking auth, show a loading state or nothing
   if (isCheckingAuth) {
     return <div className="min-h-screen flex items-center justify-center">Verificando autenticação...</div>;
-  }
-
-  // If trying to access login page while already logged in, redirect to dashboard
-  if (isLoggedIn && pathname === '/admin') {
-     // Use useEffect to avoid rendering loop during redirect
-     useEffect(() => {
-        router.replace('/admin/posts');
-     }, [router]);
-     return <div className="min-h-screen flex items-center justify-center">Redirecionando...</div>; // Or loading indicator
   }
 
   // Allow access to login page if not logged in

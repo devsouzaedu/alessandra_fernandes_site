@@ -2,7 +2,6 @@
 'use client'; // Necessário para useFormState e useFormStatus
 
 import { useFormState, useFormStatus } from 'react-dom';
-import { useEffect } from 'react';
 import { createPostAction } from '@/app/admin/posts/actions'; // Importa a action do arquivo correto
 
 // Define o tipo do estado esperado pelo useFormState
