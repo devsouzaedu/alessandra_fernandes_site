@@ -64,27 +64,32 @@ export default function HeroSection() {
               Agendar Consulta
             </Link>
             
-            {/* Ícones de nutrição com animação */}
-            <div className="mt-8 flex space-x-6 overflow-hidden">
-              {[
-                { icon: <Apple size={32} />, delay: '100' },
-                { icon: <Salad size={32} />, delay: '200' },
-                { icon: <Carrot size={32} />, delay: '300' },
-                { icon: <Beef size={32} />, delay: '400' },
-                { icon: <Drumstick size={32} />, delay: '500' },
-                { icon: <EggFried size={32} />, delay: '600' },
-              ].map((item, index) => (
-                <div 
-                  key={index}
-                  className="text-brand-green animate-spin-slow"
-                  data-aos="fade-right"
-                  data-aos-duration="1000"
-                  data-aos-easing="ease-out-cubic"
-                  data-aos-delay={item.delay}
-                >
-                  {item.icon}
-                </div>
-              ))}
+            {/* Ícones de nutrição com animação de banner rotativo */}
+            <div className="mt-8 relative w-full max-w-md h-20 overflow-hidden">
+              <div className="absolute inset-0 flex space-x-10 items-center" style={{ animation: 'carouselRotate 20s linear infinite' }}>
+                {[
+                  { icon: <Apple size={48} />, position: 0 },
+                  { icon: <Salad size={48} />, position: 1 },
+                  { icon: <Carrot size={48} />, position: 2 },
+                  { icon: <Beef size={48} />, position: 3 },
+                  { icon: <Drumstick size={48} />, position: 4 },
+                  { icon: <EggFried size={48} />, position: 5 },
+                  // Repetindo os ícones para criar efeito contínuo
+                  { icon: <Apple size={48} />, position: 6 },
+                  { icon: <Salad size={48} />, position: 7 },
+                  { icon: <Carrot size={48} />, position: 8 },
+                  { icon: <Beef size={48} />, position: 9 },
+                  { icon: <Drumstick size={48} />, position: 10 },
+                  { icon: <EggFried size={48} />, position: 11 },
+                ].map((item, index) => (
+                  <div 
+                    key={index}
+                    className="text-brand-green transform transition-all duration-500 hover:scale-125"
+                  >
+                    {item.icon}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
