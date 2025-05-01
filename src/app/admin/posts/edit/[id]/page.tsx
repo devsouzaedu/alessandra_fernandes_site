@@ -4,12 +4,6 @@ import { getSupabaseAdmin } from '@/lib/supabaseClient';
 import { Post } from '@/types/blog';
 import EditPostForm from './EditPostForm'; // Importa o formulário de edição
 
-interface EditPostPageProps {
-  params: {
-    id: string; // O ID do post vindo da URL
-  };
-}
-
 async function getPostById(id: string): Promise<Post | null> {
   const supabaseAdmin = getSupabaseAdmin();
   const { data, error } = await supabaseAdmin
@@ -31,7 +25,7 @@ async function getPostById(id: string): Promise<Post | null> {
   return data as Post | null;
 }
 
-export default async function EditPostPage({ params }: EditPostPageProps) {
+export default async function EditPostPage({ params }: { params: { id: string } }) {
   const post = await getPostById(params.id);
 
   if (!post) {
