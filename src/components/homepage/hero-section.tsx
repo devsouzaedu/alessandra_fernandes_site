@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import AOS from 'aos';
-import { Apple, Salad, Carrot, Beef, DrumstickLeg, EggFried } from 'lucide-react';
+import { Apple, Salad, Carrot, Beef, Drumstick, EggFried } from 'lucide-react';
 
 const WHATSAPP_LINK = "https://wa.me/5511963074495?text=Oi!%20gostaria%20de%20agendar%20uma%20consulta...";
 const HERO_IMAGE_PATH = "/images/fotos_alessandra_nutricionista_esportiva_em_barueri_alphaville_bethaville_ (2).jpeg";
@@ -71,7 +71,7 @@ export default function HeroSection() {
                 { icon: <Salad size={32} />, delay: '200' },
                 { icon: <Carrot size={32} />, delay: '300' },
                 { icon: <Beef size={32} />, delay: '400' },
-                { icon: <DrumstickLeg size={32} />, delay: '500' },
+                { icon: <Drumstick size={32} />, delay: '500' },
                 { icon: <EggFried size={32} />, delay: '600' },
               ].map((item, index) => (
                 <div 
