@@ -8,13 +8,13 @@ interface EspecialidadeProps {
 
 const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
   <div
-    className={`p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 animate-slideUp ${delay} bg-white hover:bg-white/90`}
+    className={`p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl animate-slideUp ${delay} bg-white`}
   >
     <div className="flex flex-col items-center text-center">
-      <div className="text-brand-green mb-4">
+      <div className="mb-4">
         {icon}
       </div>
-      <h3 className="text-lg font-semibold mb-2 text-brand-green">{title}</h3>
+      <h3 className="text-sm font-medium bg-[#4169E1] text-white px-3 py-1 rounded-sm">{title}</h3>
     </div>
   </div>
 );
@@ -22,31 +22,31 @@ const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
 export default function Especialidades() {
   const especialidades = [
     { 
-      icon: <Heart size={48} />, 
+      icon: <Heart size={48} className="text-white" />, 
       title: "Nutrição Estética", 
       delay: "delay-100",
       alt: false
     },
     { 
-      icon: <Weight size={48} />, 
+      icon: <Weight size={48} className="text-white" />, 
       title: "Emagrecimento", 
       delay: "delay-200",
       alt: true 
     },
     { 
-      icon: <Apple size={48} />, 
+      icon: <Apple size={48} className="text-white" />, 
       title: "Nutrição Clínica", 
       delay: "delay-300",
       alt: false
     },
     { 
-      icon: <Dumbbell size={48} />, 
+      icon: <Dumbbell size={48} className="text-white" />, 
       title: "Nutrição Aplicada ao Exercício", 
       delay: "delay-400",
       alt: true
     },
     { 
-      icon: <FileSpreadsheet size={48} />, 
+      icon: <FileSpreadsheet size={48} className="text-white" />, 
       title: "Planejamento de Cardápio", 
       delay: "delay-500",
       alt: false
@@ -54,11 +54,11 @@ export default function Especialidades() {
   ];
 
   return (
-    <section className="py-16 bg-brand-main">
+    <section className="py-16" style={{ backgroundColor: '#729080' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Especialidades</h2>
-          <p className="text-white/90 max-w-3xl mx-auto">
+          <p className="text-white max-w-3xl mx-auto">
             Atendimento especializado para suas necessidades nutricionais
           </p>
         </div>
