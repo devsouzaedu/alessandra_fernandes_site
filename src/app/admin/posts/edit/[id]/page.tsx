@@ -1,6 +1,4 @@
 // src/app/admin/posts/edit/[id]/page.tsx
-import { getSupabaseAdmin } from '@/lib/supabaseClient';
-import { Post } from '@/types/blog';
 
 type Props = {
   params: { id: string };
