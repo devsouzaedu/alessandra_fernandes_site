@@ -14,7 +14,7 @@ const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
       <div className="mb-4">
         {icon}
       </div>
-      <h3 className="text-sm font-medium bg-[#4169E1] text-white px-3 py-1 rounded-sm">{title}</h3>
+      <h3 className="text-sm font-medium text-[#729080] px-3 py-1 rounded-sm">{title}</h3>
     </div>
   </div>
 );
@@ -22,31 +22,31 @@ const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
 export default function Especialidades() {
   const especialidades = [
     { 
-      icon: <Heart size={48} className="text-white" />, 
+      icon: <Heart size={48} className="text-[#729080]" />, 
       title: "Nutrição Estética", 
       delay: "delay-100",
       alt: false
     },
     { 
-      icon: <Weight size={48} className="text-white" />, 
+      icon: <Weight size={48} className="text-[#729080]" />, 
       title: "Emagrecimento", 
       delay: "delay-200",
       alt: true 
     },
     { 
-      icon: <Apple size={48} className="text-white" />, 
+      icon: <Apple size={48} className="text-[#729080]" />, 
       title: "Nutrição Clínica", 
       delay: "delay-300",
       alt: false
     },
     { 
-      icon: <Dumbbell size={48} className="text-white" />, 
+      icon: <Dumbbell size={48} className="text-[#729080]" />, 
       title: "Nutrição Aplicada ao Exercício", 
       delay: "delay-400",
       alt: true
     },
     { 
-      icon: <FileSpreadsheet size={48} className="text-white" />, 
+      icon: <FileSpreadsheet size={48} className="text-[#729080]" />, 
       title: "Planejamento de Cardápio", 
       delay: "delay-500",
       alt: false
