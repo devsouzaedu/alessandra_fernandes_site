@@ -21,7 +21,7 @@ export async function login(formData: FormData) {
       maxAge: 60 * 60 * 24, // Expira em 1 dia (em segundos)
       sameSite: 'strict',
     });
-    redirect('/admin'); // Redireciona para a página principal do admin após login
+    redirect('/admin/posts'); // Redireciona para o dashboard de posts após login
   } else {
     // Credenciais incorretas
     // TODO: Implementar feedback de erro na página de login

@@ -1,59 +1,88 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { getSupabaseAdmin } from "@/lib/supabaseClient";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "Nutrição para Hipertrofia: Como Otimizar seus Ganhos Musculares",
-    excerpt: "Descubra as estratégias nutricionais mais eficazes para maximizar o ganho de massa muscular e melhorar seus resultados de treino.",
-    image: "/images/treino de força.jpg",
-    date: "10 de Abril, 2025",
-    category: "Hipertrofia"
-  },
-  {
-    id: 2,
-    title: "Emagrecimento Saudável: Mitos e Verdades sobre Dietas",
-    excerpt: "Entenda por que dietas restritivas não funcionam a longo prazo e como estabelecer uma relação saudável com a alimentação para emagrecer de forma sustentável.",
-    image: "/images/mulher com fita metrica ao redor da cintura.jpg",
-    date: "02 de Abril, 2025",
-    category: "Emagrecimento"
-  },
-  {
-    id: 3,
-    title: "Nutrição para Corredores: Como Alimentar-se para Melhorar sua Performance",
-    excerpt: "Guia completo sobre como estruturar sua alimentação antes, durante e após os treinos de corrida para melhorar seu desempenho e recuperação.",
-    image: "/images/corrida.jpg",
-    date: "25 de Março, 2025",
-    category: "Performance"
-  },
-  {
-    id: 4,
-    title: "Diabetes e Alimentação: Como Controlar a Glicemia Através da Nutrição",
-    excerpt: "Aprenda estratégias nutricionais eficazes para manter os níveis de glicose no sangue estáveis e melhorar sua qualidade de vida com diabetes.",
-    image: "/images/fita metrica.jpg",
-    date: "18 de Março, 2025",
-    category: "Doenças Crônicas"
-  },
-  {
-    id: 5,
-    title: "Proteínas Vegetais: Alternativas para uma Alimentação Equilibrada",
-    excerpt: "Conheça as principais fontes de proteínas vegetais e como incorporá-las na sua alimentação, seja você vegetariano ou não.",
-    image: "/images/i-yunmai-5jctAMjz21A-unsplash.jpg",
-    date: "10 de Março, 2025",
-    category: "Alimentação Saudável"
-  },
-  {
-    id: 6,
-    title: "Nutrição para Ciclistas: Estratégias para Pedalar Mais e Melhor",
-    excerpt: "Dicas práticas para otimizar sua alimentação antes, durante e após os treinos de ciclismo, maximizando seu desempenho e recuperação.",
-    image: "/images/Ciclismo.jpg",
-    date: "01 de Março, 2025",
-    category: "Performance"
+// Define a interface para os posts do blog
+interface Post {
+  id: string;
+  title: string;
+  content: string;
+  author: string;
+  created_at: string;
+  updated_at: string;
+  published: boolean;
+  slug: string;
+  tags: string[];
+}
+
+// Formata a data para o formato brasileiro
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return format(date, "dd 'de' MMMM, yyyy", { locale: ptBR });
+}
+
+// Extrai a categoria do post a partir das tags
+function getPostCategory(tags: string[]): string {
+  if (!tags || tags.length === 0) return "Nutrição";
+  return tags[0];
+}
+
+// Extrai um resumo do conteúdo do post (primeiros 150 caracteres)
+function getPostExcerpt(content: string): string {
+  const plainText = content.replace(/<[^>]*>/g, '');
+  return plainText.length > 150 ? plainText.substring(0, 150) + "..." : plainText;
+}
+
+// Seleciona uma imagem com base na categoria do post
+function getPostImage(tags: string[]): string {
+  const category = getPostCategory(tags).toLowerCase();
+  
+  // Mapeamento de categorias para imagens
+  const imageMap: Record<string, string> = {
+    "hipertrofia": "/images/treino de força.jpg",
+    "emagrecimento": "/images/mulher com fita metrica ao redor da cintura.jpg",
+    "performance": "/images/corrida.jpg",
+    "diabetes": "/images/fita metrica.jpg",
+    "alimentação": "/images/i-yunmai-5jctAMjz21A-unsplash.jpg",
+    "ciclismo": "/images/Ciclismo.jpg"
+  };
+  
+  // Procura por correspondências parciais nas categorias
+  for (const [key, value] of Object.entries(imageMap)) {
+    if (category.includes(key)) {
+      return value;
+    }
   }
-];
+  
+  // Imagem padrão caso não encontre correspondência
+  return "/images/i-yunmai-5jctAMjz21A-unsplash.jpg";
+}
 
-export default function Blog() {
+// Busca os posts publicados do Supabase
+async function fetchPosts() {
+  const supabase = getSupabaseAdmin();
+  
+  const { data: posts, error } = await supabase
+    .from('posts')
+    .select('*')
+    .eq('published', true)
+    .order('created_at', { ascending: false });
+    
+  if (error) {
+    console.error('Erro ao buscar posts:', error);
+    return [];
+  }
+  
+  return posts as Post[];
+}
+
+export default async function Blog() {
+  // Busca os posts dinâmicos do Supabase
+  const posts = await fetchPosts();
+
   return (
     <main>
       {/* Header */}
@@ -75,33 +104,46 @@ export default function Blog() {
           <h2 className="text-3xl font-bold mb-12 text-center font-montserrat">Artigos Recentes</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <article key={post.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-sm font-medium text-accent">{post.category}</span>
-                    <span className="text-xs text-gray-500">{post.date}</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 font-montserrat">{post.title}</h3>
-                  <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                  <Link 
-                    href={`/blog/${post.id}`}
-                    className="inline-flex items-center text-accent font-medium hover:underline"
-                  >
-                    Ler mais 
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
-              </article>
-            ))}
+            {posts.length === 0 ? (
+              <div className="col-span-3 text-center py-12">
+                <p>Nenhum post encontrado. Novos artigos serão publicados em breve!</p>
+              </div>
+            ) : (
+              posts.map((post) => {
+                const category = getPostCategory(post.tags);
+                const excerpt = getPostExcerpt(post.content);
+                const image = getPostImage(post.tags);
+                const date = formatDate(post.created_at);
+                
+                return (
+                  <article key={post.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div className="relative h-48 w-full">
+                      <Image
+                        src={image}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <div className="flex justify-between items-center mb-3">
+                        <span className="text-sm font-medium text-accent">{category}</span>
+                        <span className="text-xs text-gray-500">{date}</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-3 font-montserrat">{post.title}</h3>
+                      <p className="text-gray-600 mb-4">{excerpt}</p>
+                      <Link 
+                        href={`/blog/${post.slug}`}
+                        className="inline-flex items-center text-accent font-medium hover:underline"
+                      >
+                        Ler mais 
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </Link>
+                    </div>
+                  </article>
+                );
+              })
+            )}
           </div>
         </div>
       </section>
