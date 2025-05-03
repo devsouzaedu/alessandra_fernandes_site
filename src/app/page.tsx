@@ -1,19 +1,33 @@
 'use client'; // Adiciona diretiva para Componente de Cliente
 
-import { useState } from 'react'; // Importa useState
+import { useState, useEffect } from 'react'; // Importa useState e useEffect
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, UserCog } from "lucide-react";
 import Homepage from '@/components/homepage/homepage'; // Importar Homepage
+import { Cookies } from 'react-cookie'; // Importa Cookies
+
+// Inicializa o objeto cookies
+const cookies = new Cookies();
 
 export default function Home() {
   // Estado para controlar a autenticação do admin
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
 
+  // Verifica se existe um cookie de autenticação ao carregar a página
+  useEffect(() => {
+    const adminAuth = cookies.get('adminAuthenticated');
+    if (adminAuth === 'true') {
+      setIsAdminAuthenticated(true);
+    }
+  }, []);
+
   // Função para lidar com o login do admin
   const handleAdminLogin = () => {
     const password = prompt("Digite a senha de administrador:");
     if (password === "2210") {
+      // Define o cookie para 7 dias
+      cookies.set('adminAuthenticated', 'true', { path: '/', maxAge: 7 * 24 * 60 * 60 });
       setIsAdminAuthenticated(true);
     } else if (password !== null) { // Evita alerta se o usuário cancelar o prompt
       alert("Senha incorreta!");
@@ -27,8 +41,8 @@ export default function Home() {
 
   // Renderiza a tela "Em breve" por padrão ou se a autenticação falhar
   return (
-    <main className="min-h-screen bg-brand-green flex flex-col items-center justify-center text-white p-6">
-      {/* Contenido Centralizado */}
+    <main className="min-h-screen flex flex-col items-center justify-center text-white p-6" style={{ backgroundColor: '#729080' }}>
+      {/* Conteúdo Centralizado */}
       <div className="flex flex-col items-center text-center space-y-8 animate-fadeIn">
         {/* Logo Principal */}
         <Image 
