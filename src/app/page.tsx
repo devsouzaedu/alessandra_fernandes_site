@@ -17,7 +17,8 @@ export default function Home() {
   // Verifica se existe um cookie de autenticação ao carregar a página
   useEffect(() => {
     const adminAuth = cookies.get('adminAuthenticated');
-    if (adminAuth === 'true') {
+    const middlewareAuth = cookies.get('admin-auth');
+    if (adminAuth === 'true' || middlewareAuth === 'true') {
       setIsAdminAuthenticated(true);
     }
   }, []);
@@ -28,6 +29,12 @@ export default function Home() {
     if (password === "2210") {
       // Define o cookie para 7 dias
       cookies.set('adminAuthenticated', 'true', { path: '/', maxAge: 7 * 24 * 60 * 60 });
+      // Define também o cookie que o middleware usa para autenticação
+      cookies.set('admin-auth', 'true', { 
+        path: '/', 
+        maxAge: 7 * 24 * 60 * 60, // 7 dias em segundos
+        secure: window.location.protocol === 'https:' // Seguro apenas em HTTPS
+      });
       setIsAdminAuthenticated(true);
     } else if (password !== null) { // Evita alerta se o usuário cancelar o prompt
       alert("Senha incorreta!");
