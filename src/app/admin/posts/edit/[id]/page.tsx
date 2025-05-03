@@ -25,7 +25,7 @@ async function getPostById(id: string): Promise<Post | null> {
   return data as Post | null;
 }
 
-export default async function EditPostPage({ params }: { params: any }) {
+export default async function EditPostPage({ params }: { params: { id: string } }) {
   // Idealmente, teríamos uma validação aqui para garantir que params.id é string
   const postId = params?.id;
   if (typeof postId !== 'string') {
