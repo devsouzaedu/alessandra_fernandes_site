@@ -17,6 +17,7 @@ const navItems = [
   { href: '/espaco', label: 'Espaço' },
   { href: '/sobremim', label: 'Sobre Mim' },
   { href: '/endereco', label: 'Endereço' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 export default function Navbar() {
