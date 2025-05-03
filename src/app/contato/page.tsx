@@ -98,6 +98,16 @@ export default function Contato() {
               referrerPolicy="no-referrer-when-downgrade"
               className="border-0"
             ></iframe>
+            
+            {/* Pin personalizado para o mapa */}
+            <div className="relative">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -mt-48">
+                <div className="relative">
+                  <MapPin size={32} className="text-red-600 animate-bounce" />
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-600 rounded-full opacity-30 animate-ping"></div>
+                </div>
+              </div>
+            </div>
           </div>
           
           <div className="mt-3 text-center text-white text-xs">
