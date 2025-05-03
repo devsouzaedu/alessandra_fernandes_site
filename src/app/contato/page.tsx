@@ -88,7 +88,8 @@ export default function Contato() {
       {/* Mapa */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="bg-white rounded-md shadow-md overflow-hidden">
+          <div className="bg-white rounded-md shadow-md overflow-hidden relative">
+            {/* Usando iframe padrão do Google Maps */}
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1758128087093!2d-46.86438542385761!3d-23.52903376258215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf026c105a6675%3A0x648842201d599535!2sAv.%20Trindade%2C%20254%20-%20Alphaville%20Industrial%2C%20Barueri%20-%20SP%2C%2006473-005!5e0!3m2!1spt-BR!2sbr!4v1712786989868!5m2!1spt-BR!2sbr" 
               width="100%" 
@@ -99,20 +100,17 @@ export default function Contato() {
               className="border-0"
             ></iframe>
             
-            {/* Pin personalizado para o mapa */}
-            <div className="relative">
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -mt-48">
-                <div className="relative">
-                  <MapPin size={32} className="text-red-600 animate-bounce" />
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-600 rounded-full opacity-30 animate-ping"></div>
-                </div>
+            {/* Overlay para colocar o pin vermelho no meio do mapa */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none flex justify-center items-center">
+              <div className="flex flex-col items-center" style={{transform: 'translateY(-20px)'}}>
+                <MapPin size={42} className="text-red-600 drop-shadow-xl" style={{filter: 'drop-shadow(0px 0px 5px rgba(255,255,255,0.7))'}} />
+                <div className="h-2 w-2 rounded-full bg-red-600 animate-ping mt-[-8px] opacity-70"></div>
               </div>
             </div>
           </div>
           
           <div className="mt-3 text-center text-white text-xs">
-            <p>2023 Google - Dados do mapa 2023 Google</p>
-            <p className="mt-1">Informe erro no mapa</p>
+            <p>2023 Google - Dados cartográficos</p>
           </div>
         </div>
       </section>
