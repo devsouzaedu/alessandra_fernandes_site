@@ -16,6 +16,7 @@ export async function createPostAction(prevState: { message: string | null; type
   const author = formData.get('author') as string;
   const tagsRaw = formData.get('tags') as string;
   const content = formData.get('content') as string;
+  const coverImage = formData.get('coverImage') as string;
   const published = formData.get('published') === 'on'; // Checkbox value is 'on' when checked
 
   if (!title || !author || !content) {
@@ -33,7 +34,7 @@ export async function createPostAction(prevState: { message: string | null; type
 
   const { data, error } = await supabaseAdmin
     .from('posts')
-    .insert([{ title, author, tags, content, published, slug }])
+    .insert([{ title, author, tags, content, published, slug, coverImage }])
     .select()
     .single();
 
@@ -127,6 +128,7 @@ export async function updatePost(postId: string, prevState: { message: string | 
   const author = formData.get('author') as string;
   const tagsRaw = formData.get('tags') as string;
   const content = formData.get('content') as string;
+  const coverImage = formData.get('coverImage') as string;
   const published = formData.get('published') === 'on';
 
   if (!title || !author || !content) {
@@ -150,6 +152,7 @@ export async function updatePost(postId: string, prevState: { message: string | 
       content,
       published,
       slug, // Atualiza o slug também
+      coverImage, // URL da imagem de capa
     })
     .match({ id: postId });
 

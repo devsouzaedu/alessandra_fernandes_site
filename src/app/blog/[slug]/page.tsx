@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
 import { ArrowLeft } from 'lucide-react';
 
 // Tipos para os posts
@@ -15,6 +16,7 @@ interface Post {
   created_at: string;
   tags: string[];
   slug: string;
+  coverImage?: string; // URL da imagem de capa (opcional)
 }
 
 // Formata a data para o formato brasileiro
@@ -77,8 +79,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     notFound();
   }
   
-  // Obtu00e9m a imagem para o post baseado nas tags
-  const featuredImage = getPostImage(post.tags);
+  // Obtu00e9m a imagem para o post: usa a imagem de capa personalizada se dispoñível, ou seleciona baseado nas tags
+  const featuredImage = post.coverImage || getPostImage(post.tags);
   const formattedDate = formatDate(post.created_at);
   
   return (
@@ -130,9 +132,39 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           )}
           
           {/* Conteu00fado principal do post */}
-          <article className="prose prose-lg max-w-none">
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
-          </article>
+          <ReactMarkdown
+            components={{
+              // Renderiza imagens com estilo consistente
+              img: ({ node, ...props }) => (
+                <img {...props} className="rounded-md my-4 max-h-96 mx-auto" alt={props.alt || 'Imagem do post'} />
+              ),
+              // Estilizau00e7u00e3o para outros elementos Markdown
+              h1: ({ node, ...props }) => <h1 {...props} className="text-3xl font-bold mt-8 mb-4" />,
+              h2: ({ node, ...props }) => <h2 {...props} className="text-2xl font-bold mt-6 mb-3" />,
+              h3: ({ node, ...props }) => <h3 {...props} className="text-xl font-bold mt-5 mb-2" />,
+              p: ({ node, ...props }) => <p {...props} className="my-4" />,
+              ul: ({ node, ...props }) => <ul {...props} className="list-disc pl-6 my-4" />,
+              ol: ({ node, ...props }) => <ol {...props} className="list-decimal pl-6 my-4" />,
+              li: ({ node, ...props }) => <li {...props} className="ml-2 mb-1" />,
+              blockquote: ({ node, ...props }) => <blockquote {...props} className="border-l-4 border-primary pl-4 italic my-4" />,
+              a: ({ node, ...props }) => <a {...props} className="text-accent hover:underline" target="_blank" rel="noopener noreferrer" />,
+              code: ({ node, className, ...props }) => {
+                // Verifica se u00e9 um bloco de cu00f3digo inline ou bloco
+                const match = /language-+(\w+)/.exec(className || '');
+                const isInline = !match && !className?.includes('language-');
+                
+                return isInline ? (
+                  <code {...props} className="bg-gray-100 px-1 py-0.5 rounded text-sm" />
+                ) : (
+                  <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto">
+                    <code {...props} className={className} />
+                  </pre>
+                );
+              }
+            }}
+          >
+            {post.content}
+          </ReactMarkdown>
           
           {/* Compartilhamento (opcional) */}
           <div className="mt-10 pt-6 border-t border-gray-200">

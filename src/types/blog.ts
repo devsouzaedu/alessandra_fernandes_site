@@ -9,4 +9,5 @@ export interface Post {
   content: string;
   published: boolean;
   slug: string;
+  coverImage?: string; // URL da imagem de capa (opcional)
 }

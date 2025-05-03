@@ -16,6 +16,7 @@ interface Post {
   published: boolean;
   slug: string;
   tags: string[];
+  coverImage?: string; // URL da imagem de capa (opcional)
 }
 
 // Formata a data para o formato brasileiro
@@ -112,7 +113,8 @@ export default async function Blog() {
               posts.map((post) => {
                 const category = getPostCategory(post.tags);
                 const excerpt = getPostExcerpt(post.content);
-                const image = getPostImage(post.tags);
+                // Usa a imagem de capa personalizada quando dispoñível, ou fallback para imagem baseada em tags
+                const image = post.coverImage || getPostImage(post.tags);
                 const date = formatDate(post.created_at);
                 
                 return (

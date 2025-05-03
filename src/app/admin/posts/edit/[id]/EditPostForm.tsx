@@ -79,6 +79,18 @@ export default function EditPostForm({ post }: EditPostFormProps) {
         />
       </div>
       <div>
+        <label htmlFor="coverImage" className="block text-sm font-medium text-gray-700">URL da Imagem de Capa</label>
+        <input
+          type="url"
+          id="coverImage"
+          name="coverImage"
+          defaultValue={post.coverImage || ''} // Preenche com valor inicial se existir
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          placeholder="https://exemplo.com/imagem.jpg"
+        />
+        <p className="mt-1 text-xs text-gray-500">Insira o endereço de uma imagem pública online para ser usada como capa do post</p>
+      </div>
+      <div>
         <label htmlFor="content" className="block text-sm font-medium text-gray-700">Conteúdo (Markdown)</label>
         <textarea
           id="content"
