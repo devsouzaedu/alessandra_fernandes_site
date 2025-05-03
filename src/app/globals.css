@@ -17,10 +17,11 @@
 }
 
 body {
-  color: #111;
-  background: var(--brand-main);
+  color: #222;
+  background: #ffffff;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
 @layer base {
