@@ -87,12 +87,12 @@ export default async function Blog() {
   return (
     <main>
       {/* Header */}
-      <section className="bg-white py-16 md:py-20 border-b">
+      <section className="bg-green-primary py-16 md:py-20 border-b">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-montserrat text-gray-900">Blog de Nutrição</h1>
-            <div className="w-24 h-1 bg-green-primary mx-auto mb-6"></div>
-            <p className="text-lg mb-0 text-gray-700">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-montserrat text-white">Blog de Nutrição</h1>
+            <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
+            <p className="text-lg mb-0 text-white">
               Artigos, dicas e informações sobre nutrição, saúde e bem-estar para ajudar você 
               a fazer escolhas alimentares mais conscientes.
             </p>
@@ -119,7 +119,7 @@ export default async function Blog() {
                 const date = formatDate(post.created_at);
                 
                 return (
-                  <article key={post.id} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                  <article key={post.id} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:border-green-primary">
                     <div className="relative h-56 w-full">
                       <Image
                         src={image}
@@ -154,9 +154,9 @@ export default async function Blog() {
       </section>
 
       {/* Inscrição Newsletter */}
-      <section className="py-16 bg-gray-50 border-y">
+      <section className="py-16 bg-green-light border-y">
         <div className="container max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4 font-montserrat text-gray-900">Receba Conteúdo Exclusivo</h2>
+          <h2 className="text-2xl font-bold mb-4 font-montserrat text-green-primary">Receba Conteúdo Exclusivo</h2>
           <div className="w-16 h-1 bg-green-primary mx-auto mb-6"></div>
           <p className="mb-8 text-gray-700">
             Inscreva-se na nossa newsletter e receba dicas, receitas e artigos exclusivos 
@@ -178,15 +178,15 @@ export default async function Blog() {
       {/* Categorias */}
       <section className="py-16 bg-white">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 text-center font-montserrat text-gray-900">Categorias</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center font-montserrat text-green-primary">Categorias</h2>
           <div className="w-16 h-1 bg-green-primary mx-auto mb-12"></div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <Link 
               href="/blog/categoria/hipertrofia"
-              className="bg-white p-6 rounded-lg text-center border border-gray-100 shadow-sm hover:shadow-md hover:border-green-primary transition-all duration-300"
+              className="bg-white p-6 rounded-lg text-center border border-gray-100 shadow-sm hover:shadow-md hover:border-green-primary hover:bg-green-light/50 transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-green-light rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
@@ -197,9 +197,9 @@ export default async function Blog() {
             
             <Link 
               href="/blog/categoria/emagrecimento"
-              className="bg-white p-6 rounded-lg text-center border border-gray-100 shadow-sm hover:shadow-md hover:border-green-primary transition-all duration-300"
+              className="bg-white p-6 rounded-lg text-center border border-gray-100 shadow-sm hover:shadow-md hover:border-green-primary hover:bg-green-light/50 transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-green-light rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -210,9 +210,9 @@ export default async function Blog() {
             
             <Link 
               href="/blog/categoria/performance"
-              className="bg-white p-6 rounded-lg text-center border border-gray-100 shadow-sm hover:shadow-md hover:border-green-primary transition-all duration-300"
+              className="bg-white p-6 rounded-lg text-center border border-gray-100 shadow-sm hover:shadow-md hover:border-green-primary hover:bg-green-light/50 transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-green-light rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
@@ -223,9 +223,9 @@ export default async function Blog() {
             
             <Link 
               href="/blog/categoria/doencas-cronicas"
-              className="bg-white p-6 rounded-lg text-center border border-gray-100 shadow-sm hover:shadow-md hover:border-green-primary transition-all duration-300"
+              className="bg-white p-6 rounded-lg text-center border border-gray-100 shadow-sm hover:shadow-md hover:border-green-primary hover:bg-green-light/50 transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-green-light rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>

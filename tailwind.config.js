@@ -13,11 +13,11 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: "#005651",
-          dark: "#005651",
+          DEFAULT: "#729080",
+          dark: "#658273",
         },
-        'brand-green': '#005651',
-        'brand-green-alt': '#68A097',
+        'brand-green': '#729080',
+        'brand-green-alt': '#86A69A',
         secondary: "#D4AF37",
         pink: {
           50: "#fdf2f8",
@@ -29,8 +29,9 @@ module.exports = {
         },
         green: {
           300: "#86efac",
-          primary: "#005651",
-          secondary: "#68A097",
+          primary: "#729080",
+          secondary: "#86A69A",
+          light: "#ECF2EF"
         },
       },
       animation: {
@@ -66,15 +67,22 @@ module.exports = {
     'bg-brand-green',
     'bg-brand-green-alt',
     'bg-secondary',
+    'bg-green-primary',
+    'bg-green-secondary',
+    'bg-green-light',
     'text-white',
     'text-brand-green',
     'text-brand-green-alt',
     'text-secondary',
+    'text-green-primary',
     'hover:bg-primary',
     'hover:bg-primary-dark',
     'hover:bg-gray-800',
+    'hover:bg-green-primary',
+    'hover:bg-green-secondary',
     'hover:text-brand-green',
     'hover:text-brand-green-alt',
+    'hover:text-green-primary',
   ],
   plugins: [],
 }; 

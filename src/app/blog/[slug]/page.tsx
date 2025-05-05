@@ -94,7 +94,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+        <div className="absolute inset-0 bg-gradient-to-t from-green-primary/80 to-transparent flex items-end">
           <div className="container p-6 md:p-10">
             <h1 className="text-3xl md:text-5xl font-bold text-white font-montserrat mb-4 leading-tight">
               {post.title}
@@ -129,7 +129,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               {post.tags.map((tag, index) => (
                 index > 0 && <span 
                   key={tag} 
-                  className="px-3 py-1 bg-green-50 text-green-primary rounded-full text-sm font-medium border border-green-100"
+                  className="px-3 py-1 bg-green-light text-green-primary rounded-full text-sm font-medium border border-green-secondary/20"
                 >
                   {tag}
                 </span>
@@ -145,9 +145,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                 <img {...props} className="rounded-lg my-6 max-h-[500px] mx-auto shadow-sm" alt={props.alt || 'Imagem do post'} />
               ),
               // Estilizau00e7u00e3o para outros elementos Markdown
-              h1: ({ node, ...props }) => <h1 {...props} className="text-3xl font-bold mt-10 mb-4 text-gray-900 font-montserrat" />,
-              h2: ({ node, ...props }) => <h2 {...props} className="text-2xl font-bold mt-8 mb-4 text-gray-900 font-montserrat border-b border-gray-100 pb-2" />,
-              h3: ({ node, ...props }) => <h3 {...props} className="text-xl font-bold mt-6 mb-3 text-gray-900 font-montserrat" />,
+              h1: ({ node, ...props }) => <h1 {...props} className="text-3xl font-bold mt-10 mb-4 text-green-primary font-montserrat" />,
+              h2: ({ node, ...props }) => <h2 {...props} className="text-2xl font-bold mt-8 mb-4 text-green-primary font-montserrat border-b border-gray-100 pb-2" />,
+              h3: ({ node, ...props }) => <h3 {...props} className="text-xl font-bold mt-6 mb-3 text-green-primary font-montserrat" />,
               p: ({ node, ...props }) => <p {...props} className="my-4 text-gray-700 leading-relaxed" />,
               ul: ({ node, ...props }) => <ul {...props} className="list-disc pl-6 my-5 text-gray-700 space-y-2" />,
               ol: ({ node, ...props }) => <ol {...props} className="list-decimal pl-6 my-5 text-gray-700 space-y-2" />,
@@ -160,15 +160,15 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                 const isInline = !match && !className?.includes('language-');
                 
                 return isInline ? (
-                  <code {...props} className="bg-gray-100 px-2 py-0.5 rounded text-sm font-mono text-green-800" />
+                  <code {...props} className="bg-green-light px-2 py-0.5 rounded text-sm font-mono text-green-primary" />
                 ) : (
-                  <pre className="bg-gray-50 p-4 rounded-lg overflow-x-auto border border-gray-100 my-6 shadow-sm">
+                  <pre className="bg-green-light/30 p-4 rounded-lg overflow-x-auto border border-green-secondary/20 my-6 shadow-sm">
                     <code {...props} className={`${className} font-mono text-gray-800`} />
                   </pre>
                 );
               },
-              strong: ({ node, ...props }) => <strong {...props} className="font-semibold text-gray-900" />,
-              em: ({ node, ...props }) => <em {...props} className="text-gray-800 italic" />
+              strong: ({ node, ...props }) => <strong {...props} className="font-semibold text-green-primary" />,
+              em: ({ node, ...props }) => <em {...props} className="text-green-primary/80 italic" />
             }}
           >
             {post.content}
@@ -176,19 +176,19 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           
           {/* Compartilhamento */}
           <div className="mt-12 pt-6 border-t border-gray-200">
-            <h3 className="text-lg font-bold mb-4 text-gray-900 font-montserrat">Compartilhe este artigo</h3>
+            <h3 className="text-lg font-bold mb-4 text-green-primary font-montserrat">Compartilhe este artigo</h3>
             <div className="flex gap-3">
-              <button className="p-3 bg-green-50 text-green-primary rounded-full hover:bg-green-100 transition-colors">
+              <button className="p-3 bg-green-light text-green-primary rounded-full hover:bg-green-secondary hover:text-white transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                 </svg>
               </button>
-              <button className="p-3 bg-green-50 text-green-primary rounded-full hover:bg-green-100 transition-colors">
+              <button className="p-3 bg-green-light text-green-primary rounded-full hover:bg-green-secondary hover:text-white transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </button>
-              <button className="p-3 bg-green-50 text-green-primary rounded-full hover:bg-green-100 transition-colors">
+              <button className="p-3 bg-green-light text-green-primary rounded-full hover:bg-green-secondary hover:text-white transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -198,15 +198,15 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           
           {/* Autor */}
           <div className="mt-10 pt-6 border-t border-gray-200">
-            <h3 className="text-lg font-bold mb-4 text-gray-900 font-montserrat">Sobre o Autor</h3>
+            <h3 className="text-lg font-bold mb-4 text-green-primary font-montserrat">Sobre o Autor</h3>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-primary">
+              <div className="w-12 h-12 rounded-full bg-green-light flex items-center justify-center text-green-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900">{post.author}</h4>
+                <h4 className="font-semibold text-green-primary">{post.author}</h4>
                 <p className="text-gray-600 text-sm">
                   Nutricionista especializada em nutrição clínica e esportiva.
                 </p>
@@ -219,9 +219,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       {/* CTA - Agende uma consulta */}
       <section className="bg-white py-16 border-t border-gray-100 mt-12">
         <div className="container max-w-4xl mx-auto">
-          <div className="bg-gray-50 rounded-xl p-8 md:p-12 shadow-sm border border-gray-100">
+          <div className="bg-green-light rounded-xl p-8 md:p-12 shadow-sm border border-green-secondary/20">
             <div className="text-center">
-              <h2 className="text-2xl font-bold mb-2 font-montserrat text-gray-900">Gostou deste conteúdo?</h2>
+              <h2 className="text-2xl font-bold mb-2 font-montserrat text-green-primary">Gostou deste conteúdo?</h2>
               <div className="w-16 h-1 bg-green-primary mx-auto mb-6"></div>
               <p className="mb-6 max-w-2xl mx-auto text-gray-700">
                 Agende uma consulta personalizada e receba orientações nutricionais específicas para suas necessidades e objetivos.
