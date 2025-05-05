@@ -80,9 +80,9 @@ export default function Contato() {
           </div>
           
           {/* Mapa */}
-          <div className="h-96 rounded-lg overflow-hidden shadow-md animate-slideUp delay-200">
+          <div className="h-96 rounded-lg overflow-hidden shadow-md animate-slideUp delay-200 relative">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.7598854805367!2d-46.86918302391035!3d-23.507650559834967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf03dd5607441b%3A0x9f8d1c6e4f3e5c5d!2sDra.%20Alessandra%20Fernandes%20-%20Nutricionista%20Esportiva%20em%20Barueri%20e%20Alphaville!5e0!3m2!1spt-BR!2sbr!4v1688563309967!5m2!1spt-BR!2sbr" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1758128087093!2d-46.86438542385761!3d-23.52903376258215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf026c105a6675%3A0x648842201d599535!2sAv.%20Trindade%2C%20254%20-%20Alphaville%20Industrial%2C%20Barueri%20-%20SP%2C%2006473-005!5e0!3m2!1spt-BR!2sbr!4v1712786989868!5m2!1spt-BR!2sbr" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
@@ -92,6 +92,14 @@ export default function Contato() {
               title="Localização do consultório da Dra. Alessandra Fernandes"
               aria-label="Mapa mostrando a localização do consultório"
             ></iframe>
+            
+            {/* Overlay para o pin vermelho no centro do mapa */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none flex justify-center items-center">
+              <div className="flex flex-col items-center" style={{transform: 'translateY(-20px)'}}>
+                <MapPin size={42} className="text-red-600 drop-shadow-xl" style={{filter: 'drop-shadow(0px 0px 5px rgba(255,255,255,0.7))'}} />
+                <div className="h-2 w-2 rounded-full bg-red-600 animate-ping mt-[-8px] opacity-70"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
