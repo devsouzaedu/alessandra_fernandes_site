@@ -15,27 +15,34 @@ export default function Feedbacks() {
   // Estado para controlar qual depoimento está visível
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Depoimentos placeholder
+  // Depoimentos reais do Google
   const depoimentos: Depoimento[] = [
     {
       id: 1,
-      nome: "Cliente Satisfeito",
-      foto: "/images/garotas_feedback_pfp (1).jpg",
-      texto: "Este é um placeholder para um depoimento real. Aqui será adicionado o feedback de um cliente satisfeito com os serviços da Dra. Alessandra Fernandes.",
+      nome: "Feedback do Google",
+      foto: "/images/feedbacks_dra_alessandra_google (1).png",
+      texto: "Doutora incrível! Muito atenciosa, cuidadosa e clara. Meu primeiro contato com uma nutricionista e foi melhor do que eu esperava. Recomendo muito!",
       avaliacao: 5
     },
     {
       id: 2,
-      nome: "Cliente Motivado",
-      foto: "/images/garotas_feedback_pfp (2).jpg",
-      texto: "Outro placeholder para depoimento. Os depoimentos reais dos clientes serão adicionados posteriormente nesta seção, mostrando os resultados obtidos.",
+      nome: "Feedback do Google",
+      foto: "/images/feedbacks_dra_alessandra_google (2).png",
+      texto: "Excelente profissional. Cuidadosa, atenciosa e preocupada com a saúde dos seus pacientes. Recomendo!",
       avaliacao: 5
     },
     {
       id: 3,
-      nome: "Cliente Transformado",
-      foto: "/images/garotas_feedback_pfp (3).jpg",
-      texto: "Terceiro placeholder para depoimento. Esta área será preenchida com histórias reais de transformação e resultados alcançados com a nutrição.",
+      nome: "Feedback do Google",
+      foto: "/images/feedbacks_dra_alessandra_google (3).png",
+      texto: "Fiz a primeira consulta com a Dra. Alessandra e já saí super satisfeita! Super atenciosa, detalhista e cuidadosa. Recomendo demais!",
+      avaliacao: 5
+    },
+    {
+      id: 4,
+      nome: "Feedback do Google",
+      foto: "/images/feedbacks_dra_alessandra_google (4).png",
+      texto: "Alessandra é simplesmente excelente! Muito cuidadosa com o paciente, ouve cada necessidade e entrega um plano perfeito. Maravilhosa!",
       avaliacao: 5
     }
   ];
