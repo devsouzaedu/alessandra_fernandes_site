@@ -43,8 +43,10 @@ export default function ComoFuncionaConsultas() {
             Será um processo de transformação, onde juntos vamos desenvolver uma relação com a alimentação que se adapte à sua rotina, objetivos, preferências e estilo de vida.
           </p>
         </div>
+      </div>
 
-        <div className="bg-[#729080] py-12 px-4 rounded-xl">
+      <div className="bg-[#729080] py-12">
+        <div className="container mx-auto px-4">
           <h3 className="text-2xl font-semibold text-white mb-8 text-center">4 pilares do acompanhamento</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group">
