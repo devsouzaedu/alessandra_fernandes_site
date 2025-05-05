@@ -1,140 +1,85 @@
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
-
-// Interface para dados de depoimentos
-interface Depoimento {
-  id: number;
-  nome: string;
-  foto: string;
-  texto: string;
-  avaliacao: number;
-}
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Feedbacks() {
-  // Estado para controlar qual depoimento está visível
+  // Estado para controlar qual imagem de feedback está visível
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Depoimentos reais do Google
-  const depoimentos: Depoimento[] = [
-    {
-      id: 1,
-      nome: "Feedback do Google",
-      foto: "/images/feedbacks_dra_alessandra_google (1).png",
-      texto: "Doutora incrível! Muito atenciosa, cuidadosa e clara. Meu primeiro contato com uma nutricionista e foi melhor do que eu esperava. Recomendo muito!",
-      avaliacao: 5
-    },
-    {
-      id: 2,
-      nome: "Feedback do Google",
-      foto: "/images/feedbacks_dra_alessandra_google (2).png",
-      texto: "Excelente profissional. Cuidadosa, atenciosa e preocupada com a saúde dos seus pacientes. Recomendo!",
-      avaliacao: 5
-    },
-    {
-      id: 3,
-      nome: "Feedback do Google",
-      foto: "/images/feedbacks_dra_alessandra_google (3).png",
-      texto: "Fiz a primeira consulta com a Dra. Alessandra e já saí super satisfeita! Super atenciosa, detalhista e cuidadosa. Recomendo demais!",
-      avaliacao: 5
-    },
-    {
-      id: 4,
-      nome: "Feedback do Google",
-      foto: "/images/feedbacks_dra_alessandra_google (4).png",
-      texto: "Alessandra é simplesmente excelente! Muito cuidadosa com o paciente, ouve cada necessidade e entrega um plano perfeito. Maravilhosa!",
-      avaliacao: 5
-    }
+  // Array com os caminhos das imagens de feedback
+  const feedbackImages = [
+    '/images/feedbacks_dra_alessandra_google (1).png',
+    '/images/feedbacks_dra_alessandra_google (2).png',
+    '/images/feedbacks_dra_alessandra_google (3).png',
+    '/images/feedbacks_dra_alessandra_google (4).png',
   ];
 
-  // Funções para navegar entre os depoimentos
-  const prevDepoimento = () => {
+  // Funções para navegar entre as imagens
+  const prevFeedback = () => {
     setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? depoimentos.length - 1 : prevIndex - 1
+      prevIndex === 0 ? feedbackImages.length - 1 : prevIndex - 1
     );
   };
 
-  const nextDepoimento = () => {
+  const nextFeedback = () => {
     setCurrentIndex((prevIndex) => 
-      prevIndex === depoimentos.length - 1 ? 0 : prevIndex + 1
+      prevIndex === feedbackImages.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   return (
-    <section className="py-16 bg-white text-black">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">O Que Dizem Nossos Pacientes</h2>
-          <p className="text-black/80 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">O Que Dizem Nossos Pacientes</h2>
+          <p className="text-gray-700 max-w-3xl mx-auto">
             Depoimentos de quem já transformou sua saúde e qualidade de vida
           </p>
         </div>
         
-        {/* Carrossel de depoimentos */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative bg-brand-main p-6 md:p-8 rounded-xl shadow-sm animate-fadeIn">
-            {/* Aspas decorativas */}
-            <div className="absolute top-4 left-4 text-6xl text-brandSecondary font-serif">&ldquo;</div>
-            
-            {/* Conteúdo do depoimento */}
-            <div className="relative z-10 pt-6">
-              <p className="text-black text-lg italic mb-6">
-                {depoimentos[currentIndex].texto}
-              </p>
-              
-              {/* Informações do cliente */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full overflow-hidden relative">
-                    <Image 
-                      src={depoimentos[currentIndex].foto}
-                      alt={`Foto de ${depoimentos[currentIndex].nome}`}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-black">{depoimentos[currentIndex].nome}</div>
-                    <div className="flex">
-                      {Array.from({ length: depoimentos[currentIndex].avaliacao }).map((_, i) => (
-                        <Star key={i} size={16} className="fill-current text-brandSecondary" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Navegação do carrossel */}
-                <div className="flex gap-2">
-                  <button 
-                    onClick={prevDepoimento} 
-                    className="p-2 rounded-full bg-brand-main border border-brandSecondary text-brandSecondary hover:bg-brandSecondary hover:text-brand-main transition-colors"
-                    aria-label="Depoimento anterior"
-                  >
-                    <ChevronLeft size={20} className="text-brandSecondary hover:text-brand-main" />
-                  </button>
-                  <button 
-                    onClick={nextDepoimento} 
-                    className="p-2 rounded-full bg-brand-main border border-brandSecondary text-brandSecondary hover:bg-brandSecondary hover:text-brand-main transition-colors"
-                    aria-label="Próximo depoimento"
-                  >
-                    <ChevronRight size={20} className="text-brandSecondary hover:text-brand-main" />
-                  </button>
-                </div>
-              </div>
+        {/* Carrossel de imagens de feedback */}
+        <div className="max-w-2xl mx-auto">
+          <div className="relative rounded-xl shadow-lg overflow-hidden animate-fadeIn">
+            {/* Imagem atual do feedback */}
+            <div className="relative h-[500px] w-full">
+              <Image 
+                src={feedbackImages[currentIndex]}
+                alt={`Feedback de cliente no Google ${currentIndex + 1}`}
+                fill
+                style={{ objectFit: 'contain' }}
+                className="rounded-xl"
+              />
             </div>
             
-            {/* Aspas decorativas de fechamento */}
-            <div className="absolute bottom-4 right-4 text-6xl text-brandSecondary font-serif rotate-180">&rdquo;</div>
+            {/* Botões de navegação */}
+            <div className="absolute top-1/2 left-0 right-0 flex justify-between transform -translate-y-1/2 px-4">
+              <button 
+                onClick={prevFeedback} 
+                className="p-2 rounded-full bg-white/80 text-green-primary hover:bg-green-primary hover:text-white transition-colors"
+                aria-label="Feedback anterior"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button 
+                onClick={nextFeedback} 
+                className="p-2 rounded-full bg-white/80 text-green-primary hover:bg-green-primary hover:text-white transition-colors"
+                aria-label="Próximo feedback"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
           </div>
           
           {/* Indicadores de paginação */}
           <div className="flex justify-center gap-2 mt-6">
-            {depoimentos.map((_, index) => (
+            {feedbackImages.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${currentIndex === index ? 'bg-white' : 'bg-brand-main'}`}
-                aria-label={`Ver depoimento ${index + 1}`}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentIndex === index ? 'bg-green-primary' : 'bg-gray-300'
+                }`}
+                aria-label={`Ver feedback ${index + 1}`}
               />
             ))}
           </div>
@@ -142,4 +87,4 @@ export default function Feedbacks() {
       </div>
     </section>
   );
-} 
+}
