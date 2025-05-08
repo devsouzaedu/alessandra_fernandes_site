@@ -57,16 +57,16 @@ export default function Feedbacks() {
 
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">O Que Dizem Nossos Pacientes</h2>
-          <p className="text-gray-700 max-w-3xl mx-auto">
+          <p className="text-gray-700 max-w-3xl mx-auto font-normal">
             Depoimentos de quem já transformou sua saúde e qualidade de vida
           </p>
         </div>
         
         {/* Carrossel de imagens de feedback - minimalista */}
-        <div className="max-w-2xl mx-auto overflow-hidden relative"
+        <div className="max-w-3xl mx-auto overflow-hidden relative px-2"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -76,7 +76,7 @@ export default function Feedbacks() {
           >
             {feedbackImages.map((src, index) => (
               <div key={index} className="min-w-full">
-                <div className="relative h-[500px] w-full">
+                <div className="relative h-[500px] w-full px-0">
                   <Image
                     src={src}
                     alt={`Feedback de cliente no Google ${index + 1}`}

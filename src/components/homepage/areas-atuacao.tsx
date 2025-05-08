@@ -14,7 +14,7 @@ const ServicoCard = ({ icon, title }: ServicoProps) => (
     <div className="text-black">
       {icon}
     </div>
-    <h3 className="font-medium text-black">{title}</h3>
+    <h3 className="font-normal text-black">{title}</h3>
   </div>
 );
 
@@ -68,7 +68,7 @@ export default function AreasAtuacao() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Áreas de Atuação e Serviços</h2>
-          <p className="text-brand-secondary600 max-w-3xl mx-auto hover:text-brand-secondary">
+          <p className="text-brand-secondary600 max-w-3xl mx-auto hover:text-brand-secondary font-normal">
             Conheça os serviços especializados oferecidos para o seu bem-estar e saúde
           </p>
         </div>
