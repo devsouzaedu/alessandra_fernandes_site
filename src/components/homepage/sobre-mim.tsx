@@ -21,7 +21,7 @@ export default function SobreMim() {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-              <div className="relative h-64 sm:h-80 md:h-full w-full">
+              <div className="relative h-80 sm:h-96 md:h-full w-full overflow-hidden mx-0 px-0">
                 <Image
                   src="/images/fotos_alessandra_nutricionista_esportiva_em_barueri_alphaville_bethaville_ (3).jpeg"
                   alt="Dra. Alessandra Fernandes"
@@ -40,7 +40,7 @@ export default function SobreMim() {
               data-aos="fade-left"
               data-aos-duration="1000"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 px-3">
                 <div 
                   className="flex items-start gap-3"
                   data-aos="fade-up"
@@ -48,8 +48,8 @@ export default function SobreMim() {
                 >
                   <GraduationCap size={24} className="text-brand-green flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-gray-800">Formação</h3>
-                    <p className="text-gray-600">Universidade Presbiteriana Mackenzie (2016)</p>
+                    <h3 className="font-semibold text-gray-800 text-base sm:text-lg">Formação</h3>
+                    <p className="text-gray-600 text-sm sm:text-base">Universidade Presbiteriana Mackenzie (2016)</p>
                   </div>
                 </div>
                 
@@ -60,8 +60,8 @@ export default function SobreMim() {
                 >
                   <Award size={24} className="text-brand-green-alt flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-gray-800">Especialização</h3>
-                    <p className="text-gray-600">Pós-graduada em Nutrição Esportiva pelo Centro de Estudos de Fisiologia do Exercício</p>
+                    <h3 className="font-semibold text-gray-800 text-base sm:text-lg">Especialização</h3>
+                    <p className="text-gray-600 text-sm sm:text-base">Pós-graduada em Nutrição Esportiva pelo Centro de Estudos de Fisiologia do Exercício</p>
                   </div>
                 </div>
                 
@@ -72,8 +72,8 @@ export default function SobreMim() {
                 >
                   <Users size={24} className="text-brand-green flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-gray-800">Experiência</h3>
-                    <p className="text-gray-600">Membro da comissão técnica de judô da Força Aérea Brasileira</p>
+                    <h3 className="font-semibold text-gray-800 text-base sm:text-lg">Experiência</h3>
+                    <p className="text-gray-600 text-sm sm:text-base">Membro da comissão técnica de judô da Força Aérea Brasileira</p>
                   </div>
                 </div>
                 
@@ -84,8 +84,8 @@ export default function SobreMim() {
                 >
                   <CalendarClock size={24} className="text-brand-green-alt flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-gray-800">Atuação</h3>
-                    <p className="text-gray-600">9 anos de experiência em consultório</p>
+                    <h3 className="font-semibold text-gray-800 text-base sm:text-lg">Atuação</h3>
+                    <p className="text-gray-600 text-sm sm:text-base">9 anos de experiência em consultório</p>
                   </div>
                 </div>
               </div>
