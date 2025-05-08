@@ -8,7 +8,7 @@ interface EspecialidadeProps {
 
 const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
   <div
-    className={`p-6 rounded-lg shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-slideUp ${delay} bg-white flex flex-col justify-between h-full group`}
+    className={`p-6 rounded-lg shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-slideUp ${delay} bg-white flex flex-col justify-between h-full w-full group`}
   >
     <div className="flex flex-col items-center text-center w-full">
       <div className="mb-5 transform transition-transform duration-500 group-hover:scale-110 text-brand-green group-hover:text-[#5b7566]">
@@ -66,7 +66,7 @@ export default function Especialidades() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center max-w-6xl mx-auto">
           {especialidades.map((item, idx) => (
             <EspecialidadeCard key={idx} {...item} />
           ))}

@@ -6,7 +6,7 @@ import AOS from 'aos';
 import { Apple, Salad, Carrot, Beef, Drumstick, EggFried } from 'lucide-react';
 
 const WHATSAPP_LINK = "https://wa.me/5511963074495?text=Oi!%20gostaria%20de%20agendar%20uma%20consulta...";
-const HERO_IMAGE_PATH = "/images/fotos_alessandra_nutricionista_esportiva_em_barueri_alphaville_bethaville_ (2).jpeg";
+const HERO_IMAGE_PATH = "/images/fotos_alessandra_nutricionista_esportiva_em_barueri_alphaville_bethaville_ (5).jpeg";
 
 export default function HeroSection() {
   // Inicializar AOS com configurações personalizadas para o hero
