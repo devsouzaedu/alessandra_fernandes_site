@@ -6,7 +6,7 @@ export default function ComoFuncionaConsultas() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Como funciona meu atendimento</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12 font-semibold">
             Aqui você não encontrará apenas uma consulta, mas todo o suporte necessário para atingir resultados eficazes e duradouros.
           </p>
         </div>
@@ -19,7 +19,7 @@ export default function ComoFuncionaConsultas() {
                 <div className="text-brand-green p-2 bg-brand-green/10 rounded-lg group-hover:bg-brand-green/20 transition-colors">
                   <LineChart size={24} />
                 </div>
-                <p className="text-brand-green font-medium mt-2">Feedbacks semanais</p>
+                <p className="text-brand-green font-semibold mt-2">Feedbacks semanais</p>
               </div>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
@@ -27,7 +27,7 @@ export default function ComoFuncionaConsultas() {
                 <div className="text-brand-green p-2 bg-brand-green/10 rounded-lg group-hover:bg-brand-green/20 transition-colors">
                   <ClipboardEdit size={24} />
                 </div>
-                <p className="text-brand-green font-medium mt-2">Alterações no cardápio para aumentar sua aderência</p>
+                <p className="text-brand-green font-semibold mt-2">Alterações no cardápio para aumentar sua aderência</p>
               </div>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-brand-green/5 group">
@@ -35,11 +35,11 @@ export default function ComoFuncionaConsultas() {
                 <div className="text-brand-green p-2 bg-brand-green/10 rounded-lg group-hover:bg-brand-green/20 transition-colors">
                   <BarChart size={24} />
                 </div>
-                <p className="text-brand-green font-medium mt-2">Ajustes de estratégias para evitar a estagnação dos resultados</p>
+                <p className="text-brand-green font-semibold mt-2">Ajustes de estratégias para evitar a estagnação dos resultados</p>
               </div>
             </div>
           </div>
-          <p className="text-center text-gray-600 mt-8 max-w-3xl mx-auto">
+          <p className="text-center text-gray-600 mt-8 max-w-3xl mx-auto font-semibold">
             Será um processo de transformação, onde juntos vamos desenvolver uma relação com a alimentação que se adapte à sua rotina, objetivos, preferências e estilo de vida.
           </p>
         </div>

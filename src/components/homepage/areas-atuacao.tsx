@@ -14,7 +14,7 @@ const ServicoCard = ({ icon, title }: ServicoProps) => (
     <div className="text-black">
       {icon}
     </div>
-    <h3 className="font-normal text-black">{title}</h3>
+    <h3 className="font-semibold text-black">{title}</h3>
   </div>
 );
 

@@ -40,7 +40,7 @@ export default function HeroSection() {
               Dra. Alessandra Fernandes
             </h1>
             <p 
-              className="text-lg md:text-xl text-gray-600 mb-8"
+              className="text-lg md:text-xl text-gray-600 mb-8 font-semibold"
               data-aos="fade-right"
               data-aos-duration="1500"
               data-aos-easing="ease-out-cubic"
