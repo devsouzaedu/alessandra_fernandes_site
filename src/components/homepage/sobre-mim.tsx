@@ -26,7 +26,10 @@ export default function SobreMim() {
                   src="/images/fotos_alessandra_nutricionista_esportiva_em_barueri_alphaville_bethaville_ (3).jpeg"
                   alt="Dra. Alessandra Fernandes"
                   fill
-                  style={{ objectFit: 'contain', objectPosition: 'center' }}
+                  style={{ 
+                    objectFit: 'cover', 
+                    objectPosition: 'center' 
+                  }}
                   sizes="(max-width: 768px) 100vw, 40vw"
                   priority
                   className="transition-transform duration-500 hover:scale-105"
