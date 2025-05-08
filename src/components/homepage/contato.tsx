@@ -5,7 +5,7 @@ export default function Contato() {
   const WHATSAPP_LINK = "https://wa.me/5511963074495?text=Oi!%20gostaria%20de%20agendar%20uma%20consulta...";
   
   return (
-    <section className="py-16 bg-brand-green" id="contato">
+    <section className="py-24 bg-brand-green" id="contato">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Contato</h2>
@@ -71,8 +71,8 @@ export default function Contato() {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full py-3 px-6 text-white text-center font-medium rounded-md"
-                style={{ backgroundColor: '#729080' }}
+                className="inline-block w-full py-4 px-6 text-white text-center font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                style={{ background: 'linear-gradient(135deg, var(--brand-accent), var(--brand-accent-light))' }}
               >
                 Agendar Consulta
               </Link>

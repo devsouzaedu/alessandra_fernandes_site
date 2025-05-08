@@ -64,7 +64,7 @@ export default function AreasAtuacao() {
   const paginatedServicos = servicos.slice(startIndex, endIndex);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Áreas de Atuação e Serviços</h2>

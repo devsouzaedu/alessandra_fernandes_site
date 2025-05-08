@@ -94,7 +94,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-white hover:text-gray-200 transition-colors duration-300 px-4 py-2 rounded-full font-lexend text-sm"
+                  className="text-white hover:text-gray-200 transition-colors duration-300 px-4 py-2 rounded-full font-lexend text-sm font-semibold"
                 >
                   {item.label}
                 </Link>
@@ -108,7 +108,7 @@ export default function Navbar() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-white text-black rounded-full font-lexend text-sm"
+              className="px-5 py-2.5 bg-white text-black rounded-full font-lexend text-sm font-semibold"
             >
               Agendar Consulta
             </Link>

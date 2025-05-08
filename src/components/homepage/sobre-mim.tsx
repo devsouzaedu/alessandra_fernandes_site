@@ -90,29 +90,77 @@ export default function SobreMim() {
                 </div>
               </div>
               
+              {/* Quote destacada */}
               <div 
-                className="text-gray-700 space-y-3"
+                className="text-gray-700 mb-6 bg-brand-green/10 p-4 rounded-lg border-l-4 border-brand-green italic"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                <p>
+                <p className="text-lg font-semibold text-brand-green">
                   &quot;Cuidar da alimentação é um ato de amor-próprio — e meu propósito é te mostrar que isso pode ser leve, possível e transformador.&quot;
                 </p>
-                <p>
-                  Com mais de 9 anos de experiência em atendimentos em consultório, venho atuando com o propósito de promover saúde e bem-estar, 
-                  sempre respeitando a individualidade de cada paciente. Levo em consideração sua rotina, preferências alimentares e objetivos, 
-                  buscando, por meio da reeducação alimentar, oferecer caminhos possíveis e sustentáveis para escolhas mais saudáveis ao longo da vida.
-                </p>
-                <p>
-                  Acredito em uma nutrição leve, acessível e sem extremismos — longe do terrorismo nutricional. Meu compromisso é mostrar que 
-                  cuidar da alimentação vai muito além de comer frutas, verduras e legumes. É sobre descomplicar, esclarecer mitos e ensinar que 
-                  para emagrecer não é preciso passar fome, mas sim aprender a comer com qualidade e consciência.
-                </p>
-                <p>
-                  Nutrição de uma forma leve, sem terrorismo nutricional, mostrando que a nutrição é muito além do que apenas 
-                  comer frutas, verduras e legumes. Desmistificar polêmicas da área, que para emagrecer não significa passar fome, 
-                  e sim, comer com qualidade.
-                </p>
+              </div>
+              
+              {/* Timeline de carreira */}
+              <div className="mb-6 relative" data-aos="fade-up" data-aos-delay="350">
+                <h3 className="font-bold text-gray-800 mb-4 text-lg">Minha Trajetória</h3>
+                <div className="border-l-2 border-brand-green pl-4 space-y-4">
+                  <div className="relative">
+                    <div className="absolute w-3 h-3 bg-brand-green rounded-full -left-[1.65rem] top-1"></div>
+                    <p className="font-semibold text-gray-800">2016</p>
+                    <p className="text-gray-600">Formação em Nutrição pela Universidade Presbiteriana Mackenzie</p>
+                  </div>
+                  <div className="relative">
+                    <div className="absolute w-3 h-3 bg-brand-green rounded-full -left-[1.65rem] top-1"></div>
+                    <p className="font-semibold text-gray-800">2017</p>
+                    <p className="text-gray-600">Pós-graduação em Nutrição Esportiva</p>
+                  </div>
+                  <div className="relative">
+                    <div className="absolute w-3 h-3 bg-brand-green rounded-full -left-[1.65rem] top-1"></div>
+                    <p className="font-semibold text-gray-800">2018-2020</p>
+                    <p className="text-gray-600">Membro da comissão técnica de judô da Força Aérea Brasileira</p>
+                  </div>
+                  <div className="relative">
+                    <div className="absolute w-3 h-3 bg-brand-green rounded-full -left-[1.65rem] top-1"></div>
+                    <p className="font-semibold text-gray-800">Atual</p>
+                    <p className="text-gray-600">Atendimento personalizado em consultório</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Texto com bullets para melhor escaneabilidade */}
+              <div 
+                className="text-gray-700"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <h3 className="font-bold text-gray-800 mb-3 text-lg">Minha Abordagem</h3>
+                <ul className="space-y-3 list-none">
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-green text-xl mt-0.5">•</span>
+                    <p className="flex-1">
+                      <span className="font-semibold">Nutrição personalizada:</span> Respeito a individualidade de cada paciente, considerando rotina, preferências e objetivos únicos.
+                    </p>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-green text-xl mt-0.5">•</span>
+                    <p className="flex-1">
+                      <span className="font-semibold">Abordagem sem extremismos:</span> Acredito em uma nutrição leve, acessível e equilibrada, longe do terrorismo nutricional.
+                    </p>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-green text-xl mt-0.5">•</span>
+                    <p className="flex-1">
+                      <span className="font-semibold">Desmistificando a nutrição:</span> Mostro que nutrição vai muito além de apenas comer frutas e legumes, é sobre escolhas conscientes.
+                    </p>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-green text-xl mt-0.5">•</span>
+                    <p className="flex-1">
+                      <span className="font-semibold">Emagrecimento saudável:</span> Ensino que para emagrecer não precisa passar fome, mas sim aprender a comer com qualidade e equilíbrio.
+                    </p>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

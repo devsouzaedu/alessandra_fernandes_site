@@ -8,13 +8,16 @@ interface EspecialidadeProps {
 
 const EspecialidadeCard = ({ icon, title, delay }: EspecialidadeProps) => (
   <div
-    className={`p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl animate-slideUp ${delay} bg-white`}
+    className={`p-6 rounded-lg shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-slideUp ${delay} bg-white flex flex-col justify-between h-full group`}
   >
-    <div className="flex flex-col items-center text-center">
-      <div className="mb-4">
+    <div className="flex flex-col items-center text-center w-full">
+      <div className="mb-5 transform transition-transform duration-500 group-hover:scale-110 text-brand-green group-hover:text-[#5b7566]">
         {icon}
       </div>
-      <h3 className="text-base md:text-lg font-medium text-black px-3 py-1 rounded-sm">{title}</h3>
+      <h3 className="text-base md:text-lg font-semibold text-black px-3 py-1 rounded-md text-center w-full relative overflow-hidden">
+        <span className="relative z-10 transition-colors duration-500 group-hover:text-brand-green">{title}</span>
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-green transition-all duration-500 group-hover:w-full"></span>
+      </h3>
     </div>
   </div>
 );

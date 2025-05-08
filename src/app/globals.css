@@ -6,6 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
   --brand-green: #729080;
+  --brand-green-light: #8aa59a;
+  --brand-green-dark: #5b7566;
+  --brand-green-pale: #e8f3ef;
+  --brand-accent: #d5b277;
+  --brand-accent-light: #e4ca9a;
   --brand-secondary: #729080;
 }
 
@@ -29,9 +34,24 @@ body {
     font-family: 'Lexend', sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1 {
     font-family: var(--font-montserrat), sans-serif;
-    @apply font-semibold;
+    @apply font-bold text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+  
+  h2 {
+    font-family: var(--font-montserrat), sans-serif;
+    @apply font-bold text-3xl md:text-4xl leading-snug;
+  }
+  
+  h3 {
+    font-family: var(--font-montserrat), sans-serif;
+    @apply font-semibold text-2xl md:text-3xl leading-relaxed;
+  }
+  
+  h4, h5, h6 {
+    font-family: var(--font-montserrat), sans-serif;
+    @apply font-semibold leading-relaxed;
   }
 
   a {

@@ -2,7 +2,7 @@ import { MessageSquare, Target, HeartHandshake, Sparkles, LineChart, ClipboardEd
 
 export default function ComoFuncionaConsultas() {
   return (
-    <section className="py-16 bg-gray-50" id="como-funciona">
+    <section className="py-20 bg-gray-50" id="como-funciona">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Como funciona meu atendimento</h2>
@@ -90,11 +90,11 @@ export default function ComoFuncionaConsultas() {
             </div>
           </div>
         
-          <div className="text-center mt-12">
-            <p className="text-lg font-medium text-white mb-6">Quer um acompanhamento individualizado?</p>
+          <div className="text-center mt-16">
+            <p className="text-lg font-semibold text-white mb-8">Quer um acompanhamento individualizado?</p>
             <a 
               href="#contato" 
-              className="inline-block bg-white text-[#729080] px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-block bg-[#e8f3ef] text-[#5b7566] px-10 py-4 rounded-full font-semibold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 border-2 border-white"
             >
               Agende já sua consulta
             </a>

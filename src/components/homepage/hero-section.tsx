@@ -53,8 +53,8 @@ export default function HeroSection() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 text-lg font-semibold text-white rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-brand-main focus:ring-offset-2"
-              style={{ backgroundColor: '#729080' }}
+              className="inline-block px-10 py-4 text-lg font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-main focus:ring-offset-2"
+              style={{ background: 'linear-gradient(135deg, var(--brand-green), var(--brand-green-dark))' }}
               data-aos="fade-right"
               data-aos-duration="1500"
               data-aos-easing="ease-out-cubic"
