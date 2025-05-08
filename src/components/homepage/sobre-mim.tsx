@@ -28,7 +28,7 @@ export default function SobreMim() {
                   fill
                   style={{ 
                     objectFit: 'cover', 
-                    objectPosition: 'center' 
+                    objectPosition: 'center top' 
                   }}
                   sizes="(max-width: 768px) 100vw, 40vw"
                   priority
