@@ -3,19 +3,15 @@
 
 import { useTransition } from 'react';
 import Link from 'next/link';
-import { deletePost, togglePublishStatus } from './actions'; // Importa as Server Actions
+import { deletePost, togglePublishStatus } from './actions';
 
 interface PostActionsProps {
   postId: string;
   isPublished: boolean;
-  // Passar o slug aqui seria útil para revalidação mais granular ou navegação
-  // postSlug: string;
 }
 
 export default function PostActions({ postId, isPublished }: PostActionsProps) {
   const [isPending, startTransition] = useTransition();
-  // Local state to immediately reflect publish/unpublish change, might not be needed if revalidation is fast enough
-  // const [publishedState, setPublishedState] = useState(isPublished);
 
   const handleDelete = () => {
     if (confirm('Tem certeza que deseja apagar este post permanentemente? Esta ação não pode ser desfeita.')) {
@@ -24,7 +20,6 @@ export default function PostActions({ postId, isPublished }: PostActionsProps) {
         if (result?.error) {
           alert(`Erro ao apagar: ${result.error}`);
         }
-        // Revalidation should update the list automatically
       });
     }
   };
@@ -37,31 +32,31 @@ export default function PostActions({ postId, isPublished }: PostActionsProps) {
         if (result?.error) {
           alert(`Erro ao ${actionText}: ${result.error}`);
         }
-        // Update local state if needed, or rely on revalidation
-        // if (result?.success) {
-        //   setPublishedState(result.newState);
-        // }
       });
     }
   };
 
+  // Este componente agora renderiza apenas na versão desktop (tabela)
+  // A versão mobile tem seus próprios botões diretamente na página
   return (
     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
-      {/* Botão Editar (Link) */}
-      <Link href={`/admin/posts/edit/${postId}`} className="text-indigo-600 hover:text-indigo-900 disabled:opacity-50" aria-disabled={isPending}>
+      <Link 
+        href={`/admin/posts/edit/${postId}`} 
+        className="text-indigo-600 hover:text-indigo-900 disabled:opacity-50" 
+        aria-disabled={isPending}
+      >
         Editar
       </Link>
 
-      {/* Botão Apagar */}
-      <button
-        onClick={handleDelete}
-        disabled={isPending}
-        className="text-red-600 hover:text-red-900 disabled:opacity-50 disabled:cursor-not-allowed"
+      <Link 
+        href={`/blog/posts/${postId}`} 
+        target="_blank" 
+        className="text-blue-600 hover:text-blue-900 disabled:opacity-50" 
+        aria-disabled={isPending}
       >
-        {isPending ? 'Apagando...' : 'Apagar'}
-      </button>
+        Visualizar
+      </Link>
 
-      {/* Botão Publicar/Despublicar */}
       <button
         onClick={handleTogglePublish}
         disabled={isPending}
@@ -69,6 +64,18 @@ export default function PostActions({ postId, isPublished }: PostActionsProps) {
       >
         {isPending ? 'Atualizando...' : (isPublished ? 'Despublicar' : 'Publicar')}
       </button>
+
+      <button
+        onClick={handleDelete}
+        disabled={isPending}
+        className="text-red-600 hover:text-red-900 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {isPending ? 'Apagando...' : 'Apagar'}
+      </button>
     </td>
   );
 }
+
+// Exporta as ações de servidor diretamente para uso na versão mobile
+export { deletePost, togglePublishStatus };
+
