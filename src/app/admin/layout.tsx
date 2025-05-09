@@ -16,21 +16,22 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       {/* Cabeçalho Responsivo */}
-      <header className="bg-white shadow-md p-4 flex justify-between items-center w-full">
+      <header className="bg-white shadow-md p-3 flex justify-between items-center w-full">
         <div className="flex items-center">
           {/* Botão do menu móvel */}
           <button
             onClick={toggleMobileMenu}
-            className="mr-4 md:hidden text-gray-600 hover:text-gray-900 focus:outline-none"
+            className="mr-2 md:hidden text-gray-600 hover:text-gray-900 focus:outline-none p-1"
+            aria-label="Menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
-          <h1 className="text-xl font-semibold text-gray-800">Painel Administrativo</h1>
+          <h1 className="text-lg sm:text-xl font-semibold text-gray-800 truncate">Painel Admin</h1>
         </div>
         <form action={logout}>
           <button
             type="submit"
-            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-150 ease-in-out"
+            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-3 rounded-md text-xs sm:text-sm transition duration-150 ease-in-out"
           >
             Sair
           </button>

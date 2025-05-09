@@ -4,7 +4,7 @@ import { getSupabaseAdmin } from '@/lib/supabaseClient';
 import { Post } from '@/types/blog';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
-import PostActions from './PostActions';
+import PostActions, { deletePost, togglePublishStatus } from './PostActions';
 
 async function getPosts(): Promise<Post[]> {
   const supabaseAdmin = getSupabaseAdmin();
@@ -25,11 +25,11 @@ export default async function AdminPostsPage() {
 
   return (
     <div>
-      {/* Cabeçalho responsivo */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-        <h1 className="text-2xl font-bold">Gerenciar Posts</h1>
-        <Link href="/admin/posts/new" className="w-full sm:w-auto">
-          <span className="block text-center bg-brand-green hover:bg-brand-green-alt text-white font-bold py-2 px-4 rounded" style={{ backgroundColor: '#729080' }}>
+      {/* Cabeçalho otimizado para mobile */}
+      <div className="mb-4">
+        <h1 className="text-xl sm:text-2xl font-bold mb-2">Gerenciar Posts</h1>
+        <Link href="/admin/posts/new" className="block w-full">
+          <span className="block text-center bg-brand-green hover:bg-brand-green-alt text-white font-bold py-3 px-4 rounded" style={{ backgroundColor: '#729080' }}>
             Novo Post
           </span>
         </Link>
@@ -106,26 +106,29 @@ export default async function AdminPostsPage() {
           ) : (
             <div className="divide-y divide-gray-200">
               {posts.map((post) => (
-                <div key={post.id} className="p-4 space-y-3">
-                  <div className="flex justify-between items-start">
-                    <div className="space-y-1 flex-1">
-                      <h3 className="font-medium text-gray-900 truncate" title={post.title}>{post.title}</h3>
-                      <div className="text-xs text-gray-500">/{post.slug}</div>
-                    </div>
-                    <div>
+                <div key={post.id} className="p-3 space-y-2 overflow-hidden">
+                  {/* Título e Status */}
+                  <div className="flex flex-col space-y-1">
+                    <h3 className="font-medium text-gray-900 break-words" title={post.title}>
+                      {post.title.length > 30 ? `${post.title.substring(0, 30)}...` : post.title}
+                    </h3>
+                    <div className="text-xs text-gray-500 truncate">/{post.slug}</div>
+                    
+                    <div className="mt-1">
                       {post.published ? (
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                        <span className="px-2 py-1 inline-flex text-xs leading-4 font-semibold rounded-full bg-green-100 text-green-800">
                           Publicado
                         </span>
                       ) : (
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                        <span className="px-2 py-1 inline-flex text-xs leading-4 font-semibold rounded-full bg-yellow-100 text-yellow-800">
                           Rascunho
                         </span>
                       )}
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-2 text-sm text-gray-500">
+                  {/* Informações do Post */}
+                  <div className="grid grid-cols-1 gap-1 text-xs text-gray-500">
                     <div>
                       <span className="font-medium">Autor:</span> {post.author}
                     </div>
@@ -134,30 +137,61 @@ export default async function AdminPostsPage() {
                     </div>
                   </div>
                   
-                  <div className="pt-2 flex justify-end space-x-2">
-                    <Link href={`/admin/posts/edit/${post.id}`} className="inline-flex items-center justify-center px-3 py-1.5 border border-transparent text-xs font-medium rounded text-white bg-blue-600 hover:bg-blue-700">
-                      Editar
-                    </Link>
-                    
-                    <Link href={`/blog/${post.slug}`} target="_blank" className="inline-flex items-center justify-center px-3 py-1.5 border border-gray-300 text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50">
-                      Visualizar
-                    </Link>
-                    
-                    {post.published ? (
-                      <button 
-                        className="inline-flex items-center justify-center px-3 py-1.5 border border-transparent text-xs font-medium rounded text-white bg-yellow-500 hover:bg-yellow-600"
-                        // Adicione a ação de despublicar
+                  {/* Botões de Ação - Reorganizados em duas linhas */}
+                  <div className="pt-2 flex flex-col space-y-2">
+                    <div className="grid grid-cols-2 gap-2 w-full">
+                      <Link 
+                        href={`/admin/posts/edit/${post.id}`} 
+                        className="flex-1 flex items-center justify-center px-2 py-2 border border-transparent text-xs font-medium rounded text-white bg-blue-600 hover:bg-blue-700"
                       >
-                        Despublicar
-                      </button>
-                    ) : (
-                      <button 
-                        className="inline-flex items-center justify-center px-3 py-1.5 border border-transparent text-xs font-medium rounded text-white bg-green-500 hover:bg-green-600"
-                        // Adicione a ação de publicar
+                        Editar
+                      </Link>
+                      
+                      <Link 
+                        href={`/blog/${post.slug}`} 
+                        target="_blank" 
+                        className="flex-1 flex items-center justify-center px-2 py-2 border border-gray-300 text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50"
                       >
-                        Publicar
+                        Visualizar
+                      </Link>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-2 w-full">
+                      {post.published ? (
+                        <button 
+                          onClick={async () => {
+                            if (confirm('Tem certeza que deseja despublicar este post?')) {
+                              await togglePublishStatus(post.id, true);
+                            }
+                          }}
+                          className="flex-1 flex items-center justify-center px-2 py-2 border border-transparent text-xs font-medium rounded text-white bg-yellow-500 hover:bg-yellow-600"
+                        >
+                          Despublicar
+                        </button>
+                      ) : (
+                        <button 
+                          onClick={async () => {
+                            if (confirm('Tem certeza que deseja publicar este post?')) {
+                              await togglePublishStatus(post.id, false);
+                            }
+                          }}
+                          className="flex-1 flex items-center justify-center px-2 py-2 border border-transparent text-xs font-medium rounded text-white bg-green-500 hover:bg-green-600"
+                        >
+                          Publicar
+                        </button>
+                      )}
+                      
+                      <button 
+                        onClick={async () => {
+                          if (confirm('Tem certeza que deseja apagar este post permanentemente? Esta ação não pode ser desfeita.')) {
+                            await deletePost(post.id);
+                          }
+                        }}
+                        className="flex-1 flex items-center justify-center px-2 py-2 border border-transparent text-xs font-medium rounded text-white bg-red-500 hover:bg-red-600"
+                      >
+                        Apagar
                       </button>
-                    )}
+                    </div>
                   </div>
                 </div>
               ))}
