@@ -4,7 +4,8 @@ import { getSupabaseAdmin } from '@/lib/supabaseClient';
 import { Post } from '@/types/blog';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
-import PostActions, { deletePost, togglePublishStatus } from './PostActions';
+import PostActions from './PostActions';
+import MobilePostCard from './MobilePostCard';
 
 async function getPosts(): Promise<Post[]> {
   const supabaseAdmin = getSupabaseAdmin();
@@ -97,7 +98,7 @@ export default async function AdminPostsPage() {
           </table>
         </div>
         
-        {/* Layout de cartões para dispositivos móveis */}
+        {/* Layout de cartões para dispositivos móveis - usando componente cliente */}
         <div className="md:hidden">
           {posts.length === 0 ? (
             <div className="p-4 text-center text-gray-500">
@@ -106,94 +107,15 @@ export default async function AdminPostsPage() {
           ) : (
             <div className="divide-y divide-gray-200">
               {posts.map((post) => (
-                <div key={post.id} className="p-3 space-y-2 overflow-hidden">
-                  {/* Título e Status */}
-                  <div className="flex flex-col space-y-1">
-                    <h3 className="font-medium text-gray-900 break-words" title={post.title}>
-                      {post.title.length > 30 ? `${post.title.substring(0, 30)}...` : post.title}
-                    </h3>
-                    <div className="text-xs text-gray-500 truncate">/{post.slug}</div>
-                    
-                    <div className="mt-1">
-                      {post.published ? (
-                        <span className="px-2 py-1 inline-flex text-xs leading-4 font-semibold rounded-full bg-green-100 text-green-800">
-                          Publicado
-                        </span>
-                      ) : (
-                        <span className="px-2 py-1 inline-flex text-xs leading-4 font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                          Rascunho
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  
-                  {/* Informações do Post */}
-                  <div className="grid grid-cols-1 gap-1 text-xs text-gray-500">
-                    <div>
-                      <span className="font-medium">Autor:</span> {post.author}
-                    </div>
-                    <div>
-                      <span className="font-medium">Data:</span> {format(new Date(post.created_at), 'dd/MM/yy HH:mm', { locale: ptBR })}
-                    </div>
-                  </div>
-                  
-                  {/* Botões de Ação - Reorganizados em duas linhas */}
-                  <div className="pt-2 flex flex-col space-y-2">
-                    <div className="grid grid-cols-2 gap-2 w-full">
-                      <Link 
-                        href={`/admin/posts/edit/${post.id}`} 
-                        className="flex-1 flex items-center justify-center px-2 py-2 border border-transparent text-xs font-medium rounded text-white bg-blue-600 hover:bg-blue-700"
-                      >
-                        Editar
-                      </Link>
-                      
-                      <Link 
-                        href={`/blog/${post.slug}`} 
-                        target="_blank" 
-                        className="flex-1 flex items-center justify-center px-2 py-2 border border-gray-300 text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50"
-                      >
-                        Visualizar
-                      </Link>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-2 w-full">
-                      {post.published ? (
-                        <button 
-                          onClick={async () => {
-                            if (confirm('Tem certeza que deseja despublicar este post?')) {
-                              await togglePublishStatus(post.id, true);
-                            }
-                          }}
-                          className="flex-1 flex items-center justify-center px-2 py-2 border border-transparent text-xs font-medium rounded text-white bg-yellow-500 hover:bg-yellow-600"
-                        >
-                          Despublicar
-                        </button>
-                      ) : (
-                        <button 
-                          onClick={async () => {
-                            if (confirm('Tem certeza que deseja publicar este post?')) {
-                              await togglePublishStatus(post.id, false);
-                            }
-                          }}
-                          className="flex-1 flex items-center justify-center px-2 py-2 border border-transparent text-xs font-medium rounded text-white bg-green-500 hover:bg-green-600"
-                        >
-                          Publicar
-                        </button>
-                      )}
-                      
-                      <button 
-                        onClick={async () => {
-                          if (confirm('Tem certeza que deseja apagar este post permanentemente? Esta ação não pode ser desfeita.')) {
-                            await deletePost(post.id);
-                          }
-                        }}
-                        className="flex-1 flex items-center justify-center px-2 py-2 border border-transparent text-xs font-medium rounded text-white bg-red-500 hover:bg-red-600"
-                      >
-                        Apagar
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <MobilePostCard 
+                  key={post.id}
+                  id={post.id}
+                  title={post.title}
+                  slug={post.slug}
+                  author={post.author}
+                  published={post.published}
+                  created_at={post.created_at}
+                />
               ))}
             </div>
           )}
