@@ -79,6 +79,16 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-200 mt-8 pt-8 text-center text-black/70 text-sm font-lexend">
           <p> {currentYear} Dra. Alessandra Fernandes. Todos os direitos reservados.</p>
+          <p className="mt-2">
+            <a 
+              href="https://jmsouza.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-black/70 hover:text-brand-main transition-colors"
+            >
+              Website by JMSOUZA
+            </a>
+          </p>
         </div>
       </div>
     </footer>
