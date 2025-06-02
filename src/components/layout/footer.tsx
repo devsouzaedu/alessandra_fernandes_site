@@ -20,7 +20,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-black/90 text-sm text-center md:text-left font-lexend">
-              CRN-3: 123456 <br />
+              CRN-3: 47267 <br />
               Nutricionista Clínica e Esportiva
             </p>
           </div>
