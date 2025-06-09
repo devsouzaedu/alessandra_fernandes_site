@@ -29,7 +29,6 @@ export default function AreasAtuacao() {
     { icon: <Clock size={24} />, title: "Acompanhamento nutricional de mulheres na menopausa" },
     { icon: <Dumbbell size={24} />, title: "Nutrição esportiva" },
     { icon: <Brain size={24} />, title: "Tratamento para compulsão alimentar" },
-    { icon: <Brain size={24} />, title: "Tratamento de transtornos alimentares" },
     { icon: <Award size={24} />, title: "Suporte Nutricional para Atletas" },
     { icon: <Clipboard size={24} />, title: "Planejamento de cardápio nutricional" },
     { icon: <Timer size={24} />, title: "Performance física" },
