@@ -1,19 +1,39 @@
 import Image from 'next/image';
 
 export default function NossoEspaco() {
-  // Array de imagens do espaço com caminhos corretos
+  // Array de imagens do espaço com caminhos corretos - fotos novas
   const imagens = [
     { 
-      src: '/images/fotos_alessandra_nutricionista_esportiva_em_barueri_alphaville_bethaville_espaco_interno (2).jpeg', 
-      alt: 'Recepção do consultório' 
+      src: '/images/fotos_novas_interno_consultorio_dra_alessandra_bethaville_barueri_nutri_esportiva (1).jpeg', 
+      alt: 'Sala de espera com poltronas verdes' 
     },
     { 
-      src: '/images/fotos_alessandra_nutricionista_esportiva_em_barueri_alphaville_bethaville_espaco_interno (3).jpeg', 
-      alt: 'Sala de atendimento' 
+      src: '/images/fotos_novas_interno_consultorio_dra_alessandra_bethaville_barueri_nutri_esportiva (2).jpeg', 
+      alt: 'Consultório com mesa e cadeiras' 
     },
     { 
-      src: '/images/fotos_alessandra_nutricionista_esportiva_em_barueri_alphaville_bethaville_espaco_interno (4).jpeg', 
-      alt: 'Área de medição' 
+      src: '/images/fotos_novas_interno_consultorio_dra_alessandra_bethaville_barueri_nutri_esportiva (3).jpeg', 
+      alt: 'Mesa de trabalho com vista panorâmica' 
+    },
+    { 
+      src: '/images/fotos_novas_interno_consultorio_dra_alessandra_bethaville_barueri_nutri_esportiva (4).jpeg', 
+      alt: 'Área de atendimento com iluminação moderna' 
+    },
+    { 
+      src: '/images/fotos_novas_interno_consultorio_dra_alessandra_bethaville_barueri_nutri_esportiva (5).jpeg', 
+      alt: 'Espaço de recepção e espera' 
+    },
+    { 
+      src: '/images/fotos_novas_interno_consultorio_dra_alessandra_bethaville_barueri_nutri_esportiva (6).jpeg', 
+      alt: 'Sala de consulta completa' 
+    },
+    { 
+      src: '/images/fotos_novas_interno_consultorio_dra_alessandra_bethaville_barueri_nutri_esportiva (7).jpeg', 
+      alt: 'Ambiente de trabalho profissional' 
+    },
+    { 
+      src: '/images/fotos_novas_interno_consultorio_dra_alessandra_bethaville_barueri_nutri_esportiva (8).jpeg', 
+      alt: 'Vista geral do consultório' 
     },
     { 
       src: '/images/fachada_predio_atendimento_alessandra.png', 
