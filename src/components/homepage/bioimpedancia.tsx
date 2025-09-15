@@ -12,7 +12,7 @@ export default function Bioimpedancia() {
   ];
 
   return (
-    <section className="py-16 bg-brand-main">
+    <section className="py-16" style={{ backgroundColor: '#729080' }}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-white">
