@@ -12,7 +12,7 @@ export default function Bioimpedancia() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-brand-green to-green-600">
+    <section className="py-16 bg-gradient-to-br from-brand-main to-[#5a7368]">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -28,7 +28,7 @@ export default function Bioimpedancia() {
               </h2>
               
               <p 
-                className="text-xl mb-6 text-green-50 leading-relaxed"
+                className="text-xl mb-6 text-white/90 leading-relaxed"
                 data-aos="fade-right"
                 data-aos-duration="800"
                 data-aos-delay="200"
@@ -37,7 +37,7 @@ export default function Bioimpedancia() {
               </p>
 
               <p 
-                className="text-lg mb-8 text-green-100 leading-relaxed"
+                className="text-lg mb-8 text-white/80 leading-relaxed"
                 data-aos="fade-right"
                 data-aos-duration="800"
                 data-aos-delay="300"
@@ -59,7 +59,7 @@ export default function Bioimpedancia() {
                       <div className="bg-white/20 rounded-full p-2">
                         <IconComponent className="h-5 w-5 text-white" />
                       </div>
-                      <span className="text-sm font-medium text-green-50">
+                      <span className="text-sm font-medium text-white/90">
                         {destaque.title}
                       </span>
                     </div>
@@ -78,7 +78,7 @@ export default function Bioimpedancia() {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-white text-brand-green px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg"
+                  className="inline-flex items-center justify-center bg-white text-brand-main px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg"
                 >
                   <Activity className="mr-3 h-5 w-5" />
                   Agende Seu Exame Agora
@@ -86,7 +86,7 @@ export default function Bioimpedancia() {
                 
                 <Link 
                   href="/bioimpedancia"
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-green transition-colors duration-300"
+                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-main transition-colors duration-300"
                 >
                   Saiba Mais
                   <ArrowRight className="ml-3 h-5 w-5" />
@@ -104,7 +104,7 @@ export default function Bioimpedancia() {
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                 <div className="text-center">
                   <div className="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
-                    <Activity className="h-12 w-12 text-brand-green" />
+                    <Activity className="h-12 w-12 text-brand-main" />
                   </div>
                   
                   <h3 className="text-2xl font-bold text-white mb-4">
@@ -112,19 +112,19 @@ export default function Bioimpedancia() {
                   </h3>
                   
                   <div className="space-y-3">
-                    <div className="flex justify-between items-center text-green-50">
+                    <div className="flex justify-between items-center text-white/90">
                       <span>Água corporal total</span>
                       <span className="font-semibold">✓</span>
                     </div>
-                    <div className="flex justify-between items-center text-green-50">
+                    <div className="flex justify-between items-center text-white/90">
                       <span>Massa magra</span>
                       <span className="font-semibold">✓</span>
                     </div>
-                    <div className="flex justify-between items-center text-green-50">
+                    <div className="flex justify-between items-center text-white/90">
                       <span>IMC</span>
                       <span className="font-semibold">✓</span>
                     </div>
-                    <div className="flex justify-between items-center text-green-50">
+                    <div className="flex justify-between items-center text-white/90">
                       <span>Equilíbrio corporal</span>
                       <span className="font-semibold">✓</span>
                     </div>
