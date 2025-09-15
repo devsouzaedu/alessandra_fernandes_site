@@ -12,13 +12,14 @@ export default function Bioimpedancia() {
   ];
 
   return (
-    <section className="py-16 bg-brand-main">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            {/* Conteúdo Textual */}
-            <div className="text-white">
+          <div className="bg-brand-main rounded-2xl p-8 lg:p-12 text-white">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              
+              {/* Conteúdo Textual */}
+              <div>
               <h2 
                 className="text-3xl md:text-4xl font-bold mb-6"
                 data-aos="fade-right"
@@ -130,6 +131,7 @@ export default function Bioimpedancia() {
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           </div>
