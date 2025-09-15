@@ -4,6 +4,7 @@ import Especialidades from '@/components/homepage/especialidades';
 import AreasAtuacao from '@/components/homepage/areas-atuacao';
 import ComoFuncionaConsultas from '@/components/homepage/como-funciona';
 import FraseHumanizada from '@/components/homepage/frase-humanizada';
+import Bioimpedancia from '@/components/homepage/bioimpedancia';
 import NossoEspaco from '@/components/homepage/nosso-espaco';
 import SobreMim from '@/components/homepage/sobre-mim';
 import Feedbacks from '@/components/homepage/feedbacks';
@@ -20,6 +21,7 @@ export default function Homepage() {
         <ComoFuncionaConsultas />
         <AreasAtuacao />
         <FraseHumanizada />
+        <Bioimpedancia />
         <NossoEspaco />
         <SobreMim />
         <Feedbacks />

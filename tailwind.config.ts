@@ -21,6 +21,7 @@ const config: Config = {
       colors: {
         'brand-main': "#729080", // Cor principal
         'brand-secondary': "#13896F", // Elementos secundários
+        'brand-green': "#13896F", // Alias para brand-secondary (verde principal)
         secondary: "#D4AF37", // Cor ouro mantida
       },
       fontFamily: {
@@ -65,12 +66,16 @@ const config: Config = {
   safelist: [
     'bg-brand-main',
     'bg-brand-secondary',
+    'bg-brand-green',
     'text-brand-main',
     'text-brand-secondary',
+    'text-brand-green',
     'hover:bg-brand-main',
     'hover:bg-brand-secondary',
+    'hover:bg-brand-green',
     'hover:text-brand-main',
     'hover:text-brand-secondary',
+    'hover:text-brand-green',
     'text-white',
     'text-black',
     'font-lexend',
