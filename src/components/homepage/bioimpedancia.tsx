@@ -103,10 +103,6 @@ export default function Bioimpedancia() {
             >
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                 <div className="text-center">
-                  <div className="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
-                    <Activity className="h-12 w-12 text-brand-main" />
-                  </div>
-                  
                   <h3 className="text-2xl font-bold text-white mb-4">
                     Análise Completa
                   </h3>
